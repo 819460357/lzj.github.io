@@ -1,0 +1,58 @@
+.c-treeview-menu {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+  .c-treeview-menu {
+    padding-left: 15px;
+  }
+  & > li {
+    margin: 0;
+    margin-left: .4rem;
+    & > .c-treeview-menu {
+      margin: 0 1px;
+    }
+    & > a {
+      padding: 5px 5px 8px 15px;
+      display: block;
+
+      border: 0px;
+      &:hover{
+
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        cursor: pointer;
+        filter: alpha(opacity=35);
+        -moz-opacity: 0.35;
+        opacity: 0.35;
+        margin-left: 5px;
+      }
+      & > .fa {
+        width: 20px;
+      }
+    }
+  }
+  li {
+    &.active {
+      a{
+
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        cursor: pointer;
+        filter: alpha(opacity=35);
+        -moz-opacity: 0.35;
+        opacity: 0.35;
+        margin-left: 5px;
+      }
+      & > .c-treeview-menu {
+        display: block;
+      }
+    }
+  }
+}
+

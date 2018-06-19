@@ -1,0 +1,13 @@
+.c-main-wrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  .c-memu-wrap {
+    width: 14rem;
+    height: 100%;
+    box-shadow: 0rem 0.06rem 0.43rem 0.01rem #f2f2f2;
+  }
+}
