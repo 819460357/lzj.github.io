@@ -1,8 +1,8 @@
 <ul class="c-treeview-menu" [hidden]="!data.isExpend"  *ngIf="!isLeaf(data)">
   <li *ngFor="let item of data.children; let i = index;">
     <a  (click)="itemClicked(item);">
-      <i class="fa " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
-      <i style="margin-top:3px;width:17px" class="fa  pull-right"  [ngClass]="{'fa-angle-down': !isLeaf(item) && item.isExpend, 'fa-angle-left': !isLeaf(item) && !item.isExpend}"></i>
+      <i class="iconfont " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
+      <i style="margin-top:3px;width:17px; float: right" class="iconfont"  [ngClass]="{'icon-down': !isLeaf(item) && item.isExpend, 'icon-zuo': !isLeaf(item) && !item.isExpend}"></i>
     </a>
     <c-treeview-memu [data]="item"></c-treeview-memu>
   </li>

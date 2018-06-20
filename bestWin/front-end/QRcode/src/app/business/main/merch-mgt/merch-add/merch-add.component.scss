@@ -1,0 +1,105 @@
+.c-add-merch-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  .c-contain-wrap {
+    width: 80%;
+    height: 90%;
+    box-shadow: 0rem 0.06rem 0.43rem 0.01rem #b3bab9;
+    padding: 1px;
+    display: flex;
+
+    .c-contain-left-wrap {
+      width: 50%;
+      height: 100%;
+      background: white;
+      padding-top: 3rem;
+
+      .c-div-item {
+        height: 2rem;
+        width: 24rem;
+        margin: 0 auto 1rem;
+        font-size: 1rem;
+        line-height: 2rem;
+
+        .c-input-text {
+          display: inline-block;
+          width: 5rem;
+          text-align: right;
+        }
+
+        .c-input {
+          height: 2rem;
+          width: 12rem;
+          margin-left: 1rem;
+          outline: none;
+          border: 1px solid #ECECEC;
+          border-radius: .25rem;
+          font-size: .94rem;
+        }
+      }
+
+      .c-qrCode-div {
+        margin: 2rem auto 0;
+        width: 8rem;
+        height: 8rem;
+        border: 1px solid #ECECEC;
+        border-radius: .25rem;
+
+        .c-input-file {
+            position: absolute;
+            font-size: -3px;
+            opacity: 0;
+            height: 1px;
+            width: 1px;
+            top: 5px;
+            left: 5px;
+            filter: alpha(opacity=0);
+            cursor: pointer;
+        }
+      }
+    }
+
+    .c-contain-right-wrap {
+      height: 100%;
+      width: 50%;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      background: white;
+      overflow: auto;
+
+      .c-img-item {
+        height: 8rem;
+        width: 8rem;
+        border: 1px solid #ECECEC;
+        border-radius: .25rem;
+        margin: 0 1rem 1rem 0;
+      }
+
+      .c-img-input-wrap {
+        height: 8rem;
+        width: 8rem;
+        border-radius: .25rem;
+        position: relative;
+
+        .c-input-file {
+          position: absolute;
+          font-size: -3px;
+          opacity: 0;
+          height: 1px;
+          width: 1px;
+          top: 5px;
+          left: 5px;
+          filter: alpha(opacity=0);
+          cursor: pointer;
+        }
+      }
+      //background: white;
+    }
+  }
+}

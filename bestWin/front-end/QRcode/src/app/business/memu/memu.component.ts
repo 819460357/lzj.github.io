@@ -6,8 +6,54 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['memu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-//输入数据
-  @Input() data;
+  public memuArray = [
+      {
+        "id": "1",
+        "parentId": "0",
+        "name": "商户管理",
+        "icon": 'icon-shanghu',
+        "isExpend": false,
+        "children": [{
+          "id": "2",
+          "parentId": "1",
+          "name": "添加商户",
+          "icon": 'icon-tianjiashanghu',
+          "url": 'main/addMerch'
+        },
+          {
+            "id": "3",
+            "parentId": "1",
+            "name": "商户列表",
+            "icon": 'icon-shanghuliebiao',
+            "url": 'main/merchList'
+          }
+        ]
+
+      },
+
+      {
+        "id": "31",
+        "parentId": "0",
+        "name": "管理员管理",
+        "keyWord": "xtgl",
+        "icon": "icon-guanliyuan",
+        "children": [{
+          "id": "32",
+          "parentId": "31",
+          "name": "添加管理员",
+          "keyWord": "txjk",
+          "icon": "icon-guanliyuantianjia",
+          "url": "/app/sysMonitor"
+        },{
+          "id": "33",
+          "parentId": "31",
+          "name": "管理员列表",
+          "keyWord": "txrz",
+          "icon": "icon-guanliyuanliebiao",
+          "url": "/app/sysLog"
+        }]
+      },
+    ];
   //所有数据
   private  allData;
 
@@ -20,7 +66,7 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.allData=this.data;
+    this.allData=this.memuArray;
   }
 
   /**
@@ -45,9 +91,9 @@ export class MenuComponent implements OnInit {
    */
   itemClicked(item){
     if(!this.isLeaf(item)) {
-      for(let obj of this.data){
+      for(let obj of this.memuArray){
         if(obj.id!=item.id){
-          obj.isExpend=false;
+          obj['isExpend'] = false;
         }
       }
       item.isExpend = !item.isExpend;
@@ -66,20 +112,20 @@ export class MenuComponent implements OnInit {
 
     if(''!=this.searchTxt){
       let keyWord = new RegExp(this.searchTxt);
-      let menuList=new Array<Object>();
+      let menuList = new Array();
       let menuIdList=new Array<string>();
 
       for(let item of tempData){
         this.searchItem(item,menuList,menuIdList,keyWord);
       }
       if(menuList.length>0){
-        this.data=menuList;
+        this.memuArray = menuList;
       }else{
         this.searchMsgHidden=false;
       }
 
     }else{
-      this.data=this.allData;
+      this.memuArray = this.allData;
     }
   }
 
