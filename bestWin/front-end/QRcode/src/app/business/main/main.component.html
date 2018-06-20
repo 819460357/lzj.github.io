@@ -1,0 +1,18 @@
+<div class="c-main-wrap">
+  <div class="c-left-wrap"  [ngClass]="{'c-left-wrap-show': !navClose, 'c-left-wrap-hide': navClose}">
+    <c-main-memu></c-main-memu>
+  </div>
+  <div class="c-right-wrap">
+    <div class="c-top-wrap">
+      <div class="c-slide-wrap">
+        <div class="c-slide-btn" placement="right"   (click)="toggleNav($event)">
+          <i class="iconfont icon-zhediecaidanzuo c-cursor-pointer" [hidden]="navClose"></i>
+          <i class="iconfont icon-zhediecaidanyou c-cursor-pointer" [hidden]="!navClose"></i>
+        </div>&nbsp;
+      </div>
+    </div>
+    <div class="c-container-wrap">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
