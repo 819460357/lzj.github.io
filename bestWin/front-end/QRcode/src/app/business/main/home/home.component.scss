@@ -1,0 +1,31 @@
+.c-home-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.c-account-info-wrap {
+  height: 8rem;
+  width: 60%;
+  display: flex;
+  margin: 2rem auto 0;
+
+  .c-account-item-wrap {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .c-account-title {
+      color: #243139;
+      font-weight: bolder;
+      font-size: 1.4rem;
+    }
+
+    .c-account-num {
+      color: #4e6b7c;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+}

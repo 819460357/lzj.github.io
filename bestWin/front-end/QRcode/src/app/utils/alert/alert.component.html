@@ -1,0 +1,4 @@
+<div class="c-un-select c-cursor-pointer c-alert-wrap" [ngClass]="{'c-alert-warn': data.type == 'warn', 'c-alert-error': data.type == 'error'}">
+  {{data.msg|| '系统错误'}}
+  <span class="mat-button" (click)="closeBtn($event)">×</span>
+</div>

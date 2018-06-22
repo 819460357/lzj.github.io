@@ -1,0 +1,24 @@
+.c-alert-wrap {
+  height: 100%;
+  width: 100%;
+  line-height: 1.4rem;
+  font-size: 1rem;
+  padding: .5rem;
+}
+
+.c-alert-warn {
+  color: #545351;
+}
+
+.c-alert-error {
+  color: #fe444e;
+}
+
+.mat-button {
+  padding: 0 !important;
+  width: 2rem !important;
+  float: right;
+  line-height: 1.4rem;
+  min-width: 0 !important;
+  text-align: center;
+}

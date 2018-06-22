@@ -66,6 +66,30 @@
           line-height: 2rem;
         }
       }
+
+      .c-title-wrap {
+        width: 16rem;
+        height: 4rem;
+        font-size: 4rem;
+        font-size: 1.4rem;
+        font-weight: bolder;
+        color: white;
+        text-align: right;
+      }
+
+      .c-top-memu-wrap {
+        width: calc(100% - 20rem);
+        height: 4rem;
+        line-height: 4rem;
+        font-size: 1rem;
+        color: white;
+       text-align: right;
+        padding-right: 8rem;
+
+        .c-inline-block-div {
+          display: inline-block;
+        }
+      }
     }
 
     .c-container-wrap {

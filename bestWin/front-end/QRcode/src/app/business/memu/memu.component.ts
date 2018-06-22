@@ -31,28 +31,28 @@ export class MenuComponent implements OnInit {
 
       },
 
-      {
-        "id": "31",
-        "parentId": "0",
-        "name": "管理员管理",
-        "keyWord": "xtgl",
-        "icon": "icon-guanliyuan",
-        "children": [{
-          "id": "32",
-          "parentId": "31",
-          "name": "添加管理员",
-          "keyWord": "txjk",
-          "icon": "icon-guanliyuantianjia",
-          "url": "/app/sysMonitor"
-        },{
-          "id": "33",
-          "parentId": "31",
-          "name": "管理员列表",
-          "keyWord": "txrz",
-          "icon": "icon-guanliyuanliebiao",
-          "url": "/app/sysLog"
-        }]
-      },
+      // {
+      //   "id": "31",
+      //   "parentId": "0",
+      //   "name": "管理员管理",
+      //   "keyWord": "xtgl",
+      //   "icon": "icon-guanliyuan",
+      //   "children": [{
+      //     "id": "32",
+      //     "parentId": "31",
+      //     "name": "添加管理员",
+      //     "keyWord": "txjk",
+      //     "icon": "icon-guanliyuantianjia",
+      //     "url": "/app/sysMonitor"
+      //   },{
+      //     "id": "33",
+      //     "parentId": "31",
+      //     "name": "管理员列表",
+      //     "keyWord": "txrz",
+      //     "icon": "icon-guanliyuanliebiao",
+      //     "url": "/app/sysLog"
+      //   }]
+      // },
     ];
   //所有数据
   private  allData;

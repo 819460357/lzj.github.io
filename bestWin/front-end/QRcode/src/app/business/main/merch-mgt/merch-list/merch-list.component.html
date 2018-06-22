@@ -1,19 +1,20 @@
 <div class="c-merch-list-wrap">
-  <div class="c-merch-item-wrap">
+  <div class="c-merch-item-wrap" *ngFor="let merchItem of merchList">
     <div class="c-merch-left-wrap">
-      <div class="c-merch-title">泉州三七有限公司</div>
+      <div class="c-merch-title">{{merchItem['name']}}</div>
       <div class="c-addr-wrap">
-        <span>公司地址： 福建省厦门市湖里区安宁路</span>
+        <span>公司地址： {{merchItem['addr']}}</span>
       </div>
       <div class="c-phone-wrap">
-        <span>客户电话：15750213658</span>
+        <span>客户电话：{{merchItem['tel']}}</span>
       </div>
       <div class="c-wechat-wrap">
-        <span>微信号：15750213658</span>
+        <span>微信号：{{merchItem['wechat']}}</span>
       </div>
     </div>
     <div class="c-merch-right-wrap">
-      <span class="c-btn c-cursor-pointer" (click)="addQrCodeBtn($event)">防伪二维码生成</span>
+      <span class="c-btn c-cursor-pointer" (click)="merchInfoBtn($event, merchItem)" style="margin-right: 2.5rem; padding-left: 2rem; padding-right: 2rem">查看</span>
+      <span class="c-btn c-cursor-pointer" (click)="addQrCodeBtn($event, merchItem)">防伪二维码生成</span>
     </div>
   </div>
 </div>

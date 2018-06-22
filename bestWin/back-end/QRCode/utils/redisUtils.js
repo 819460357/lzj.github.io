@@ -53,7 +53,7 @@ exports.delToken = function(token) {
 
         redisClient.del(key, function (err, reply) {
             if(err) {
-                return reject({code: -1, msg: '获取 token 错误！'});
+                return reject({code: -1, msg: '系统错误！'});
             }
             return resolve({code: 0, msg: ''});
         });

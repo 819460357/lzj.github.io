@@ -10,6 +10,20 @@
           <i class="iconfont icon-zhediecaidanyou c-cursor-pointer" [hidden]="!navClose"></i>
         </div>&nbsp;
       </div>
+      <div class="c-title-wrap">
+        <span style="line-height: 4rem;">防伪管理系统</span>
+      </div>
+      <div class="c-top-memu-wrap">
+        <div class="c-inline-block-div" style="margin-right: 5rem">
+          <span class="iconfont icon-iconfonthome0 c-cursor-pointer" (click)="backHomeBtn($event)"></span>
+        </div>
+        <div class="c-inline-block-div" style="margin-right: 2rem">
+          <span>{{userInfo['user_name']}}</span> <span style="margin-left: 2rem">创建时间：{{userInfo['append_time']}}</span>
+        </div>
+        <div class="c-inline-block-div">
+          <span class="iconfont icon-tuichu c-cursor-pointer" style="font-size: 1.4rem" (click)="logoutBtn($event)"></span>
+        </div>
+      </div>
     </div>
     <div class="c-container-wrap">
       <router-outlet></router-outlet>

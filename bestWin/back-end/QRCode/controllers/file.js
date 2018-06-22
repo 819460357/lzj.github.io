@@ -2,7 +2,7 @@ var fs = require('fs');
 var multiparty  = require('multiparty');
 var path = require('path');
 
-var DIRNAME = 'public/images/'
+var DIRNAME = __dirname +  '/../public/images/';
 
 module.exports = function (router) {
 
@@ -22,6 +22,7 @@ function uploadImg(req) {
     return new Promise(function (resolve, reject) {
         var form = new multiparty.Form({uploadDir: DIRNAME});
         form.parse(req, function (err, fields, files) {
+            console.log(DIRNAME);
             if (err) {
                 return reject({code: -1, msg: '文件上传出错'})
             }
@@ -32,14 +33,14 @@ function uploadImg(req) {
             var promiseResult = new Array();
             for (key in files) {
                 var fileName = DIRNAME + new Date().getTime() + '_' + Math.floor(Math.random() * 100) + files[key][0]['originalFilename'].substring(files[key][0]['originalFilename'].lastIndexOf('.'));
-                urls.push(fileName);
+                urls.push(fileName.substring(fileName.indexOf('/public') + 7 ));
                 promiseResult.push(renameImg(files[key][0]['path'], fileName));
             }
             Promise
                 .all(promiseResult)
                 .then(function (result) {
                     console.log(result);
-                    return resolve({code: 0, ids: urls});
+                    return resolve({code: 0, data: {urls: urls }});
                 })
                 .catch(function (err) {
                     console.log('err', err);

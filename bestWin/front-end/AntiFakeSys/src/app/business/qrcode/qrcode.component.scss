@@ -1,0 +1,112 @@
+.c-anti-faky-wrap {
+  height: auto;
+  width: 100%;
+  padding-bottom: 2rem;
+
+  .c-title {
+    height: 3rem;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+    color: white;
+    background: #2f2d2d;
+  }
+
+  .c-content-wrap {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 60rem;
+    background: white;
+    height: auto;
+    padding-bottom: 2rem;
+
+
+    .c-carousel-wrap {
+      margin: 0 auto;
+      height: 14rem;
+      width: 100%;
+      max-width: 60rem;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .c-anti-fake-code-wrap {
+      width: 100%;
+      height: 4rem;
+      margin-top: 2rem;
+      padding: 0 2rem;
+
+      .c-anti-fake-title{
+        font-weight: bold;
+        color: #888;
+      }
+
+      .c-anti-fake-code {
+        width: 100%;
+        height: 2rem;
+        margin-top: .5rem;
+
+        .c-anti-fake-code-input {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #ECECEC;
+          border-radius: .25rem;
+          outline: none;
+        }
+      }
+    }
+
+    .c-code-desc-wrap {
+      width: 80%;
+      /* height: 5rem; */
+      height: auto;
+      margin: .5rem auto 0;
+      font-size: .94rem;
+      color: red;
+      white-space: normal;
+      word-break: break-all;
+      border-bottom: 1px #333 dashed;
+      padding-bottom: .5rem;
+    }
+
+    .c-code-from-to {
+      line-height: 1.5rem;
+      font-size: .94rem;
+      width: 80%;
+      height: auto;
+      margin: .5rem auto 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px #333 dashed;
+      color: #2f2d2d;
+    }
+
+    .c-div-item {
+      height: .94rem;
+      line-height: .94rem;
+      width: 80%;
+      margin: .5rem auto 0;
+      font-size: .8rem;
+      color: #2f2d2d;
+    }
+
+    .c-btn-wrap {
+      height: 8rem;
+      width: 100%;
+      margin-top: 1rem;
+      line-height: 2rem;
+    }
+
+    .c-bottom-wrap {
+      width: 100%;
+      height: .8rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: .7rem;
+      color: #2a2f32;
+    }
+
+  }
+}

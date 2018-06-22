@@ -1,0 +1,54 @@
+<div class="c-anti-faky-wrap">
+
+  <div class="c-title"><span>{{codeInfo['title']}}</span></div>
+
+  <div class="c-content-wrap">
+    <div class="c-carousel-wrap">
+      <div style="height: 100%; width: 100%">
+
+        <carousel>
+          <slide *ngFor="let imgItem of codeInfo['imgs']">
+            <div style="height: 14rem; width: 100%; background-size:100% 14rem" class="text-center py-5 bg-dark text-white" [style.background-image]="'url(' + imgItem['url'] + ')' ">
+            </div>
+          </slide>
+        </carousel>
+
+      </div>
+    </div>
+    <div class="c-anti-fake-code-wrap">
+      <div class="c-anti-fake-title">您查询的防伪码为：</div>
+      <div class="c-anti-fake-code">
+        <input class="c-anti-fake-code-input" [(ngModel)]="codeInfo['antifakeCode']"/>
+      </div>
+    </div>
+    <div class="c-code-desc-wrap">
+      <span *ngIf="codeInfo['read'] > 0 && !codeInfo['unExist']">你所查询的防伪码已被查询过，首次查询时间：2018-06-15 21:46:01,查询设备:{{codeInfo['device_type']}},请确认!此次是第{{codeInfo['read'] + 1}}次查询！</span>
+      <span *ngIf="!(codeInfo['read'] > 0) && !codeInfo['unExist']">你所查询的防伪码此次是第{{codeInfo['read'] + 1}}次查询！</span>
+      <span *ngIf="codeInfo['unExist']">你所查询的防伪码不存在！</span>
+    </div>
+    <div class="c-code-from-to" *ngIf="codeInfo['from'] || codeInfo['to'] || codeInfo['desc']">
+      <span *ngIf="codeInfo['desc']">产品信息：{{codeInfo['desc']}}<br/><br/></span>
+      <span *ngIf="codeInfo['from']">产地：{{codeInfo['from']}}<br/></span>
+      <span *ngIf="codeInfo['to']">销往：{{codeInfo['to']}}</span>
+    </div>
+    <div class="c-div-item">
+      {{codeInfo['name']}}
+    </div>
+    <div class="c-div-item">
+      公司地址：{{codeInfo['addr']}}
+    </div>
+    <div class="c-div-item">
+      客户热线：{{codeInfo['tel']}}
+    </div>
+    <div class="c-div-item" *ngIf="codeInfo['wechat']">
+      微信号：{{codeInfo['wechat']}}
+    </div>
+    <div style="width: 80%; margin: .5rem auto 0; height: 1px;  border-top: 1px #333 dashed;"></div>
+
+    <div class="c-btn-wrap" *ngIf="codeInfo['wechat']" style="text-align: center; margin-top: 2rem">
+      <img [src]="codeInfo['qr_code']" style="height: 8rem; width: 8rem">
+      <!--<span style="display: inline-block; height: 2rem; width: 6rem; background: #7fd0c7; color: white; cursor: pointer;">关注微信</span>-->
+    </div>
+    <div class="c-bottom-wrap">© Copyright 2017 - 2019. 贝思盈防伪系统</div>
+  </div>
+</div>

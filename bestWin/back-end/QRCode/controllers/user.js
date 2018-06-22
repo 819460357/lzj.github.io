@@ -12,6 +12,26 @@ module.exports = function (router) {
                res.json(err);
            });
     });
+
+    router.post('/validate', function(req, res) {
+        validate(req.body)
+            .then(function (result) {
+                res.json(result);
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    });
+
+    router.post('/logout', function(req, res) {
+        logout(req.body)
+            .then(function (result) {
+                res.json(result);
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    });
 }
 
 function login(userName, password) {
@@ -45,6 +65,9 @@ function login(userName, password) {
             return new Promise(function (resolve, reject) {
                 var selectSql =
                     "   SELECT `user`.`id` AS user_id" +
+                    "        , `user`.user_name AS user_name" +
+                    "        , `user`.name AS name " +
+                    "        , `user`.append_time AS append_time " +
                     "        , `admin`.`id`  AS admin_id" +
                     "   FROM `user`" +
                     "   LEFT JOIN `admin` ON `admin`.user_id = `user`.id" +
@@ -76,7 +99,7 @@ function login(userName, password) {
                 redis
                     .saveToken(response['data']['user']['user_id'], token)
                     .then(function (result) {
-                        return resolve({code: 0, data: {user_id: response['data']['user']['user_id'], token: token}})
+                        return resolve({code: 0, data: Object.assign(response['data']['user'],{token: token}) })
                     })
                     .catch(function (err) {
                         return reject(err);
@@ -93,6 +116,78 @@ function login(userName, password) {
             return new Promise(function (resolve, reject) {
                 if(mysqlConnect) mysqlConnect.rollback();
                return reject(err);
+            });
+        });
+}
+
+function validate(data) {
+    return new Promise(function (resolve, reject) {
+        if(!data['token'] || data['token'].trim() == '') {
+            return reject({code: -1, msg: '请求不合法！'});
+        }
+        return resolve();
+    })
+        .then(function (response) {
+            return new Promise(function (resolve, reject) {
+                redis.checkToken(data['token'])
+                    .then(function (result) {
+                        if(!result.data) {
+                            return resolve({code: 0, data:{alive: false}});
+                        }
+                        return resolve({code: 0, data:{alive: true}});
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        return reject(err);
+                    });
+            });
+        })
+        .catch(function (err) {
+            console.log(err);
+            return new Promise(function (resolve, reject) {
+                return reject(err);
+            });
+        });
+}
+
+function logout(data) {
+    return new Promise(function (resolve, reject) {
+        if(!data['token'] || data['token'].trim() == '') {
+            return reject({code: -1, msg: '请求不合法！'});
+        }
+        return resolve();
+    })
+        .then(function (response) {
+            return new Promise(function (resolve, reject) {
+                redis.checkToken(data['token'])
+                    .then(function (result) {
+                        if(!result.data) {
+                            return resolve({code: 0, data:{alive: false}});
+                        }
+                        return resolve({code: 0, data:{alive: true}});
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        return reject(err);
+                    });
+            });
+        })
+        .then(function (response) {
+            return new Promise(function (resolve, reject) {
+                redis.delToken(data['token'])
+                    .then(function (result) {
+                        return resolve({code: 0, msg: ''});
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        return reject(err);
+                    });
+            });
+        })
+        .catch(function (err) {
+            console.log(err);
+            return new Promise(function (resolve, reject) {
+                return reject(err);
             });
         });
 }
