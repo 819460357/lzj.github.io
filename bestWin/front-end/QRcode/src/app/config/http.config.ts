@@ -1,6 +1,6 @@
 const httpConfig = {
-  domainName: 'http://47.105.108.213:3200',
-  frontDominName: "http://scycode.bestwin.vip/#/qrcode"
+  domainName: 'http://scycode.api.chinalansu.com',
+  frontDominName: "http://scycode.chinalansu.com/#/qrcode"
 };
 
 export const api = {
