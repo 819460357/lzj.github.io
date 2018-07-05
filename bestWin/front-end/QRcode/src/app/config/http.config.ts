@@ -1,6 +1,6 @@
 const httpConfig = {
-  domainName: 'http://scycode.api.chinalansu.com',
-  frontDominName: "http://scycode.chinalansu.com/#/qrcode"
+  domainName: 'http://scycode.api.chinatotomall.com',
+  frontDominName: "http://scycode.chinatotomall.com/#/qrcode"
 };
 
 export const api = {
