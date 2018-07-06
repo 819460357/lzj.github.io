@@ -67,12 +67,12 @@ function addMerch(data) {
         if(!data['tel'] || data['tel'].trim() == '') {
             return reject({code: -1, msg: '请填写商户客户热线！'});
         }
-        if(!data['wechat'] || data['wechat'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户微信号！'});
-        }
-        if(!data['qrCode'] || data['qrCode'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户微信二维码！'});
-        }
+        // if(!data['wechat'] || data['wechat'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户微信号！'});
+        // }
+        // if(!data['qrCode'] || data['qrCode'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户微信二维码！'});
+        // }
         return resolve();
     })
         .then(function (response) {
@@ -116,10 +116,16 @@ function addMerch(data) {
                     "     , `title` = '" + data['title'] + "'" +
                     "     , `addr` = '" + data['addr'] + "'" +
                     "     , `tel` = '" + data['tel'] + "'" +
-                    "     , `wechat` = '" + data['wechat'] + "'" +
-                    "     , `qr_code` = '" + data['qrCode'] + "'" +
+                    // "     , `wechat` = '" + data['wechat'] + "'" +
+                    // "     , `qr_code` = '" + data['qrCode'] + "'" +
                     "     , effect = 1" +
                     "     , active = 1";
+                if(data['wechat'] && data['wechat'].trim() != '') {
+                    insertSql += "     , `wechat` = '" + data['wechat'] + "'";
+                }
+                if(data['qr_code'] && data['qr_code'].trim() != '') {
+                    insertSql += "     , `qr_code` = '" + data['qrCode'] + "'";
+                }
 
                 mysqlConnect.query(insertSql, function (err, result) {
                     if(err) {
@@ -363,12 +369,12 @@ function editMerch(data) {
         if(!data['tel'] || data['tel'].trim() == '') {
             return reject({code: -1, msg: '请填写商户客户热线！'});
         }
-        if(!data['wechat'] || data['wechat'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户微信号！'});
-        }
-        if(!data['qrCode'] || data['qrCode'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户微信二维码！'});
-        }
+        // if(!data['wechat'] || data['wechat'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户微信号！'});
+        // }
+        // if(!data['qrCode'] || data['qrCode'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户微信二维码！'});
+        // }
         return resolve();
     })
         .then(function (response) {
