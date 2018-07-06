@@ -31,13 +31,13 @@
       <span *ngIf="codeInfo['from']">产地：{{codeInfo['from']}}<br/></span>
       <span *ngIf="codeInfo['to']">销往：{{codeInfo['to']}}</span>
     </div>
-    <div class="c-div-item">
+    <div class="c-div-item" *ngIf="codeInfo['name']">
       {{codeInfo['name']}}
     </div>
-    <div class="c-div-item">
+    <div class="c-div-item" *ngIf="codeInfo['addr']">
       公司地址：{{codeInfo['addr']}}
     </div>
-    <div class="c-div-item">
+    <div class="c-div-item" *ngIf="codeInfo['tel']">
       客户热线：{{codeInfo['tel']}}
     </div>
     <div class="c-div-item" *ngIf="codeInfo['wechat']">
