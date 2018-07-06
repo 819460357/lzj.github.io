@@ -33,7 +33,7 @@ export class QrcodeComponent implements OnInit {
       .myService
       .getMerchInfo({merch_id: this.merch_id, code: this.code})
       .then(res => {
-        console.log(res);
+        this.myService.title.setTitle('查询结果_' + res['data'].brand_name);
         this.codeInfo = res['data'];
         Date.prototype['format'] = function(format) {
           var date = {
@@ -57,7 +57,7 @@ export class QrcodeComponent implements OnInit {
           return format;
         };
 
-        this.codeInfo['first_read_time'] = new Date(this.codeInfo['first_read_time'])['format']('yyyy-MM-dd hh:mm:ss');
+        this.codeInfo['first_read_time'] = new Date(this.codeInfo['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss');
       })
       .catch(res => {
 

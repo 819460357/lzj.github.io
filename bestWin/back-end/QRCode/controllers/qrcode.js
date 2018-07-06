@@ -94,6 +94,9 @@ function addQrcode(data) {
                     if(Object.hasOwnProperty.call(data, 'to') && data.to.trim() != '') {
                         insertSql += "  ,  `to` = '" + data.to.trim() + "'";
                     }
+                    if(Object.hasOwnProperty.call(data, 'brand_name') && data.brand_name.trim() != '') {
+                        insertSql += "  ,  `brand_name` = '" + data.brand_name.trim() + "'";
+                    }
                     if(Object.hasOwnProperty.call(data, 'desc') && data.desc.trim() != '') {
                         insertSql += "  ,  `desc` = '" + data.desc.trim() + "'";
                     }
@@ -160,6 +163,7 @@ function getCodeInfo(data, headers) {
                     "        , qr_code.first_read_time" +
                     "        , qr_code.`from`" +
                     "        , qr_code.`to`" +
+                    "        , qr_code.`brand_name`" +
                     "        , qr_code.`desc`" +
                     "        , qr_code.device_type" +
                     "        , merch.`name`" +

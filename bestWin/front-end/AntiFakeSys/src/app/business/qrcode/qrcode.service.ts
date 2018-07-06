@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { HttpUtilService } from '../../utils/http-util/http-util.service';
 import { AlertService } from '../../utils/alert/alert.service';
 import { api } from '../../config/http.config';
@@ -7,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Injectable()
 export class QrcodeService {
 
-  constructor(public http: HttpUtilService, public alert: AlertService, private sanitizer: DomSanitizer) { }
+  constructor(public http: HttpUtilService, public alert: AlertService, private sanitizer: DomSanitizer, public title: Title) { }
 
 
   /**

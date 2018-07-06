@@ -19,7 +19,7 @@
       <div class="c-qrCode-div">
         <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
           <input type="file" accept="image/*" class="c-input-file" (change)="uploadQRCode($event)"/>
-          <img [src] = "qrCodeUrl ? qrCodeUrl : '../../../../../assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem">
+          <img [src] = "qrCodeUrl && qrCodeUrl.trim() != '' ? qrCodeUrl : '../../../../../assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem">
         </label>
       </div>
     </div>

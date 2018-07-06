@@ -1,6 +1,7 @@
 .c-anti-faky-wrap {
-  height: auto;
+  height: 100%;
   width: 100%;
+  overflow: auto;
   padding-bottom: 2rem;
 
   .c-title {
@@ -41,7 +42,7 @@
 
       .c-anti-fake-title{
         font-weight: bold;
-        color: #888;
+        color: #6f6f6f;
       }
 
       .c-anti-fake-code {
@@ -55,6 +56,7 @@
           border: 1px solid #ECECEC;
           border-radius: .25rem;
           outline: none;
+          color: #888;
         }
       }
     }

@@ -5,6 +5,9 @@
        <span class="c-qrcode-total-num">已生成二维码数量： {{merchInfo['total']}}</span>
      </div>
      <div class="c-qrcode-from-wrap">
+       <span class="c-input-text">品牌：</span><input class="c-input" [(ngModel)]="merchInfo['brand_name']"/>
+     </div>
+     <div class="c-qrcode-from-wrap">
        <span class="c-input-text">产地：</span><input class="c-input" [(ngModel)]="merchInfo['from']"/>
      </div>
      <div class="c-qrcode-to-wrap">

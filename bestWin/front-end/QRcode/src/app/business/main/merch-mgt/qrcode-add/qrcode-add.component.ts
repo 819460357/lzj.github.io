@@ -53,6 +53,9 @@ export class QrcodeAddComponent implements OnInit {
     body['merch_id'] = this.merchId;
     body['begin_code'] = this.merchInfo['total'];
     body['num'] = this.merchInfo['num'];
+    if(this.merchInfo['brand_name'] && this.merchInfo['brand_name'].trim() != '') {
+      body['brand_name'] = this.merchInfo['brand_name'];
+    }
     if(this.merchInfo['from'] && this.merchInfo['from'].trim() != '') {
       body['from'] = this.merchInfo['from'];
     }

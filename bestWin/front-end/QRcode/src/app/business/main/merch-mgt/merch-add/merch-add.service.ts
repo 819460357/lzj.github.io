@@ -206,7 +206,9 @@ export class MerchAddService {
                 this.alert.show('error', response.msg);
               return reject(response);
             }
-            response['data']['qr_code_url'] = api.domainName +  response['data']['qr_code'];
+            if(response['data']['qr_code'] && response['data']['qr_code'].trim() != '') {
+              response['data']['qr_code_url'] = api.domainName +  response['data']['qr_code'];
+            }
             let imgs = new Array();
             for(let i = 0; i < response['data']['imgs'].length; i ++) {
               let imgItem = {
