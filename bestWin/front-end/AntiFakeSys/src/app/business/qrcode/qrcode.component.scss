@@ -42,7 +42,10 @@
 
       .c-anti-fake-title{
         font-weight: bold;
-        color: #6f6f6f;
+        color: #888;
+        font-size: .75rem;
+        display: flex;
+        align-items: center;
       }
 
       .c-anti-fake-code {
@@ -56,7 +59,8 @@
           border: 1px solid #ECECEC;
           border-radius: .25rem;
           outline: none;
-          color: #888;
+          color: #666;
+          font-size: .75rem;
         }
       }
     }
@@ -65,8 +69,8 @@
       width: 80%;
       /* height: 5rem; */
       height: auto;
-      margin: .5rem auto 0;
-      font-size: .94rem;
+      margin: .1rem auto 0;
+      font-size: 1rem;
       color: red;
       white-space: normal;
       word-break: break-all;
@@ -82,7 +86,7 @@
       margin: .5rem auto 0;
       padding-bottom: 1rem;
       border-bottom: 1px #333 dashed;
-      color: #2f2d2d;
+      color: #666;
     }
 
     .c-div-item {
@@ -90,8 +94,8 @@
       line-height: .94rem;
       width: 80%;
       margin: .5rem auto 0;
-      font-size: .8rem;
-      color: #2f2d2d;
+      font-size: .74rem;
+      color: #666;
     }
 
     .c-btn-wrap {
@@ -106,8 +110,8 @@
       height: .8rem;
       margin-top: 2rem;
       text-align: center;
-      font-size: .7rem;
-      color: #2a2f32;
+      font-size: .75rem;
+      color: #999;
     }
 
   }
