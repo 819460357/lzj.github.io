@@ -158,7 +158,15 @@ function getCodeInfo(data, headers) {
         .then(function (response) {
             return new Promise(function (resolve, reject) {
                 var selectSql =
-                    "   SELECT qr_code.`code`" +
+                    "   SELECT merch.`name`" +
+                    "        , merch.title" +
+                    "        , merch.addr" +
+                    "        , merch.qr_code" +
+                    "        , merch.tel" +
+                    "        , merch.wechat" +
+                    "        , IF(merch.id > 0, TRUE, FALSE) AS merch_exist" +
+                    "        ,IF(qr_code.id > 0, TRUE,FALSE) AS code_exist" +
+                    "        , qr_code.`code`" +
                     "        , qr_code.`read`" +
                     "        , qr_code.first_read_time" +
                     "        , qr_code.`from`" +
@@ -166,56 +174,24 @@ function getCodeInfo(data, headers) {
                     "        , qr_code.`brand_name`" +
                     "        , qr_code.`desc`" +
                     "        , qr_code.device_type" +
-                    "        , merch.`name`" +
-                    "        , merch.title" +
-                    "        , merch.addr" +
-                    "        , merch.qr_code" +
-                    "        , merch.tel" +
-                    "        , merch.wechat" +
-                    "   FROM qr_code" +
-                    "   LEFT JOIN merch ON merch.id = qr_code.merch_id" +
-                    "   WHERE qr_code.effect = 1" +
-                    "     AND qr_code.active = 1" +
-                    "     AND qr_code.merch_id = " + data['merch_id'] +
-                    "     AND qr_code.`code` = " + data ['code'];
-                mysqlConnect.query(selectSql, function (err, result) {
-                    if(err) {
-                        return reject({code: -1, msg: '数据存储失败！'});
-                    }
-                    if(result.length == 0) {
-                        return reject({code: 0, data: {unExist: true}});
-                    }
-                    var body = result[0];
-                    var antifakeCode = md5(body['code']);
-
-                    body['antifakeCode'] = antifakeCode;
-                    return resolve({code: 0, data: body});
-                });
-            });
-        })
-        .then(function (response) {
-            return new Promise(function (resolve, reject) {
-                if(!response['data']['unExist']) return resolve(response);
-                var selectSql =
-                    "   SELECT merch.`name`" +
-                    "        , merch.title" +
-                    "        , merch.addr" +
-                    "        , merch.qr_code" +
-                    "        , merch.tel" +
-                    "        , merch.wechat" +
                     "   FROM merch" +
+                    "   LEFT JOIN qr_code ON merch.id = qr_code.merch_id" +
+                    "     AND qr_code.`code` = " + data ['code'] +
                     "   WHERE merch.effect = 1" +
                     "     AND merch.active = 1" +
-                    "     AND merch.merch_id = " + data['merch_id'];
+                    "     AND merch.id = " + data['merch_id'];
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
-                        return reject({code: -1, msg: '数据存储失败！'});
+                        return reject({code: -1, msg: '数据获取失败！'});
                     }
                     if(result.length == 0) {
-                        return reject({code: 0, data: {unExist: true}});
+                        return reject({code: 0, data: {merch_exist: false}});
                     }
                     var body = result[0];
-                    body['unExist'] = true;
+                   if(body.code_exist) {
+                       var antifakeCode = md5(body['code']);
+                       body['antifakeCode'] = antifakeCode;
+                   }
                     return resolve({code: 0, data: body});
                 });
             });
@@ -242,6 +218,7 @@ function getCodeInfo(data, headers) {
         })
         .then(function (response) {
             return new Promise(function (resolve, reject) {
+                if(!response.data.code_exist) return resolve(response);
                 var updateSql =
                     "   UPDATE qr_code" +
                     "   SET `read` = " + (parseInt(response['data']['read']) + 1) +

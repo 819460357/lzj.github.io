@@ -28,8 +28,8 @@
     <div class="c-code-desc-wrap">
       <span *ngIf="codeInfo['read'] == 0" style="    display: block;color: #6ea017;font-size: 1.6rem;">正确有效</span>
       <span *ngIf="codeInfo['read'] > 0 && !codeInfo['unExist']">你所查询的防伪码已被查询过，首次查询时间：{{codeInfo.first_read_time}},查询方式:网络,请确认!此次是第{{codeInfo['read'] + 1}}次查询！</span>
-      <span *ngIf="!(codeInfo['read'] > 0) && !codeInfo['unExist']" style="color: #6ea017">您所查询的是{{codeInfo.brand_name}}品牌卫浴产品，是该品牌正品的标识，感谢您的查询！</span>
-      <span *ngIf="codeInfo['unExist']">你所查询的防伪码不存在！</span>
+      <span *ngIf="codeInfo['read'] == 0 && codeInfo['code_exist']" style="color: #6ea017">您所查询的是{{codeInfo.brand_name}}品牌卫浴产品，是该品牌正品的标识，感谢您的查询！</span>
+      <span *ngIf="!codeInfo['code_exist']">你所查询的防伪码不存在！</span>
     </div>
     <div class="c-code-from-to" *ngIf="codeInfo['from'] || codeInfo['to'] || codeInfo['desc']">
       <span *ngIf="codeInfo['desc']">产品信息：{{codeInfo['desc']}}<br/><br/></span>
