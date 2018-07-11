@@ -159,8 +159,10 @@ function getCodeInfo(data, headers) {
             return new Promise(function (resolve, reject) {
                 var selectSql =
                     "   SELECT merch.`name`" +
-                    "        , merch.title" +
+                    // "        , merch.title" +
                     "        , merch.addr" +
+                    "        , merch.support_tag" +
+                    "        , merch.fixed_line" +
                     "        , merch.qr_code" +
                     "        , merch.tel" +
                     "        , merch.wechat" +
@@ -182,6 +184,7 @@ function getCodeInfo(data, headers) {
                     "     AND merch.id = " + data['merch_id'];
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
+                        // console.log(err);
                         return reject({code: -1, msg: '数据获取失败！'});
                     }
                     if(result.length == 0) {
@@ -207,9 +210,6 @@ function getCodeInfo(data, headers) {
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
                         return reject({code: -1, msg: '数据获取失败！'});
-                    }
-                    if(result.length == 0) {
-                        return reject({code: 0, data: {unExist: false}});
                     }
                     response.data['imgs'] = result;
                     return resolve(response);

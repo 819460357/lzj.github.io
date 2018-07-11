@@ -58,15 +58,15 @@ function addMerch(data) {
         if(!data['name'] || data['name'].trim() == '') {
             return reject({code: -1, msg: '请填写商户名称！'});
         }
-        if(!data['title'] || data['title'].trim() == '') {
-            return reject({code: -1, msg: '请填写防伪标题！'});
-        }
-        if(!data['addr'] || data['addr'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户地址！'});
-        }
-        if(!data['tel'] || data['tel'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户客户热线！'});
-        }
+        // if(!data['title'] || data['title'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写防伪标题！'});
+        // }
+        // if(!data['addr'] || data['addr'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户地址！'});
+        // }
+        // if(!data['tel'] || data['tel'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户客户热线！'});
+        // }
         // if(!data['wechat'] || data['wechat'].trim() == '') {
         //     return reject({code: -1, msg: '请填写商户微信号！'});
         // }
@@ -113,18 +113,26 @@ function addMerch(data) {
                     "   INSERT INTO merch" +
                     "   SET append_user_id =  "+ data['user_id'] +
                     "     , `name` = '" + data['name'] + "'" +
-                    "     , `title` = '" + data['title'] + "'" +
-                    "     , `addr` = '" + data['addr'] + "'" +
-                    "     , `tel` = '" + data['tel'] + "'" +
-                    // "     , `wechat` = '" + data['wechat'] + "'" +
-                    // "     , `qr_code` = '" + data['qrCode'] + "'" +
+                    "     , `support_tag` = " + data['support_tag'] +
                     "     , effect = 1" +
                     "     , active = 1";
+                if(data['title'] && data['title'].trim() != '') {
+                    insertSql += "     , `title` = '" + data['title'] + "'";
+                }
+                if(data['addr'] && data['addr'].trim() != '') {
+                    insertSql += "     , `addr` = '" + data['addr'] + "'";
+                }
+                if(data['tel'] && data['tel'].trim() != '') {
+                    insertSql += "     , `tel` = '" + data['tel'] + "'";
+                }
                 if(data['wechat'] && data['wechat'].trim() != '') {
                     insertSql += "     , `wechat` = '" + data['wechat'] + "'";
                 }
                 if(data['qr_code'] && data['qr_code'].trim() != '') {
                     insertSql += "     , `qr_code` = '" + data['qrCode'] + "'";
+                }
+                if(data['fixed_line'] && data['fixed_line'].trim() != '') {
+                    insertSql += "     , `fixed_line` = '" + data['fixed_line'] + "'";
                 }
 
                 mysqlConnect.query(insertSql, function (err, result) {
@@ -290,11 +298,14 @@ function getMerchInfo(data) {
                 var selectSql =
                     "   SELECT merch.`name`" +
                     "        , merch.id" +
+                    "        , merch.fixed_line" +
+                    "        , merch.support_tag" +
+                    "        , merch.wechat" +
                     "        , COUNT(qr_code.id) AS total" +
                     "        , merch.addr" +
                     "        , merch.qr_code" +
                     "        , merch.tel" +
-                    "        , merch.title" +
+                    // "        , merch.title" +
                     "        , merch.wechat" +
                     "   FROM merch" +
                     "   LEFT JOIN qr_code ON qr_code.merch_id = merch.id" +
@@ -360,15 +371,15 @@ function editMerch(data) {
         if(!data['name'] || data['name'].trim() == '') {
             return reject({code: -1, msg: '请填写商户名称！'});
         }
-        if(!data['title'] || data['title'].trim() == '') {
-            return reject({code: -1, msg: '请填写防伪标题！'});
-        }
-        if(!data['addr'] || data['addr'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户地址！'});
-        }
-        if(!data['tel'] || data['tel'].trim() == '') {
-            return reject({code: -1, msg: '请填写商户客户热线！'});
-        }
+        // if(!data['title'] || data['title'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写防伪标题！'});
+        // }
+        // if(!data['addr'] || data['addr'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户地址！'});
+        // }
+        // if(!data['tel'] || data['tel'].trim() == '') {
+        //     return reject({code: -1, msg: '请填写商户客户热线！'});
+        // }
         // if(!data['wechat'] || data['wechat'].trim() == '') {
         //     return reject({code: -1, msg: '请填写商户微信号！'});
         // }
@@ -415,11 +426,13 @@ function editMerch(data) {
                     "   UPDATE merch" +
                     "   SET modify_user_id =  "+ data['user_id'] +
                     "     , `name` = '" + data['name'] + "'" +
-                    "     , `title` = '" + data['title'] + "'" +
+                    "     , `support_tag` = " + data['support_tag'] +
+                    // "     , `title` = '" + data['title'] + "'" +
                     "     , `addr` = '" + data['addr'] + "'" +
                     "     , `tel` = '" + data['tel'] + "'" +
                     "     , `wechat` = '" + (data['wechat'] ? data['wechat'] : '') + "'" +
                     "     , `qr_code` = '" + (data['qrCode'] ? data['qrCode'] : '') + "'" +
+                    "     , `fixed_line` = '" + (data['fixed_line'] ? data['fixed_line'] : '') + "'" +
                     "     , effect = 1" +
                     "     , active = 1" +
                     "   WHERE id = " + data['id'];

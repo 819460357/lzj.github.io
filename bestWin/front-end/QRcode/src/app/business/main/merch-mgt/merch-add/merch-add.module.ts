@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { MerchAddRoutingModule } from './merch-add-routing.module';
 import { MerchAddComponent } from './merch-add.component';
 import { MerchAddService } from './merch-add.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    MerchAddRoutingModule
+    MerchAddRoutingModule,
+    MatSelectModule
   ],
   declarations: [MerchAddComponent],
   providers: [ MerchAddService ],

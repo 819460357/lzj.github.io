@@ -16,7 +16,19 @@ export class MerchAddComponent implements OnInit {
   public wechat;
   public qrCode;
   public qrCodeUrl;
+  public fixed_line;
   public imgs: Array<OnInit> = new Array();
+  public support_tag = 1;
+  public selectList: Array<Object> = [
+    {
+      name: '是',
+      value: 1
+    },
+    {
+      name: '否',
+      value: 0
+    }
+  ];
 
   constructor(public myService: MerchAddService, public activeRoute: ActivatedRoute) {
     this.getQueryParamsEvent();
@@ -67,11 +79,13 @@ export class MerchAddComponent implements OnInit {
   public addMerchBtn = (event) => {
     let body = new Object();
     body['name'] = this.name;
-    body['title'] = this.title;
+    // body['title'] = this.title;
     body['addr'] = this.addr;
     body['tel'] = this.tel;
     body['wechat'] = this.wechat;
     body['qrCode'] = this.qrCode;
+    body['fixed_line'] = this.fixed_line;
+    body['support_tag'] = this.support_tag;
     body['imgs'] = new Array();
     for (let i = 0; i < this.imgs.length; i ++ ) {
       body['imgs'].push(this.imgs[i]['url']);
@@ -110,11 +124,13 @@ export class MerchAddComponent implements OnInit {
       .getMerchInfo({id: this.merchId})
       .then(res => {
         this.name = res['data']['name'];
-        this.title = res['data']['title'];
+        // this.title = res['data']['title'];
         this.addr = res['data']['addr'];
         this.tel = res['data']['tel'];
         this.wechat = res['data']['wechat'];
         this.qrCode = res['data']['qr_code'];
+        this.fixed_line = res['data']['fixed_line'];
+        this.support_tag = res['data']['support_tag'];
         this.qrCodeUrl =  res['data']['qr_code_url'];
         this.imgs = res['data']['imgs'];
       })

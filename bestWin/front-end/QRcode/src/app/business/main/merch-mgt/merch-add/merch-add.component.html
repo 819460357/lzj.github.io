@@ -4,14 +4,25 @@
       <div class="c-div-item">
         <span class="c-input-text">商户名称：</span><input class="c-input" [(ngModel)]="name"/>
       </div>
-      <div class="c-div-item">
-        <span class="c-input-text">防伪标题：</span><input class="c-input" [(ngModel)]="title"/>
-      </div>
+      <!--<div class="c-div-item">-->
+        <!--<span class="c-input-text">防伪标题：</span><input class="c-input" [(ngModel)]="title"/>-->
+      <!--</div>-->
       <div class="c-div-item">
         <span class="c-input-text">地址：</span><input class="c-input" [(ngModel)]="addr"/>
       </div>
       <div class="c-div-item">
-        <span class="c-input-text">客户热线：</span><input class="c-input" [(ngModel)]="tel"/>
+        <span class="c-input-text">客服热线：</span><input class="c-input" [(ngModel)]="tel"/>
+      </div>
+      <div class="c-div-item">
+        <span class="c-input-text">固定电话：</span><input class="c-input" [(ngModel)]="fixed_line"/>
+      </div>
+      <div class="c-div-item">
+        <span class="c-input-text">显示技术支持：</span>
+        <mat-select placeholder="" [(ngModel)] = "support_tag" class="c-text-gray c-no-drag"  class = 'c-input'>
+          <mat-option *ngFor="let selectItem of selectList" [value]="selectItem.value">
+            {{ selectItem.name }}
+          </mat-option>
+        </mat-select>
       </div>
       <div class="c-div-item">
         <span class="c-input-text">微信号：</span><input class="c-input" [(ngModel)]="wechat"/>
@@ -19,7 +30,7 @@
       <div class="c-qrCode-div">
         <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
           <input type="file" accept="image/*" class="c-input-file" (change)="uploadQRCode($event)"/>
-          <img [src] = "qrCodeUrl && qrCodeUrl.trim() != '' ? qrCodeUrl : '../../../../../assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem">
+          <img [src] = "qrCodeUrl && qrCodeUrl != '' ? qrCodeUrl : '../../../../../assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem">
         </label>
       </div>
     </div>

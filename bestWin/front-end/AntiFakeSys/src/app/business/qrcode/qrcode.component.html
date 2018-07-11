@@ -29,7 +29,7 @@
       <span *ngIf="codeInfo['read'] == 0" style="    display: block;color: #6ea017;font-size: 1.6rem;">正确有效</span>
       <span *ngIf="codeInfo['read'] > 0 && !codeInfo['unExist']">你所查询的防伪码已被查询过，首次查询时间：{{codeInfo.first_read_time}},查询方式:网络,请确认!此次是第{{codeInfo['read'] + 1}}次查询！</span>
       <span *ngIf="codeInfo['read'] == 0 && codeInfo['code_exist']" style="color: #6ea017">您所查询的是{{codeInfo.brand_name}}品牌卫浴产品，是该品牌正品的标识，感谢您的查询！</span>
-      <span *ngIf="!codeInfo['code_exist']">你所查询的防伪码不存在！</span>
+      <span *ngIf="codeInfo.hasOwnProperty('code_exist')  && !['code_exist']">你所查询的防伪码不存在！</span>
     </div>
     <div class="c-code-from-to" *ngIf="codeInfo['from'] || codeInfo['to'] || codeInfo['desc']">
       <span *ngIf="codeInfo['desc']">产品信息：{{codeInfo['desc']}}<br/><br/></span>
@@ -43,7 +43,10 @@
       公司地址：{{codeInfo['addr']}}
     </div>
     <div class="c-div-item" *ngIf="codeInfo['tel']">
-      客户热线：{{codeInfo['tel']}}
+      客服热线：{{codeInfo['tel']}}
+    </div>
+    <div class="c-div-item" *ngIf="codeInfo['fixed_line']">
+      固定电话：{{codeInfo['fixed_line']}}
     </div>
     <div class="c-div-item" *ngIf="codeInfo['wechat']">
       微信号：{{codeInfo['wechat']}}
@@ -51,9 +54,9 @@
     <div style="width: 80%; margin: .5rem auto 0; height: 1px;  border-top: 1px #333 dashed;"></div>
 
     <div class="c-btn-wrap" *ngIf="codeInfo['wechat']" style="text-align: center; margin-top: 2rem">
-      <img [src]="codeInfo['qr_code']" style="height: 8rem; width: 8rem">
+      <img [src]="codeInfo['qr_code']" style="height: 8rem; width: 8rem" *ngIf="codeInfo['qr_code'] && codeInfo['qr_code'] != ''">
       <!--<span style="display: inline-block; height: 2rem; width: 6rem; background: #7fd0c7; color: white; cursor: pointer;">关注微信</span>-->
     </div>
-    <div class="c-bottom-wrap">© Copyright 2017 - 2019. 贝思盈防伪系统</div>
+    <div class="c-bottom-wrap" *ngIf="codeInfo['support_tag']">© Copyright 2017 - 2019. 贝思盈防伪系统</div>
   </div>
 </div>
