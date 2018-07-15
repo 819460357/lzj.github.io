@@ -1,5 +1,5 @@
 const httpConfig = {
-  domainName: 'http://scycode.api.chinatotomall.com',
+  domainName: 'http://scy.api.bestwin.vip',
 };
 
 export const api = {

@@ -3,13 +3,13 @@ import { RouterModule, Routes} from '@angular/router'
 
 const  appRoutes: Routes = [
   {
-    path: 'qrcode',
+    path: 'qrc',
     loadChildren: 'app/business/qrcode/qrcode.module#QrcodeModule'
   },
   {
     path: '',
     pathMatch: 'prefix',
-    redirectTo: '/qrcode'
+    redirectTo: '/qrc'
   },
 ];
 

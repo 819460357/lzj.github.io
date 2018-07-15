@@ -301,7 +301,7 @@ function getMerchInfo(data) {
                     "        , merch.fixed_line" +
                     "        , merch.support_tag" +
                     "        , merch.wechat" +
-                    "        , COUNT(qr_code.id) AS total" +
+                    "        , merch.code_num AS total" +
                     "        , merch.addr" +
                     "        , merch.qr_code" +
                     "        , merch.tel" +

@@ -4,23 +4,24 @@
      <div class="c-qrcode-total">
        <span class="c-qrcode-total-num">已生成二维码数量： {{merchInfo['total']}}</span>
      </div>
-     <div class="c-qrcode-from-wrap">
-       <span class="c-input-text">品牌：</span><input class="c-input" [(ngModel)]="merchInfo['brand_name']"/>
+     <div class="c-qrcode-url">
+       <span class="c-un-select">本次二维码起始于</span><br/><span>{{host}}?id={{merchId}}&code={{merchInfo['total'] + 1}}</span><br/>
+       <span style="color: red;" class="c-un-select">请先复制二维码url，用于生成二维码！</span>
      </div>
      <div class="c-qrcode-from-wrap">
-       <span class="c-input-text">产地：</span><input class="c-input" [(ngModel)]="merchInfo['from']"/>
+       <span class="c-input-text c-un-select">品牌：</span><input class="c-input" [(ngModel)]="merchInfo['brand_name']"/>
+     </div>
+     <div class="c-qrcode-from-wrap">
+       <span class="c-input-text c-un-select">产地：</span><input class="c-input" [(ngModel)]="merchInfo['from']"/>
      </div>
      <div class="c-qrcode-to-wrap">
-       <span class="c-input-text">销往：</span><input class="c-input" [(ngModel)]="merchInfo['to']"/>
+       <span class="c-input-text c-un-select">销往：</span><input class="c-input" [(ngModel)]="merchInfo['to']"/>
      </div>
      <div class="c-qrcode-num-wrap">
-       <span class="c-input-text">数量：</span><input class="c-input" placeholder="生成二维码数量" type="number" [(ngModel)]="merchInfo['num']"/>
+       <span class="c-input-text c-un-select">数量：</span><input class="c-input" placeholder="生成二维码数量" type="number" [(ngModel)]="merchInfo['num']"/>
      </div>
      <div class="c-qrcode-desc-wrap">
        <textarea placeholder="描述：可将商品所属产品信息写入" class="c-desc" [(ngModel)]="merchInfo['desc']"></textarea>
-     </div>
-     <div class="c-qrcode-url">
-       <span>本次二维码起始于</span><br/><span>{{host}}?merch_id={{merchId}}&code={{merchInfo['total'] + 1}}</span>
      </div>
      <div class="c-btn-wrap">
        <span class="c-btn c-cursor-pointer" (click)="addQrCodeBtn($event)">生成</span>

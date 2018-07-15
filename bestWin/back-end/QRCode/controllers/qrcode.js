@@ -79,15 +79,15 @@ function addQrcode(data) {
         })
         .then(function (response) {
             return new Promise(function (resolve, reject) {
-                var insertSqlArr = new Array();
-                for(var i = 1; i <= parseInt(data.num); i ++ ) {
+
                     var insertSql =
-                        "   INSERT INTO qr_code" +
+                        "   INSERT INTO qr_code_range" +
                         "   SET append_user_id =  "+ data['user_id'] +
-                        "     , `merch_id` = '" + data['merch_id'] + "'" +
+                        "     , `merch_id` = " + data['merch_id'] +
                         "     , effect = 1" +
                         "     , active = 1"  +
-                        "     , code = " +  (parseInt(data.begin_code) + i);
+                        "     , `start` = " +  (parseInt(data.begin_code) + 1) +
+                        "     , `end` = " + (parseInt(data.begin_code) + parseInt(data.num));
                     if(Object.hasOwnProperty.call(data, 'from') && data.from.trim() != '') {
                         insertSql += "  ,  `from` = '" + data.from.trim() + "'";
                     }
@@ -100,11 +100,9 @@ function addQrcode(data) {
                     if(Object.hasOwnProperty.call(data, 'desc') && data.desc.trim() != '') {
                         insertSql += "  ,  `desc` = '" + data.desc.trim() + "'";
                     }
-                    insertSqlArr.push(insertSql);
-                }
 
-                mysqlConnect.query(insertSqlArr.join('; '), function (err, result) {
-                    console.log(result);
+
+                mysqlConnect.query(insertSql, function (err, result) {
                     if(err) {
                         return reject({code: -1, msg: '数据存储失败！'});
                     }
@@ -112,6 +110,61 @@ function addQrcode(data) {
                 });
             });
         })
+        .then(function (response) {
+            return new Promise(function (resolve, reject) {
+
+                var updateSql =
+                    "   UPDATE `merch`" +
+                    "   SET code_num = " + (parseInt(data.begin_code) + parseInt(data.num)) +
+                    "   WHERE id = " + data['merch_id']  +
+                    "     AND effect = 1" +
+                    "     AND active = 1";
+
+
+
+                mysqlConnect.query(updateSql, function (err, result) {
+                    if(err) {
+                        return reject({code: -1, msg: '数据存储失败！'});
+                    }
+                    return resolve({code: 0, data: {}});
+                });
+            });
+        })
+        // .then(function (response) {
+        //     return new Promise(function (resolve, reject) {
+        //         var insertSqlArr = new Array();
+        //         for(var i = 1; i <= parseInt(data.num); i ++ ) {
+        //             var insertSql =
+        //                 "   INSERT INTO qr_code" +
+        //                 "   SET append_user_id =  "+ data['user_id'] +
+        //                 "     , `merch_id` = '" + data['merch_id'] + "'" +
+        //                 "     , effect = 1" +
+        //                 "     , active = 1"  +
+        //                 "     , code = " +  (parseInt(data.begin_code) + i);
+        //             if(Object.hasOwnProperty.call(data, 'from') && data.from.trim() != '') {
+        //                 insertSql += "  ,  `from` = '" + data.from.trim() + "'";
+        //             }
+        //             if(Object.hasOwnProperty.call(data, 'to') && data.to.trim() != '') {
+        //                 insertSql += "  ,  `to` = '" + data.to.trim() + "'";
+        //             }
+        //             if(Object.hasOwnProperty.call(data, 'brand_name') && data.brand_name.trim() != '') {
+        //                 insertSql += "  ,  `brand_name` = '" + data.brand_name.trim() + "'";
+        //             }
+        //             if(Object.hasOwnProperty.call(data, 'desc') && data.desc.trim() != '') {
+        //                 insertSql += "  ,  `desc` = '" + data.desc.trim() + "'";
+        //             }
+        //             insertSqlArr.push(insertSql);
+        //         }
+        //
+        //         mysqlConnect.query(insertSqlArr.join('; '), function (err, result) {
+        //             console.log(result);
+        //             if(err) {
+        //                 return reject({code: -1, msg: '数据存储失败！'});
+        //             }
+        //             return resolve({code: 0, data: {}});
+        //         });
+        //     });
+        // })
         .then(function (result) {
             return new Promise(function (resolve, reject) {
                 mysqlConnect.commit();
@@ -167,29 +220,32 @@ function getCodeInfo(data, headers) {
                     "        , merch.tel" +
                     "        , merch.wechat" +
                     "        , IF(merch.id > 0, TRUE, FALSE) AS merch_exist" +
-                    "        ,IF(qr_code.id > 0, TRUE,FALSE) AS code_exist" +
-                    "        , qr_code.`code`" +
-                    "        , qr_code.`read`" +
-                    "        , qr_code.first_read_time" +
-                    "        , qr_code.`from`" +
-                    "        , qr_code.`to`" +
-                    "        , qr_code.`brand_name`" +
-                    "        , qr_code.`desc`" +
-                    "        , qr_code.device_type" +
+                    "        ,IF(qr_code_range.id > 0, TRUE,FALSE) AS code_exist" +
+                    "        , IF(qr_code_range.effect = 1, " + data ['code'] + "," + data ['code'] + ") AS code" +
+                    // "        , qr_code_range.`read`" +
+                    // "        , qr_code_range.first_read_time" +
+                    "        , qr_code_range.`from`" +
+                    "        , qr_code_range.`to`" +
+                    "        , qr_code_range.`brand_name`" +
+                    "        , qr_code_range.`desc`" +
                     "   FROM merch" +
-                    "   LEFT JOIN qr_code ON merch.id = qr_code.merch_id" +
-                    "     AND qr_code.`code` = " + data ['code'] +
+                    "   LEFT JOIN qr_code_range ON merch.id = qr_code_range.merch_id" +
+                    "     AND qr_code_range.`start` <= " + data ['code'] +
+                    "     AND qr_code_range.`end` >= " + data ['code'] +
+                    "     AND qr_code_range.effect = 1" +
+                    "     AND qr_code_range.active = 1" +
                     "   WHERE merch.effect = 1" +
                     "     AND merch.active = 1" +
                     "     AND merch.id = " + data['merch_id'];
+                console.log(selectSql);
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
-                        // console.log(err);
                         return reject({code: -1, msg: '数据获取失败！'});
                     }
                     if(result.length == 0) {
                         return reject({code: 0, data: {merch_exist: false}});
                     }
+                    console.log(result);
                     var body = result[0];
                    if(body.code_exist) {
                        var antifakeCode = md5(body['code']);
@@ -218,17 +274,63 @@ function getCodeInfo(data, headers) {
         })
         .then(function (response) {
             return new Promise(function (resolve, reject) {
-                if(!response.data.code_exist) return resolve(response);
-                var updateSql =
-                    "   UPDATE qr_code" +
-                    "   SET `read` = " + (parseInt(response['data']['read']) + 1) +
-                    "      , first_read_time = " + (response['data']['first_read_time'] ? response['data']['first_read_time'] : new Date().getTime()/1000) +
-                    "      , `device_type` = '" + (response['data']['device_type'] ? response['data']['device_type'] : headers['user-agent'].toString()) + "'" +
+                var selectSql =
+                    "   SELECT `read`" +
+                    "        , `first_read_time`" +
+                    "        , `device_type`" +
+                    "        ,  `id` AS qrcode_id" +
+                    "   FROM qr_code" +
                     "   WHERE merch_id = " +  data['merch_id'] +
-                    "     AND `code` = " + data['code'];
-                mysqlConnect.query(updateSql, function (err, result) {
+                    "     AND `code` = " + data['code'] +
+                    "     AND effect = 1" +
+                    "     AND active = 1" +
+                    "   LIMIT 1";
+                console.log(selectSql);
+                mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
-                        console.log(err, updateSql);
+                        return reject({code: -1, msg: '数据获取失败！'});
+                    }
+                   if(result.length == 1) {
+                       response.data.read = result[0]['read'];
+                       response.data.first_read_time = result[0]['first_read_time'];
+                       response.data.device_type = result[0]['device_type'];
+                       response.data.qrcode_id = result[0]['qrcode_id'];
+                   } else {
+                       response.data.read = 0;
+                       response.data.first_read_time = '';
+                       response.data.device_type = '';
+                   }
+                    return resolve(response);
+                });
+            });
+        })
+        .then(function (response) {
+            return new Promise(function (resolve, reject) {
+                if(!response.data.code_exist) return resolve(response);
+                var sql = ''
+                if(response['data']['read'] == 0) {
+                    sql =
+                        "   INSERT INTO qr_code" +
+                        "   SET `read` = 1"  +
+                        "      , first_read_time = " +  new Date().getTime()/1000 +
+                        "      , `device_type` = '" +  headers['user-agent'].toString() + "'" +
+                        "      , merch_id = " +  data['merch_id'] +
+                        "      , `code` = " + data['code'] +
+                        "      , effect = 1" +
+                        "      , active = 1";
+                } else {
+                    sql =
+                        "   UPDATE qr_code" +
+                        "   SET `read` = " + (parseInt(response['data']['read']) + 1) +
+                        "      , first_read_time = " + (response['data']['first_read_time'] ? response['data']['first_read_time'] : new Date().getTime()/1000) +
+                        "      , `device_type` = '" + (response['data']['device_type'] ? response['data']['device_type'] : headers['user-agent'].toString()) + "'" +
+                        "   WHERE merch_id = " +  data['merch_id'] +
+                        "     AND `code` = " + data['code'] +
+                        "     AND `id` = " + response['data']['qrcode_id'];
+                }
+                console.log(sql);
+                mysqlConnect.query(sql, function (err, result) {
+                    if(err) {
                         return reject({code: -1, msg: '数据存储失败！'});
                     }
                     return resolve(response);

@@ -69,7 +69,7 @@ export class QrcodeComponent implements OnInit {
    */
   getQueryParamsEvent = () => {
     this.activeRoute.queryParams.subscribe(params => {
-      this.merch_id = params['merch_id'];
+      this.merch_id = params['id'];
       this.code = params['code'];
     });
   };
