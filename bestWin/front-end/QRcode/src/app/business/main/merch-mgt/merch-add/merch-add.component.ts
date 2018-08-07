@@ -16,6 +16,8 @@ export class MerchAddComponent implements OnInit {
   public wechat;
   public qrCode;
   public qrCodeUrl;
+  public wcQrcode;
+  public wcQrcodeUrl;
   public fixed_line;
   public imgs: Array<OnInit> = new Array();
   public support_tag = 1;
@@ -56,6 +58,21 @@ export class MerchAddComponent implements OnInit {
       })
   }
 
+  public uploadWcQRCode = (event) => {
+    let files = event.target.files;
+    if(files.length == 0) return;
+    this
+      .myService
+      .qrCodeUpload(files)
+      .then(res => {
+        this.wcQrcode = res['data']['url'];
+        this.wcQrcodeUrl = res['data']['imgUrl'];
+      })
+      .catch(err => {
+
+      })
+  }
+
   /**
    * 商户主图上传
    */
@@ -83,7 +100,8 @@ export class MerchAddComponent implements OnInit {
     body['addr'] = this.addr;
     body['tel'] = this.tel;
     body['wechat'] = this.wechat;
-    body['qrCode'] = this.qrCode;
+    body['qr_code'] = this.qrCode;
+    body['wc_img'] = this.wcQrcode;
     body['fixed_line'] = this.fixed_line;
     body['support_tag'] = this.support_tag;
     body['imgs'] = new Array();
@@ -129,9 +147,11 @@ export class MerchAddComponent implements OnInit {
         this.tel = res['data']['tel'];
         this.wechat = res['data']['wechat'];
         this.qrCode = res['data']['qr_code'];
+        this.wcQrcode = res['data']['wc_img'];
         this.fixed_line = res['data']['fixed_line'];
         this.support_tag = res['data']['support_tag'];
         this.qrCodeUrl =  res['data']['qr_code_url'];
+        this.wcQrcodeUrl =  res['data']['wc_img_url'];
         this.imgs = res['data']['imgs'];
       })
       .catch(err => {

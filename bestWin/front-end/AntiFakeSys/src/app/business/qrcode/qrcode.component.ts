@@ -74,4 +74,18 @@ export class QrcodeComponent implements OnInit {
     });
   };
 
+  /**
+   * 查看微信号
+   */
+  viewQrcodeBtn = ($event) => {
+    this.myService.viewQrcode({img: this.codeInfo['qr_code']});
+  }
+
+  /**
+   * 查看微信公众号
+   */
+  viewWcQrcodeBtn = () => {
+    this.myService.vieWcQrcode({img: this.codeInfo['wc_img']});
+  }
+
 }

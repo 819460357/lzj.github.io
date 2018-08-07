@@ -129,7 +129,10 @@ function addMerch(data) {
                     insertSql += "     , `wechat` = '" + data['wechat'] + "'";
                 }
                 if(data['qr_code'] && data['qr_code'].trim() != '') {
-                    insertSql += "     , `qr_code` = '" + data['qrCode'] + "'";
+                    insertSql += "     , `qr_code` = '" + data['qr_code'] + "'";
+                }
+                if(data['wc_img'] && data['wc_img'].trim() != '') {
+                    insertSql += "     , `wc_img` = '" + data['wc_img'] + "'";
                 }
                 if(data['fixed_line'] && data['fixed_line'].trim() != '') {
                     insertSql += "     , `fixed_line` = '" + data['fixed_line'] + "'";
@@ -304,6 +307,7 @@ function getMerchInfo(data) {
                     "        , merch.code_num AS total" +
                     "        , merch.addr" +
                     "        , merch.qr_code" +
+                    "        , merch.wc_img" +
                     "        , merch.tel" +
                     // "        , merch.title" +
                     "        , merch.wechat" +
@@ -431,7 +435,8 @@ function editMerch(data) {
                     "     , `addr` = '" + data['addr'] + "'" +
                     "     , `tel` = '" + data['tel'] + "'" +
                     "     , `wechat` = '" + (data['wechat'] ? data['wechat'] : '') + "'" +
-                    "     , `qr_code` = '" + (data['qrCode'] ? data['qrCode'] : '') + "'" +
+                    "     , `qr_code` = '" + (data['qr_code'] ? data['qr_code'] : '') + "'" +
+                    "     , `wc_img` = '" + (data['wc_img'] ? data['wc_img'] : '') + "'" +
                     "     , `fixed_line` = '" + (data['fixed_line'] ? data['fixed_line'] : '') + "'" +
                     "     , effect = 1" +
                     "     , active = 1" +

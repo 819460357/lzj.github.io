@@ -27,10 +27,17 @@
       <div class="c-div-item">
         <span class="c-input-text">微信号：</span><input class="c-input" [(ngModel)]="wechat"/>
       </div>
-      <div class="c-qrCode-div">
-        <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
+      <div class="c-qrCode-div" style="display: flex; justify-content: center">
+        <label style="height: 100%; width: 100%; position: relative; text-align: center" class="c-cursor-pointer">
           <input type="file" accept="image/*" class="c-input-file" (change)="uploadQRCode($event)"/>
-          <img [src] = "qrCodeUrl && qrCodeUrl != '' ? qrCodeUrl : '../../../../../assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem">
+          <img [src] = "qrCodeUrl && qrCodeUrl != '' ? qrCodeUrl : 'assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem"><br/>
+          <span style="font-size: .84rem; color: grey"> 微信二维码</span>
+        </label>
+
+        <label style="height: 100%; width: 100%; position: relative; margin-left: 2rem; text-align: center" class="c-cursor-pointer">
+          <input type="file" accept="image/*" class="c-input-file" (change)="uploadWcQRCode($event)"/>
+          <img [src] = "wcQrcodeUrl && wcQrcodeUrl != '' ? wcQrcodeUrl : 'assets/imgs/wcQrcode.png'" style="height: 8rem; width: 8rem">
+          <span style="font-size: .84rem; color: grey"> 公众号二维码</span>
         </label>
       </div>
     </div>
@@ -43,7 +50,7 @@
         <div class="c-img-input-wrap" style="position: relative">
         <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
         <input type="file" accept="image/*" class="c-input-file" multiple (change)="uploadImg($event)"/>
-        <img [src]="'../../../../../assets/imgs/imgAdd.png'" style="height: 8rem; width: 8rem">
+        <img [src]="'assets/imgs/imgAdd.png'" style="height: 8rem; width: 8rem">
         </label>
         </div>
       </div>

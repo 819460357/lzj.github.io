@@ -28,7 +28,7 @@
     <div class="c-code-desc-wrap">
       <span *ngIf="codeInfo['read'] == 0 && codeInfo['code_exist']" style="    display: block;color: #6ea017;font-size: 1.6rem;">正确有效</span>
       <span *ngIf="codeInfo['read'] > 0 && !codeInfo['unExist']">您所查询的防伪码已被查询过，首次查询时间：{{codeInfo.first_read_time}},查询方式:网络,请确认!此次是第{{codeInfo['read'] + 1}}次查询！</span>
-      <span *ngIf="codeInfo['read'] == 0 && codeInfo['code_exist']" style="color: #6ea017">您所查询的是{{codeInfo.brand_name}}品牌卫浴产品，是该品牌正品的标识，感谢您的查询！</span>
+      <span *ngIf="codeInfo['read'] == 0 && codeInfo['code_exist']" style="color: #6ea017">您所查询的是{{codeInfo.brand_name ? '"' + codeInfo.brand_name + '"' : ''}}品牌卫浴产品，是该品牌正品的标识，感谢您的查询！</span>
       <span *ngIf="codeInfo.hasOwnProperty('code_exist')  && !codeInfo['code_exist']">您所查询的防伪码不存在！</span>
     </div>
     <div class="c-code-from-to" *ngIf="codeInfo['from'] || codeInfo['to'] || codeInfo['desc']">
@@ -53,9 +53,10 @@
     </div>
     <div style="width: 80%; margin: .5rem auto 0; height: 1px;  border-top: 1px #333 dashed;"></div>
 
-    <div class="c-btn-wrap" *ngIf="codeInfo['wechat']" style="text-align: center; margin-top: 2rem">
-      <img [src]="codeInfo['qr_code']" style="height: 8rem; width: 8rem" *ngIf="codeInfo['qr_code'] && codeInfo['qr_code'] != ''">
-      <!--<span style="display: inline-block; height: 2rem; width: 6rem; background: #7fd0c7; color: white; cursor: pointer;">关注微信</span>-->
+    <div class="c-btn-wrap" *ngIf="codeInfo['wechat']" style="text-align: center; margin-top: 2rem; font-weight: bold">
+      <!--<img [src]="codeInfo['qr_code']" style="height: 8rem; width: 8rem" *ngIf="codeInfo['qr_code'] && codeInfo['qr_code'] != ''">-->
+      <span style="display: inline-block; height: 2rem; width: 8rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; font-size: .84rem" (click)="viewQrcodeBtn($event)" *ngIf="codeInfo['qr_code'] && codeInfo['qr_code'] != ''">关注微信<span class="iconfont icon-bofang"></span></span>
+      <span style="display: inline-block; height: 2rem; width: 8rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; margin-left: .5rem; font-size: .84rem" (click)="viewWcQrcodeBtn($event)" *ngIf="codeInfo['wc_img'] && codeInfo['wc_img'] != ''">关注公众号<span class="iconfont icon-bofang"></span></span>
     </div>
     <div class="c-bottom-wrap" *ngIf="codeInfo['support_tag']">© Copyright 2017 - 2019. 贝思盈防伪系统</div>
   </div>

@@ -42,7 +42,6 @@ function addQrcode(data) {
         if(!Object.hasOwnProperty.call(data, 'num') || parseInt(data['begin_code']) < 0) {
             return reject({code: -1, msg: '系统错误！'});
         }
-        console.log(3);
         return resolve();
     })
         .then(function (response) {
@@ -217,6 +216,7 @@ function getCodeInfo(data, headers) {
                     "        , merch.support_tag" +
                     "        , merch.fixed_line" +
                     "        , merch.qr_code" +
+                    "        , merch.wc_img" +
                     "        , merch.tel" +
                     "        , merch.wechat" +
                     "        , IF(merch.id > 0, TRUE, FALSE) AS merch_exist" +
@@ -237,7 +237,6 @@ function getCodeInfo(data, headers) {
                     "   WHERE merch.effect = 1" +
                     "     AND merch.active = 1" +
                     "     AND merch.id = " + data['merch_id'];
-                console.log(selectSql);
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
                         return reject({code: -1, msg: '数据获取失败！'});
@@ -245,7 +244,6 @@ function getCodeInfo(data, headers) {
                     if(result.length == 0) {
                         return reject({code: 0, data: {merch_exist: false}});
                     }
-                    console.log(result);
                     var body = result[0];
                    if(body.code_exist) {
                        var antifakeCode = md5(body['code']);
@@ -285,7 +283,6 @@ function getCodeInfo(data, headers) {
                     "     AND effect = 1" +
                     "     AND active = 1" +
                     "   LIMIT 1";
-                console.log(selectSql);
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
                         return reject({code: -1, msg: '数据获取失败！'});
@@ -328,7 +325,6 @@ function getCodeInfo(data, headers) {
                         "     AND `code` = " + data['code'] +
                         "     AND `id` = " + response['data']['qrcode_id'];
                 }
-                console.log(sql);
                 mysqlConnect.query(sql, function (err, result) {
                     if(err) {
                         return reject({code: -1, msg: '数据存储失败！'});
