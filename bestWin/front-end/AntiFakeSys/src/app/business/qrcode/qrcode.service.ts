@@ -33,8 +33,8 @@ export class QrcodeService {
                 this.alert.show('error', response.msg);
               return reject(response);
             }
-            response['data']['qr_code'] = response['data']['qr_code'] ?  this.sanitizer.bypassSecurityTrustResourceUrl(api.domainName + response['data']['qr_code']) : response['data']['qr_code'];
-            response['data']['wc_img'] =  response['data']['wc_img'] ? this.sanitizer.bypassSecurityTrustResourceUrl(api.domainName + response['data']['wc_img']) : response['data']['wc_img'];
+            response['data']['qr_code'] = response['data']['qr_code'] && response['data']['qr_code'] != 'null'  ?  this.sanitizer.bypassSecurityTrustResourceUrl(api.domainName + response['data']['qr_code'])  : response['data']['qr_code'];
+            response['data']['wc_img'] =  response['data']['wc_img'] && response['data']['wc_img'] != 'null'  ? this.sanitizer.bypassSecurityTrustResourceUrl(api.domainName + response['data']['wc_img']) : response['data']['wc_img'];
             for (let i = 0; i < response['data']['imgs'].length; i++) {
               // response['data']['imgs'][i]['url'] = this.sanitizer.bypassSecurityTrustResourceUrl(api.domainName + response['data']['imgs'][i]['url']);
               response['data']['imgs'][i]['url'] = api.domainName + response['data']['imgs'][i]['url'];

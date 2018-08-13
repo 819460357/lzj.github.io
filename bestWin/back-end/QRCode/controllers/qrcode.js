@@ -217,6 +217,7 @@ function getCodeInfo(data, headers) {
                     "        , merch.fixed_line" +
                     "        , merch.qr_code" +
                     "        , merch.wc_img" +
+                    "        , merch.official_website" +
                     "        , merch.tel" +
                     "        , merch.wechat" +
                     "        , IF(merch.id > 0, TRUE, FALSE) AS merch_exist" +

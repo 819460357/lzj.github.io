@@ -14,6 +14,7 @@ export class MerchAddComponent implements OnInit {
   public addr;
   public tel;
   public wechat;
+  public official_website;
   public qrCode;
   public qrCodeUrl;
   public wcQrcode;
@@ -31,6 +32,8 @@ export class MerchAddComponent implements OnInit {
       value: 0
     }
   ];
+  public qrCodeInput;
+  public wcQrCodeInput;
 
   constructor(public myService: MerchAddService, public activeRoute: ActivatedRoute) {
     this.getQueryParamsEvent();
@@ -43,19 +46,25 @@ export class MerchAddComponent implements OnInit {
    * 二维码上传
    */
   public uploadQRCode = (event) => {
-    let files = event.target.files;
-    if(files.length == 0) return;
-    this
-      .myService
-      .qrCodeUpload(files)
-      .then(res => {
-        this.qrCode = res['data']['url'];
-        this.qrCodeUrl = res['data']['imgUrl'];
-        console.log(this.qrCodeUrl);
-      })
+    return new Promise((resolve, reject) => {
+      console.log(event);
+      let files = event.target.files;
+      if(files.length == 0) return;
+      this
+        .myService
+        .qrCodeUpload(files)
+        .then(res => {
+          this.qrCode = res['data']['url'];
+          this.qrCodeUrl = res['data']['imgUrl'];
+          console.log(this.qrCodeUrl);
+        })
+        .catch(err => {
+          return reject(err);
+        })
+    })
       .catch(err => {
-
-      })
+        console.log(err);
+      });
   }
 
   public uploadWcQRCode = (event) => {
@@ -105,6 +114,7 @@ export class MerchAddComponent implements OnInit {
     body['fixed_line'] = this.fixed_line;
     body['support_tag'] = this.support_tag;
     body['imgs'] = new Array();
+    body['official_website'] = this.official_website;
     for (let i = 0; i < this.imgs.length; i ++ ) {
       body['imgs'].push(this.imgs[i]['url']);
     }
@@ -146,6 +156,7 @@ export class MerchAddComponent implements OnInit {
         this.addr = res['data']['addr'];
         this.tel = res['data']['tel'];
         this.wechat = res['data']['wechat'];
+        this.official_website = res['data']['official_website'];
         this.qrCode = res['data']['qr_code'];
         this.wcQrcode = res['data']['wc_img'];
         this.fixed_line = res['data']['fixed_line'];
@@ -177,6 +188,24 @@ export class MerchAddComponent implements OnInit {
    */
   delImgBtn = (event, index) => {
     this.imgs.splice(index, 1);
+  }
+
+  /**
+   * 删除微信二维码图片
+   */
+  delQrcode = (event) => {
+    this.qrCode = '';
+    this.qrCodeUrl = '';
+    this.qrCodeInput = '';
+  }
+
+  /**
+   * 删除公众号二维码
+   */
+  delWcQrcode = (event) => {
+    this.wcQrcode = '';
+    this.wcQrcodeUrl = '';
+    this.wcQrCodeInput = '';
   }
 
 

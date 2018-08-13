@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { QrcodeService } from './qrcode.service';
 import { ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'app-qrcode',
   templateUrl: './qrcode.component.html',
   styleUrls: ['qrcode.component.scss'],
   providers: [
-    { provide: CarouselConfig, useValue: { interval: 1500, noPause: true, showIndicators: true } }
+    { provide: CarouselConfig, useValue: { interval: 1500, noPause: true, showIndicators: true} }
   ]
 })
 export class QrcodeComponent implements OnInit {
@@ -35,6 +34,12 @@ export class QrcodeComponent implements OnInit {
       .then(res => {
         this.myService.title.setTitle('查询结果_' + res['data'].brand_name);
         this.codeInfo = res['data'];
+        if(res['data']['official_website'] && res['data']['official_website'].trim() != '') {
+          res['data']['official_website'] = res['data']['official_website'].trim();
+          let regExp = new RegExp('http://');
+          let regExtResult = regExp.test(res['data']['official_website']);
+          if(!regExtResult) res['data']['official_website'] = 'http://' + res['data']['official_website'];
+        }
         Date.prototype['format'] = function(format) {
           var date = {
             "M+": this.getMonth() + 1,
@@ -78,14 +83,26 @@ export class QrcodeComponent implements OnInit {
    * 查看微信号
    */
   viewQrcodeBtn = ($event) => {
-    this.myService.viewQrcode({img: this.codeInfo['qr_code']});
+    console.log(this.codeInfo['qr_code']);
+    if(this.codeInfo['qr_code'] &&  this.codeInfo['qr_code'] != 'null') {
+      this.myService.viewQrcode({img: this.codeInfo['qr_code']});
+    } else  {
+      window.location.reload();
+    }
   }
 
   /**
    * 查看微信公众号
    */
-  viewWcQrcodeBtn = () => {
+  viewWcQrcodeBtn = (event) => {
     this.myService.vieWcQrcode({img: this.codeInfo['wc_img']});
+  }
+
+  /**
+   * 查看官网刷新
+   */
+  viewOfficalWebQrcodeBtn = (event) => {
+    window.location.reload();
   }
 
 }
