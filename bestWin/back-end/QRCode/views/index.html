@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title>查询结果_{{data.brand_name}}</title>
-    <link rel="stylesheet" href="../component/carousel.css">
-    <script src="../component/carousel.js"></script>
+    <link rel="stylesheet" href="http://scy.api.bestwin.vip/component/carousel.css">
+    <script src="http://scy.api.bestwin.vip/component/carousel.js"></script>
     <style>
         #carousel {
             width: 100%;
@@ -24,11 +25,12 @@
         }
     </style>
 </head>
-<link rel="stylesheet" href="../stylesheets/style.css">
+<link rel="stylesheet" href="http://scy.api.bestwin.vip/stylesheets/style.css">
 
 <body>
 <script>
     var data = '{{{data}}}'
+    console.log(data);
     data = JSON.parse(data);
 </script>
 <div class="c-title"><span style="font-weight: bold">二维码真伪识别与应用系统</span></div>
@@ -50,7 +52,7 @@
 
 <div class="c-anti-fake-code-wrap">
     <div class="c-anti-fake-title">
-        <img src = '../imgs/warn.png' style="border-radius: 100%; height: 1.3125rem; width: 1.3125rem; margin-right: .5rem"/>
+        <img src = 'http://scy.api.bestwin.vip/imgs/warn.png' style="border-radius: 100%; height: 1.3125rem; width: 1.3125rem; margin-right: .5rem"/>
         您查询的防伪码为：
     </div>
     <div class="c-anti-fake-code">
@@ -98,10 +100,10 @@
                 }
                 return format;
             };
-           infoText = '您所查询的防伪码已被查询过，首次查询时间：' + new Date(data['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss') + ',查询方式:网络,请确认!此次是第' + data['read'] + 1 + '次查询！';
+           infoText = '您所查询的防伪码已被查询过，首次查询时间：' + new Date(data['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss') + ',查询方式:网络,请确认!此次是第' + (data['read'] + 1) + '次查询！';
         }
         if(data.read == 0 && data.code_exist) {
-            infoText = '您所查询的是' + data.brand_name ? '"' + data.brand_name + '"' : '' + '品牌卫浴产品，是该品牌正品的标识，感谢您的查询！';
+            infoText = '您所查询的是' + (data.brand_name ? '"' + data.brand_name + '"' : '') + '品牌卫浴产品，是该品牌正品的标识，感谢您的查询！';
         }
         if(!data.code_exist) {
             infoText = '您所查询的防伪码不存在！';

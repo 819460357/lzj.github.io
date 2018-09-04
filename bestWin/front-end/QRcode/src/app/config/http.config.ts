@@ -1,6 +1,7 @@
 const httpConfig = {
   domainName: 'http://scy.api.bestwin.vip',
-  frontDominName: "http://scy.bestwin.vip/#/qrc"
+  frontDominName: 'http://scy.api.bestwin.vip',
+  // frontDominName: "http://scy.bestwin.vip/#/qrc"
 };
 
 export const api = {

@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="daf8cc5b-b50b-46fe-beeb-f182d578c753" name="Default" comment="一期修改版">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/back-end/QRCode/controllers/merch.js" afterPath="$PROJECT_DIR$/bestWin/back-end/QRCode/controllers/merch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/back-end/QRCode/controllers/qrcode.js" afterPath="$PROJECT_DIR$/bestWin/back-end/QRCode/controllers/qrcode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/package.json" afterPath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/src/app/business/qrcode/qrcode.component.html" afterPath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/src/app/business/qrcode/qrcode.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/src/app/business/qrcode/qrcode.component.ts" afterPath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/src/app/business/qrcode/qrcode.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/src/app/business/qrcode/qrcode.service.ts" afterPath="$PROJECT_DIR$/bestWin/front-end/AntiFakeSys/src/app/business/qrcode/qrcode.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/QRcode/package.json" afterPath="$PROJECT_DIR$/bestWin/front-end/QRcode/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html" afterPath="$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts" afterPath="$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts" />
       <change type="MODIFICATION" beforePath="F:/workspace/gitHub/lzj.github.io/.idea/workspace.xml" afterPath="F:/workspace/gitHub/lzj.github.io/.idea/workspace.xml" />
     </list>
     <ignored path="bestWin.iws" />
@@ -38,8 +29,8 @@
       <file leaf-file-name="merch-add.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="43" column="129" selection-start-line="43" selection-start-column="129" selection-end-line="43" selection-end-column="129" />
+            <state relative-caret-position="465">
+              <caret line="54" column="191" selection-start-line="54" selection-start-column="191" selection-end-line="54" selection-end-column="191" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -56,7 +47,7 @@
       <file leaf-file-name="merch-add.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
+            <state relative-caret-position="3724">
               <caret line="207" column="22" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="22" />
               <folding>
                 <element signature="e#670#764#0" expanded="false" />
@@ -154,10 +145,10 @@
     <handled-path value="$PROJECT_DIR$/bestWin/front-end/QRcode/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-131" />
+    <option name="y" value="62" />
     <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="height" value="1081" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -184,7 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -203,9 +193,14 @@
               <option name="myItemId" value="scycode" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,7 +313,8 @@
       <workItem from="1533614965609" duration="6157000" />
       <workItem from="1533627768126" duration="95000" />
       <workItem from="1533869072118" duration="3186000" />
-      <workItem from="1534125489427" duration="4998000" />
+      <workItem from="1534125489427" duration="5203000" />
+      <workItem from="1535703965383" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="初期定型">
       <created>1529473417474</created>
@@ -348,32 +344,39 @@
       <option name="project" value="LOCAL" />
       <updated>1533621541623</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改微信二维码或微官网不存在时点击刷新当前页面；&#10;管理后台新增微信二维码与公众号二维码删除事件">
+      <created>1534142560228</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534142560228</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56699000" />
+    <option name="totallyTimeSpent" value="56998000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <frame x="-131" y="62" width="1936" height="1081" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21601686" sideWeight="0.486631" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37124464" sideWeight="0.50421494" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3090129" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24785408" sideWeight="0.49578503" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24709609" sideWeight="0.49578503" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24657534" sideWeight="0.51336896" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3090129" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -409,7 +412,8 @@
     <MESSAGE value="初期定型" />
     <MESSAGE value="一期修改版" />
     <MESSAGE value="二期改版" />
-    <option name="LAST_COMMIT_MESSAGE" value="二期改版" />
+    <MESSAGE value="修改微信二维码或微官网不存在时点击刷新当前页面；&#10;管理后台新增微信二维码与公众号二维码删除事件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改微信二维码或微官网不存在时点击刷新当前页面；&#10;管理后台新增微信二维码与公众号二维码删除事件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -558,9 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,145 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="313" column="53" selection-start-line="313" selection-start-column="53" selection-end-line="313" selection-end-column="53" />
-          <folding>
-            <element signature="e#147#1167#0" expanded="false" />
-            <element signature="e#192#395#0" expanded="false" />
-            <element signature="e#257#306#0" expanded="false" />
-            <element signature="e#342#388#0" expanded="false" />
-            <element signature="e#443#647#0" expanded="false" />
-            <element signature="e#509#558#0" expanded="false" />
-            <element signature="e#594#640#0" expanded="false" />
-            <element signature="e#696#904#0" expanded="false" />
-            <element signature="e#765#814#0" expanded="false" />
-            <element signature="e#850#897#0" expanded="false" />
-            <element signature="e#953#1161#0" expanded="false" />
-            <element signature="e#1022#1071#0" expanded="false" />
-            <element signature="e#1107#1154#0" expanded="false" />
-            <element signature="e#1275#2228#0" expanded="false" />
-            <element signature="e#1334#1399#0" expanded="false" />
-            <element signature="e#1455#1522#0" expanded="false" />
-            <element signature="e#1531#1584#0" expanded="false" />
-            <element signature="e#2264#2866#0" expanded="false" />
-            <element signature="e#2324#2854#0" expanded="false" />
-            <element signature="e#2418#2686#0" expanded="false" />
-            <element signature="e#2461#2558#0" expanded="false" />
-            <element signature="e#2730#2838#0" expanded="false" />
-            <element signature="e#2902#3500#0" expanded="false" />
-            <element signature="e#2962#3488#0" expanded="false" />
-            <element signature="e#3024#3473#0" expanded="false" />
-            <element signature="e#3054#3145#0" expanded="false" />
-            <element signature="e#3254#3453#0" expanded="false" />
-            <element signature="e#3288#3389#0" expanded="false" />
-            <element signature="e#4022#4118#0" expanded="false" />
-            <element signature="e#4181#4275#0" expanded="false" />
-            <element signature="e#4336#4428#0" expanded="false" />
-            <element signature="e#4495#4593#0" expanded="false" />
-            <element signature="e#4662#4762#0" expanded="false" />
-            <element signature="e#4829#4927#0" expanded="false" />
-            <element signature="e#5207#5313#0" expanded="false" />
-            <element signature="e#5384#5598#0" expanded="false" />
-            <element signature="e#5414#5504#0" expanded="false" />
-            <element signature="e#5662#6698#0" expanded="false" />
-            <element signature="e#5722#6686#0" expanded="false" />
-            <element signature="e#5945#6405#0" expanded="false" />
-            <element signature="e#6488#6670#0" expanded="false" />
-            <element signature="e#6518#6608#0" expanded="false" />
-            <element signature="e#6732#6898#0" expanded="false" />
-            <element signature="e#6792#6886#0" expanded="false" />
-            <element signature="e#6930#7140#0" expanded="false" />
-            <element signature="e#7020#7128#0" expanded="false" />
-            <element signature="n#!!block;n#getMerchList#0" expanded="false" />
-            <element signature="e#7255#7409#0" expanded="false" />
-            <element signature="e#7314#7377#0" expanded="false" />
-            <element signature="e#7445#8048#0" expanded="false" />
-            <element signature="e#7505#8036#0" expanded="false" />
-            <element signature="e#7599#7867#0" expanded="false" />
-            <element signature="e#7642#7739#0" expanded="false" />
-            <element signature="e#7911#8020#0" expanded="false" />
-            <element signature="e#8084#8682#0" expanded="false" />
-            <element signature="e#8144#8670#0" expanded="false" />
-            <element signature="e#8206#8655#0" expanded="false" />
-            <element signature="e#8236#8327#0" expanded="false" />
-            <element signature="e#8436#8635#0" expanded="false" />
-            <element signature="e#8470#8571#0" expanded="false" />
-            <element signature="e#8718#9253#0" expanded="false" />
-            <element signature="e#8778#9241#0" expanded="false" />
-            <element signature="e#9018#9225#0" expanded="false" />
-            <element signature="e#9048#9138#0" expanded="false" />
-            <element signature="e#9289#9457#0" expanded="false" />
-            <element signature="e#9349#9445#0" expanded="false" />
-            <element signature="e#9489#9700#0" expanded="false" />
-            <element signature="e#9579#9688#0" expanded="false" />
-            <element signature="e#9815#10088#0" expanded="false" />
-            <element signature="e#9874#9939#0" expanded="false" />
-            <element signature="e#9991#10056#0" expanded="false" />
-            <element signature="e#10124#10727#0" expanded="false" />
-            <element signature="e#10184#10715#0" expanded="false" />
-            <element signature="e#10278#10546#0" expanded="false" />
-            <element signature="e#10321#10418#0" expanded="false" />
-            <element signature="e#10590#10699#0" expanded="false" />
-            <element signature="e#10763#11361#0" expanded="false" />
-            <element signature="e#10823#11349#0" expanded="false" />
-            <element signature="e#10885#11334#0" expanded="false" />
-            <element signature="e#10915#11006#0" expanded="false" />
-            <element signature="e#11115#11314#0" expanded="false" />
-            <element signature="e#11149#11250#0" expanded="false" />
-            <element signature="e#12613#12950#0" expanded="false" />
-            <element signature="e#12643#12733#0" expanded="false" />
-            <element signature="e#12777#12867#0" expanded="false" />
-            <element signature="e#13014#13666#0" expanded="false" />
-            <element signature="e#13074#13654#0" expanded="false" />
-            <element signature="e#13402#13638#0" expanded="false" />
-            <element signature="e#13432#13522#0" expanded="false" />
-            <element signature="e#13702#13870#0" expanded="false" />
-            <element signature="e#13762#13858#0" expanded="false" />
-            <element signature="e#13902#14113#0" expanded="false" />
-            <element signature="e#13992#14101#0" expanded="false" />
-            <element signature="e#14225#15271#0" expanded="false" />
-            <element signature="e#14284#14349#0" expanded="false" />
-            <element signature="e#14378#14442#0" expanded="false" />
-            <element signature="e#14498#14565#0" expanded="false" />
-            <element signature="e#14574#14627#0" expanded="false" />
-            <element signature="e#15307#15910#0" expanded="false" />
-            <element signature="e#15367#15898#0" expanded="false" />
-            <element signature="e#15461#15729#0" expanded="false" />
-            <element signature="e#15504#15601#0" expanded="false" />
-            <element signature="e#15773#15882#0" expanded="false" />
-            <element signature="e#15946#16563#0" expanded="false" />
-            <element signature="e#16006#16551#0" expanded="false" />
-            <element signature="e#16068#16536#0" expanded="false" />
-            <element signature="e#16098#16189#0" expanded="false" />
-            <element signature="e#16298#16516#0" expanded="false" />
-            <element signature="e#16332#16433#0" expanded="false" />
-            <element signature="e#17830#18034#0" expanded="false" />
-            <element signature="e#17860#17950#0" expanded="false" />
-            <element signature="e#18098#18927#0" expanded="false" />
-            <element signature="e#18158#18915#0" expanded="false" />
-            <element signature="e#18486#18899#0" expanded="false" />
-            <element signature="e#18516#18606#0" expanded="false" />
-            <element signature="e#18709#18785#0" expanded="false" />
-            <element signature="e#18963#19881#0" expanded="false" />
-            <element signature="e#19023#19869#0" expanded="false" />
-            <element signature="e#19221#19333#0" expanded="false" />
-            <element signature="e#19396#19547#0" expanded="false" />
-            <element signature="e#19455#19529#0" expanded="false" />
-            <element signature="e#19656#19813#0" expanded="false" />
-            <element signature="e#19714#19795#0" expanded="false" />
-            <element signature="e#19917#20985#0" expanded="false" />
-            <element signature="e#19977#20973#0" expanded="false" />
-            <element signature="e#20200#20648#0" expanded="false" />
-            <element signature="e#20731#20957#0" expanded="false" />
-            <element signature="e#20761#20893#0" expanded="false" />
-            <element signature="e#21021#22207#0" expanded="false" />
-            <element signature="e#21081#22195#0" expanded="false" />
-            <element signature="e#21313#21859#0" expanded="false" />
-            <element signature="e#21995#22179#0" expanded="false" />
-            <element signature="e#22025#22115#0" expanded="false" />
-            <element signature="e#22241#22429#0" expanded="false" />
-            <element signature="e#22301#22417#0" expanded="false" />
-            <element signature="e#22461#22672#0" expanded="false" />
-            <element signature="e#22551#22660#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="234" column="72" selection-start-line="234" selection-start-column="72" selection-end-line="234" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,7 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2152">
           <caret line="145" column="21" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
           <caret line="11178" column="4" selection-start-line="11178" selection-start-column="4" selection-end-line="11178" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="36" column="107" selection-start-line="36" selection-start-column="107" selection-end-line="36" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="96" column="26" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,19 +646,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="931">
           <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#10;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#div#10;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#10;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#1;n#div#10;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#2;n#div#10;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
+        <state relative-caret-position="3724">
           <caret line="207" column="22" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="22" />
           <folding>
             <element signature="e#670#764#0" expanded="false" />
@@ -814,8 +661,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bestWin/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="43" column="129" selection-start-line="43" selection-start-column="129" selection-end-line="43" selection-end-column="129" />
+        <state relative-caret-position="465">
+          <caret line="54" column="191" selection-start-line="54" selection-start-column="191" selection-end-line="54" selection-end-column="191" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#0;n#div#7;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />

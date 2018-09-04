@@ -24,10 +24,22 @@ module.exports = function (router) {
             })
 
     });
+    router.get('/info', function(req, res) {
+        getCodeInfo(req.query, req.headers)
+            .then(function (result) {
+                result.data = JSON.stringify(result.data);
+                return res.render('index', result);
+            })
+            .catch(function (err) {
+                // res.json(err);
+                return res.render('index', err);
+            })
 
-    router.get('/qrInfo', function(req, res) {
-        res.render('index', {"code":0,"data": JSON.stringify({"name":"test2","addr":"dd","support_tag":1,"fixed_line":"dd","qr_code":"http://scy.api.bestwin.vip/images/1536036842281_38.jpg","wc_img":"http://scy.api.bestwin.vip/images/1536036845515_16.jpg","official_website":"www.baidu.com","tel":"dd","wechat":"dd","merch_exist":1,"code_exist":1,"code":1,"from":"","to":"","brand_name":"申郎","desc":"","antifakeCode":"55a54008ad1ba589aa210d2629c1df41","imgs":[{"url":"http://scy.api.bestwin.vip/images/1536036915399_69.jpg"},{"url":"http://scy.api.bestwin.vip/images/1536036915399_2.jpg"},{"url":"http://scy.api.bestwin.vip/images/1536036915400_92.jpg"}],"read":56,"first_read_time":1533620799,"device_type":"Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac O","qrcode_id":65805})});
     });
+
+    // router.get('/qrInfo', function(req, res) {
+    //     res.render('index', {"code":0,"data": JSON.stringify({"name":"test2","addr":"dd","support_tag":1,"fixed_line":"dd","qr_code":"http://scy.api.bestwin.vip/images/1536036842281_38.jpg","wc_img":"http://scy.api.bestwin.vip/images/1536036845515_16.jpg","official_website":"www.baidu.com","tel":"dd","wechat":"dd","merch_exist":1,"code_exist":1,"code":1,"from":"","to":"","brand_name":"申郎","desc":"","antifakeCode":"55a54008ad1ba589aa210d2629c1df41","imgs":[{"url":"http://scy.api.bestwin.vip/images/1536036915399_69.jpg"},{"url":"http://scy.api.bestwin.vip/images/1536036915399_2.jpg"},{"url":"http://scy.api.bestwin.vip/images/1536036915400_92.jpg"}],"read":56,"first_read_time":1533620799,"device_type":"Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac O","qrcode_id":65805})});
+    // });
 
 
 
@@ -190,7 +202,8 @@ function addQrcode(data) {
 function getCodeInfo(data, headers) {
     var mysqlConnect = null;
     return new Promise(function (resolve, reject) {
-        if(!data['merch_id'] || parseInt(data['merch_id']) < 0) {
+        // if(!data['merch_id'] || parseInt(data['merch_id']) < 0) {
+            if(!data['id'] || parseInt(data['id']) < 0) {
             return reject({code: -1, msg: '请求链接不合法！'});
         }
         if(!Object.hasOwnProperty.call(data, 'code') || data['code'] == 0) {
@@ -244,7 +257,8 @@ function getCodeInfo(data, headers) {
                     "     AND qr_code_range.active = 1" +
                     "   WHERE merch.effect = 1" +
                     "     AND merch.active = 1" +
-                    "     AND merch.id = " + data['merch_id'];
+                    // "     AND merch.id = " + data['merch_id'];
+                "     AND merch.id = " + data['id'];
                 mysqlConnect.query(selectSql, function (err, result) {
                     if(err) {
                         return reject({code: -1, msg: '数据获取失败！'});
@@ -266,7 +280,8 @@ function getCodeInfo(data, headers) {
                 var selectSql =
                     "   SELECT url" +
                     "   FROM merch_img" +
-                    "   WHERE merch_id = " + data['merch_id'] +
+                    // "   WHERE merch_id = " + data['merch_id'] +
+                    "   WHERE merch_id = " + data['id'] +
                     "     AND effect = 1" +
                     "     AND active = 1";
                 mysqlConnect.query(selectSql, function (err, result) {
@@ -286,7 +301,8 @@ function getCodeInfo(data, headers) {
                     "        , `device_type`" +
                     "        ,  `id` AS qrcode_id" +
                     "   FROM qr_code" +
-                    "   WHERE merch_id = " +  data['merch_id'] +
+                    // "   WHERE merch_id = " +  data['merch_id'] +
+                    "   WHERE merch_id = " + data['id'] +
                     "     AND `code` = " + data['code'] +
                     "     AND effect = 1" +
                     "     AND active = 1" +
@@ -319,7 +335,8 @@ function getCodeInfo(data, headers) {
                         "   SET `read` = 1"  +
                         "      , first_read_time = " +  new Date().getTime()/1000 +
                         "      , `device_type` = '" +  headers['user-agent'].toString() + "'" +
-                        "      , merch_id = " +  data['merch_id'] +
+                        // "      , merch_id = " +  data['merch_id'] +
+                        "      , merch_id = " +  data['id'] +
                         "      , `code` = " + data['code'] +
                         "      , effect = 1" +
                         "      , active = 1";
@@ -329,7 +346,8 @@ function getCodeInfo(data, headers) {
                         "   SET `read` = " + (parseInt(response['data']['read']) + 1) +
                         "      , first_read_time = " + (response['data']['first_read_time'] ? response['data']['first_read_time'] : new Date().getTime()/1000) +
                         "      , `device_type` = '" + (response['data']['device_type'] ? response['data']['device_type'] : headers['user-agent'].toString()) + "'" +
-                        "   WHERE merch_id = " +  data['merch_id'] +
+                        // "   WHERE merch_id = " +  data['merch_id'] +
+                        "   WHERE merch_id = " +  data['id'] +
                         "     AND `code` = " + data['code'] +
                         "     AND `id` = " + response['data']['qrcode_id'];
                 }

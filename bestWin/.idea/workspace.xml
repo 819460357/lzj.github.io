@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c02eb975-0515-4e76-87ec-893648ca57a4" name="Default" comment="" />
+    <ignored path="bestWin.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="bestWin" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="merch-add.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+              <folding>
+                <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#label#0;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#label#1;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#label#1;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="merch-add.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="103" column="34" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+              <folding>
+                <element signature="e#168#289#0" expanded="false" />
+                <element signature="e#643#737#0" expanded="false" />
+                <element signature="e#649#688#0" expanded="false" />
+                <element signature="e#694#733#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#MerchAddComponent#0" expanded="false" />
+                <element signature="n#!!block;n#ngOnInit#0;n#MerchAddComponent#0" expanded="false" />
+                <element signature="e#886#906#0" expanded="false" />
+                <element signature="e#1086#1222#0" expanded="false" />
+                <element signature="e#1244#1254#0" expanded="false" />
+                <element signature="e#1586#1607#0" expanded="false" />
+                <element signature="e#1640#1886#0" expanded="false" />
+                <element signature="e#1781#1849#0" expanded="false" />
+                <element signature="e#1871#1881#0" expanded="false" />
+                <element signature="e#1890#1915#0" expanded="false" />
+                <element signature="e#2528#2583#0" expanded="false" />
+                <element signature="e#2607#2619#0" expanded="false" />
+                <element signature="e#2633#2799#0" expanded="false" />
+                <element signature="e#2744#2755#0" expanded="false" />
+                <element signature="e#2779#2791#0" expanded="false" />
+                <element signature="e#2809#2832#0" expanded="false" />
+                <element signature="e#3565#3584#0" expanded="false" />
+                <element signature="e#3615#3797#0" expanded="false" />
+                <element signature="e#3670#3791#0" expanded="false" />
+                <element signature="e#3710#3785#0" expanded="false" />
+                <element signature="e#3802#3825#0" expanded="false" />
+                <element signature="e#3858#3895#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="merch-add.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="212" column="42" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/back-end/QRCode/controllers/merch.js" />
+        <option value="$PROJECT_DIR$/back-end/QRCode/controllers/qrcode.js" />
+        <option value="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.service.ts" />
+        <option value="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QRcode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QRcode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QRcode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imgs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="back-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QRCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bestWin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="back-end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QRCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="D:/software/node/node" />
+    <property name="js-jscs-nodeInterpreter" value="D:\software\node\node.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\gitWorkspace\bestWin\scycode\bestWin\front-end\QRcode\assets\imgs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\gitWorkspace\bestWin\scycode\bestWin\front-end\QRcode\assets\imgs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c02eb975-0515-4e76-87ec-893648ca57a4" name="Default" comment="" />
+      <created>1533612066790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533612066790</updated>
+      <workItem from="1533612344952" duration="2181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2181000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/back-end/QRCode/controllers/qrcode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="219" column="43" selection-start-line="219" selection-start-column="43" selection-end-line="219" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/QRcode/assets/imgs/wcQrcode.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back-end/QRCode/controllers/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back-end/QRCode/controllers/merch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="133" column="31" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="31" />
+          <folding>
+            <element signature="e#147#1167#0" expanded="false" />
+            <element signature="e#192#395#0" expanded="false" />
+            <element signature="e#257#306#0" expanded="false" />
+            <element signature="e#342#388#0" expanded="false" />
+            <element signature="e#443#647#0" expanded="false" />
+            <element signature="e#509#558#0" expanded="false" />
+            <element signature="e#594#640#0" expanded="false" />
+            <element signature="e#696#904#0" expanded="false" />
+            <element signature="e#765#814#0" expanded="false" />
+            <element signature="e#850#897#0" expanded="false" />
+            <element signature="e#953#1161#0" expanded="false" />
+            <element signature="e#1022#1071#0" expanded="false" />
+            <element signature="e#1107#1154#0" expanded="false" />
+            <element signature="e#1275#2228#0" expanded="false" />
+            <element signature="e#1334#1399#0" expanded="false" />
+            <element signature="e#1455#1522#0" expanded="false" />
+            <element signature="e#1531#1584#0" expanded="false" />
+            <element signature="e#2324#2854#0" expanded="false" />
+            <element signature="e#2418#2686#0" expanded="false" />
+            <element signature="e#2461#2558#0" expanded="false" />
+            <element signature="e#2730#2838#0" expanded="false" />
+            <element signature="e#2902#3500#0" expanded="false" />
+            <element signature="e#2962#3488#0" expanded="false" />
+            <element signature="e#3024#3473#0" expanded="false" />
+            <element signature="e#3054#3145#0" expanded="false" />
+            <element signature="e#3254#3453#0" expanded="false" />
+            <element signature="e#3288#3389#0" expanded="false" />
+            <element signature="e#4022#4118#0" expanded="false" />
+            <element signature="e#4181#4275#0" expanded="false" />
+            <element signature="e#4336#4428#0" expanded="false" />
+            <element signature="e#4495#4593#0" expanded="false" />
+            <element signature="e#4662#4761#0" expanded="false" />
+            <element signature="e#5001#5107#0" expanded="false" />
+            <element signature="e#5178#5392#0" expanded="false" />
+            <element signature="e#5208#5298#0" expanded="false" />
+            <element signature="e#5456#6492#0" expanded="false" />
+            <element signature="e#5516#6480#0" expanded="false" />
+            <element signature="e#5739#6199#0" expanded="false" />
+            <element signature="e#6282#6464#0" expanded="false" />
+            <element signature="e#6312#6402#0" expanded="false" />
+            <element signature="e#6526#6692#0" expanded="false" />
+            <element signature="e#6586#6680#0" expanded="false" />
+            <element signature="e#6724#6934#0" expanded="false" />
+            <element signature="e#6814#6922#0" expanded="false" />
+            <element signature="n#!!block;n#getMerchList#0" expanded="false" />
+            <element signature="e#7049#7203#0" expanded="false" />
+            <element signature="e#7108#7171#0" expanded="false" />
+            <element signature="e#7239#7842#0" expanded="false" />
+            <element signature="e#7299#7830#0" expanded="false" />
+            <element signature="e#7393#7661#0" expanded="false" />
+            <element signature="e#7436#7533#0" expanded="false" />
+            <element signature="e#7705#7814#0" expanded="false" />
+            <element signature="e#7878#8476#0" expanded="false" />
+            <element signature="e#7938#8464#0" expanded="false" />
+            <element signature="e#8000#8449#0" expanded="false" />
+            <element signature="e#8030#8121#0" expanded="false" />
+            <element signature="e#8230#8429#0" expanded="false" />
+            <element signature="e#8264#8365#0" expanded="false" />
+            <element signature="e#8512#9047#0" expanded="false" />
+            <element signature="e#8572#9035#0" expanded="false" />
+            <element signature="e#8812#9019#0" expanded="false" />
+            <element signature="e#8842#8932#0" expanded="false" />
+            <element signature="e#9083#9251#0" expanded="false" />
+            <element signature="e#9143#9239#0" expanded="false" />
+            <element signature="e#9283#9494#0" expanded="false" />
+            <element signature="e#9373#9482#0" expanded="false" />
+            <element signature="n#!!block;n#getMerchInfo#0" expanded="false" />
+            <element signature="e#9609#9882#0" expanded="false" />
+            <element signature="e#9668#9733#0" expanded="false" />
+            <element signature="e#9785#9850#0" expanded="false" />
+            <element signature="e#9918#10521#0" expanded="false" />
+            <element signature="e#9978#10509#0" expanded="false" />
+            <element signature="e#10072#10340#0" expanded="false" />
+            <element signature="e#10115#10212#0" expanded="false" />
+            <element signature="e#10384#10493#0" expanded="false" />
+            <element signature="e#10557#11155#0" expanded="false" />
+            <element signature="e#10617#11143#0" expanded="false" />
+            <element signature="e#10679#11128#0" expanded="false" />
+            <element signature="e#10709#10800#0" expanded="false" />
+            <element signature="e#10909#11108#0" expanded="false" />
+            <element signature="e#10943#11044#0" expanded="false" />
+            <element signature="e#12350#12687#0" expanded="false" />
+            <element signature="e#12380#12470#0" expanded="false" />
+            <element signature="e#12514#12604#0" expanded="false" />
+            <element signature="e#12751#13403#0" expanded="false" />
+            <element signature="e#12811#13391#0" expanded="false" />
+            <element signature="e#13139#13375#0" expanded="false" />
+            <element signature="e#13169#13259#0" expanded="false" />
+            <element signature="e#13439#13607#0" expanded="false" />
+            <element signature="e#13499#13595#0" expanded="false" />
+            <element signature="e#13639#13850#0" expanded="false" />
+            <element signature="e#13729#13838#0" expanded="false" />
+            <element signature="n#!!block;n#editMerch#0" expanded="false" />
+            <element signature="e#13962#15008#0" expanded="false" />
+            <element signature="e#14021#14086#0" expanded="false" />
+            <element signature="e#14115#14179#0" expanded="false" />
+            <element signature="e#14235#14302#0" expanded="false" />
+            <element signature="e#14311#14364#0" expanded="false" />
+            <element signature="e#15044#15647#0" expanded="false" />
+            <element signature="e#15104#15635#0" expanded="false" />
+            <element signature="e#15198#15466#0" expanded="false" />
+            <element signature="e#15241#15338#0" expanded="false" />
+            <element signature="e#15510#15619#0" expanded="false" />
+            <element signature="e#15683#16300#0" expanded="false" />
+            <element signature="e#15743#16288#0" expanded="false" />
+            <element signature="e#15805#16273#0" expanded="false" />
+            <element signature="e#15835#15926#0" expanded="false" />
+            <element signature="e#16035#16253#0" expanded="false" />
+            <element signature="e#16069#16170#0" expanded="false" />
+            <element signature="e#17444#17648#0" expanded="false" />
+            <element signature="e#17474#17564#0" expanded="false" />
+            <element signature="e#17712#18541#0" expanded="false" />
+            <element signature="e#17772#18529#0" expanded="false" />
+            <element signature="e#18100#18513#0" expanded="false" />
+            <element signature="e#18130#18220#0" expanded="false" />
+            <element signature="e#18323#18399#0" expanded="false" />
+            <element signature="e#18577#19495#0" expanded="false" />
+            <element signature="e#18637#19483#0" expanded="false" />
+            <element signature="e#18835#18947#0" expanded="false" />
+            <element signature="e#19010#19161#0" expanded="false" />
+            <element signature="e#19069#19143#0" expanded="false" />
+            <element signature="e#19270#19427#0" expanded="false" />
+            <element signature="e#19328#19409#0" expanded="false" />
+            <element signature="e#19531#20599#0" expanded="false" />
+            <element signature="e#19591#20587#0" expanded="false" />
+            <element signature="e#19814#20262#0" expanded="false" />
+            <element signature="e#20345#20571#0" expanded="false" />
+            <element signature="e#20375#20507#0" expanded="false" />
+            <element signature="e#20635#21821#0" expanded="false" />
+            <element signature="e#20695#21809#0" expanded="false" />
+            <element signature="e#20927#21473#0" expanded="false" />
+            <element signature="e#21609#21793#0" expanded="false" />
+            <element signature="e#21639#21729#0" expanded="false" />
+            <element signature="e#21855#22043#0" expanded="false" />
+            <element signature="e#21915#22031#0" expanded="false" />
+            <element signature="e#22075#22286#0" expanded="false" />
+            <element signature="e#22165#22274#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="212" column="42" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="103" column="34" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+          <folding>
+            <element signature="e#168#289#0" expanded="false" />
+            <element signature="e#643#737#0" expanded="false" />
+            <element signature="e#649#688#0" expanded="false" />
+            <element signature="e#694#733#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#MerchAddComponent#0" expanded="false" />
+            <element signature="n#!!block;n#ngOnInit#0;n#MerchAddComponent#0" expanded="false" />
+            <element signature="e#886#906#0" expanded="false" />
+            <element signature="e#1086#1222#0" expanded="false" />
+            <element signature="e#1244#1254#0" expanded="false" />
+            <element signature="e#1586#1607#0" expanded="false" />
+            <element signature="e#1640#1886#0" expanded="false" />
+            <element signature="e#1781#1849#0" expanded="false" />
+            <element signature="e#1871#1881#0" expanded="false" />
+            <element signature="e#1890#1915#0" expanded="false" />
+            <element signature="e#2528#2583#0" expanded="false" />
+            <element signature="e#2607#2619#0" expanded="false" />
+            <element signature="e#2633#2799#0" expanded="false" />
+            <element signature="e#2744#2755#0" expanded="false" />
+            <element signature="e#2779#2791#0" expanded="false" />
+            <element signature="e#2809#2832#0" expanded="false" />
+            <element signature="e#3565#3584#0" expanded="false" />
+            <element signature="e#3615#3797#0" expanded="false" />
+            <element signature="e#3670#3791#0" expanded="false" />
+            <element signature="e#3710#3785#0" expanded="false" />
+            <element signature="e#3802#3825#0" expanded="false" />
+            <element signature="e#3858#3895#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#label#1;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#1;n#div#6;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
