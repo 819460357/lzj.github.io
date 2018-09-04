@@ -4,14 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var enrouten = require('express-enrouten');
+var cons = require('consolidate');
 
 
 var app = express();
 
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('view engine', 'hogan');
+
+app.engine('html', cons.hogan);
+app.set('view engine', 'html');
 
 ////设置跨域
 app.all('*', function(req, res, next) {

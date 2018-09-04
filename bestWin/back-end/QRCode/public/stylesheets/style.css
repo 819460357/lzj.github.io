@@ -1,8 +1,248 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.c-title {
+  height: 3rem;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 3rem;
+  color: white;
+  background: #2f2d2d;
 }
 
-a {
-  color: #00B7FF;
+*{
+  margin:0;
+  padding:0;
 }
+ul,li{
+  list-style: none;
+}
+/*css reset end*/
+
+/*css public start*/
+.floatfix {
+  *zoom: 1;
+}
+.floatfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*css public end*/
+
+/*slider start*/
+.slider-contaner{
+  width:100%;
+  position:relative;
+  height: 14rem;
+}
+.slider-item + .slider-item{
+  opacity:0;
+}
+.slider-item{
+  width:100%;
+  position:absolute;
+  animation-timing-function: linear;
+  animation-name:fade;
+  animation-iteration-count: infinite;
+  background-size:100%;
+}
+.focus-container{
+  position:absolute;
+  z-index:7;
+  margin:0 auto;
+  left:0;
+  right:0;
+}
+.focus-container li{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  float:left;
+  margin-right:10px;
+  background:#fff;
+}
+.focus-item{
+  width:100%;
+  height:100%;
+  border-radius:inherit;
+  animation-timing-function: linear;
+  animation-name:fade;
+  animation-iteration-count: infinite;
+}
+.focus-item-opacity0{
+  opacity:0;
+}
+.focus-container ul{
+  display: flex;
+  justify-content: center;
+}
+/*设置轮播焦点的位置*/
+.focus-container{
+  bottom:2%;
+}
+/*设置当前图片焦点的颜色*/
+.focus-item{
+  background:#51B1D9;
+}
+/*设置动画，请根据实际需要修改秒数*/
+/*.slider-item,.focus-item{*/
+  /*animation-duration: 20s;*/
+/*}*/
+/*.slider-item1,.focus-item1{*/
+  /*animation-delay: -1s;*/
+/*}*/
+/*.slider-item2,.focus-item2{*/
+  /*animation-delay: 3s;*/
+/*}*/
+/*.slider-item3,.focus-item3{*/
+  /*animation-delay: 7s;*/
+/*}*/
+/*.slider-item4,.focus-item4{*/
+  /*animation-delay: 11s;*/
+/*}*/
+/*.slider-item5,.focus-item5{*/
+  /*animation-delay: 15s;*/
+/*}*/
+@keyframes fade{
+
+  0%{
+    opacity:0;
+    z-index:2;
+  }
+  6.25%{
+    opacity:1;
+    z-index: 1;
+  }
+  25%{
+    opacity:1;
+    z-index:1;
+  }
+  31.25%{
+    opacity:0;
+    z-index:0;
+  }
+  100%{
+    opacity:0;
+    z-index:0;
+  }
+
+}
+/*设置图片的高度，请根据具体需要修改百分比，响应式及时修改此值*/
+.slider,.slider-item{
+  /*padding-bottom:40%;*/
+  height: 14rem;
+}
+
+
+.c-anti-fake-code-wrap {
+    width: 100%;
+    height: 4rem;
+    margin: 2rem auto 0 auto;
+    max-width: 70rem;
+}
+
+.c-anti-fake-title{
+  font-weight: bolder;
+  color: #888;
+  font-size: .75rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.c-anti-fake-code {
+  width: calc(100% - 4rem);
+  height: 2rem;
+  margin: .5rem auto 0 auto;
+
+}
+
+.c-anti-fake-code-input {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ECECEC;
+  border-radius: .25rem;
+  outline: none;
+  color: #666;
+  font-size: .75rem;
+  text-indent: 1rem;
+}
+
+.c-code-desc-wrap {
+  width: 80%;
+  /* height: 5rem; */
+  height: auto;
+  margin: .1rem auto 0;
+  font-size: 1rem;
+  color: red;
+  white-space: normal;
+  word-break: break-all;
+  border-bottom: 1px #333 dashed;
+  padding-bottom: .5rem;
+    max-width: 70rem;
+}
+
+.c-code-from-to {
+  line-height: 1.5rem;
+  font-size: .94rem;
+  width: 80%;
+  height: auto;
+  margin: .5rem auto 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px #333 dashed;
+  color: #666;
+    max-width: 70rem;
+}
+
+.c-div-item {
+  height: .94rem;
+  line-height: .94rem;
+  width: 80%;
+  margin: .5rem auto 0;
+  font-size: .74rem;
+  color: #666;
+    max-width: 70rem;
+}
+
+.c-btn-wrap {
+  height: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  line-height: 2rem;
+}
+
+
+.c-bottom-wrap {
+  width: 100%;
+  height: .8rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: .75rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.imgShow {
+    height: 14rem;
+    width: 14rem;
+    z-index: 99;
+    box-shadow: 0rem 0.06rem 0.43rem 0.01rem
+    rgba(0, 0, 0, 0.07);
+    border-radius: 0.63rem;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: calc(calc(100% - 14rem) / 2);
+    display: none;
+}
+
+.img-content {
+    height: 10rem;
+    width: 10rem;
+    margin: 0 auto;
+    clear: both;
+    display: flex;
+}
+
