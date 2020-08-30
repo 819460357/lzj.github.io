@@ -190,10 +190,12 @@
     <a id = 'micNetwork' style="text-decoration:none; display: inline-block; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; font-size: .84rem" href="{{codeInfo['official_website']}}" >公司微官网<span class="iconfont icon-bofang"></span></a>
     <script>
         if(data.official_website && data.official_website.trim() != '') {
-            data.official_website = data.official_website.trim();
-            var regExp = new RegExp('http://');
-            var regExtResult = regExp.test(data.official_website);
-            if(!regExtResult) data.official_website = 'http://' + data.official_website;
+            if(data.official_website.indexOf('http') < 0) {
+                data.official_website = data.official_website.trim();
+                var regExp = new RegExp('http://');
+                var regExtResult = regExp.test(data.official_website);
+                if(!regExtResult) data.official_website = 'http://' + data.official_website;
+            }
         }
         var micNetwork = document.getElementById('micNetwork');
         micNetwork.href = data.official_website ? data.official_website : this.location.href;
@@ -203,8 +205,8 @@
 </div>
 
 
-<div class="c-bottom-wrap" *ngIf="codeInfo['support_tag']">© Copyright 2017 - 2020. 贝思盈防伪系统
-    <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao" style="color: rgb(255, 255, 255);">闽ICP备18015738号-1</a>
+<div class="c-bottom-wrap" *ngIf="codeInfo['support_tag']">© Copyright 2017 - 2020. 贝思盈防伪系统<br/>
+    <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao" style = "color: #999">闽ICP备18015738号-1</a>
 </div>
 
 <div id = 'imgShow' class="imgShow">
