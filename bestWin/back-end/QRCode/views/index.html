@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>查询结果_{{data.brand_name}}</title>
+    <script>
+        var data = '{{{data}}}'
+        console.log(data);
+        data = JSON.parse(data);
+        document.title = '防伪查询_' + data.brand_name
+    </script>
+    <title>防伪查询_{{data.brand_name}}</title>
     <link rel="stylesheet" href="http://scy.api.bestwin.vip/component/carousel.css">
     <script src="http://scy.api.bestwin.vip/component/carousel.js"></script>
     <style>
+    	html {
+    		font-family: 'Microsoft YaHei';
+    	}
+    	html, body {
+    		font-size: 16px;
+    	}
         #carousel {
             width: 100%;
             height: 14rem;
@@ -23,19 +35,23 @@
             height: 100%;
             width: 100%;
         }
+        .c-code-desc-wrap {
+            background: #fbfbfb;
+            padding: 0.3rem;
+            border-bottom: 0 !import
+        }
+        .c-anti-fake-code-info {
+        	/*background-image: url("http://scy.api.bestwin.vip/imgs/map.png");*/
+
+        }
     </style>
 </head>
 <link rel="stylesheet" href="http://scy.api.bestwin.vip/stylesheets/style.css">
 
 <body>
-<script>
-    var data = '{{{data}}}'
-    console.log(data);
-    data = JSON.parse(data);
-</script>
-<div class="c-title"><span style="font-weight: bold">二维码真伪识别与应用系统</span></div>
+<div class="c-title" style = "display: none;"><span style="font-weight: bold">二维码真伪识别与应用系统</span></div>
 
-<div id = 'carousel'></div>
+<div id = 'carousel' style = "background: #fff"></div>
 <script>
     var carousel = document.getElementById('carousel');
     var imgsUrl = [];
@@ -50,13 +66,14 @@
     });
 </script>
 
-<div class="c-anti-fake-code-wrap">
-    <div class="c-anti-fake-title">
-        <img src = 'http://scy.api.bestwin.vip/imgs/warn.png' style="border-radius: 100%; height: 1.3125rem; width: 1.3125rem; margin-right: .5rem"/>
+<div class = 'c-anti-fake-code-info'>
+	<div class="c-anti-fake-code-wrap">
+    <div class="c-anti-fake-title" style = "font-size: 15px">
+        <!-- <img src = 'http://scy.api.bestwin.vip/imgs/warn.png' style="border-radius: 100%; height: 1.3125rem; width: 1.3125rem; margin-right: .5rem"/> -->
         您查询的防伪码为：
     </div>
     <div class="c-anti-fake-code">
-        <input id = 'antifakeCode' class="c-anti-fake-code-input"  />
+        <input id = 'antifakeCode' class="c-anti-fake-code-input"  style = "text-align: center; border:none; background: #d8f6ee; font-size: .9rem; height: 2.5rem; color: #024911" disabled="true" />
         <script>
             var antifakeCode = document.getElementById('antifakeCode');
             if(data.antifakeCode) {
@@ -66,7 +83,7 @@
     </div>
 </div>
 
-<div class="c-code-desc-wrap">
+<div class="c-code-desc-wrap" style = "margin-top: .8rem">
     <span id = 'firstTag'  style="display: none;color: #6ea017;font-size: 1.6rem;" >正确有效</span>
     <script>
         var firstTag = document.getElementById('firstTag');
@@ -101,15 +118,19 @@
                 return format;
             };
            infoText = '您所查询的防伪码已被查询过，首次查询时间：' + new Date(data['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss') + ',查询方式:网络,请确认!此次是第' + (data['read'] + 1) + '次查询！';
+           codeInfo.style.color = 'red';
         }
         if(data.read == 0 && data.code_exist) {
             infoText = '您所查询的是' + (data.brand_name ? '"' + data.brand_name + '"' : '') + '品牌卫浴产品，是该品牌正品的标识，感谢您的查询！';
+            codeInfo.style.color = '#6ea017';
         }
         if(!data.code_exist) {
             infoText = '您所查询的防伪码不存在！';
+            codeInfo.style.color = 'red';
         }
         codeInfo.innerText = infoText;
     </script>
+</div>
 </div>
 
 <div id = 'productsInfo' class="c-code-from-to" style="display: none">
@@ -119,32 +140,38 @@
             productsInfo.style.display = 'block';
         }
     </script>
-    <span id = "productDesc" *ngIf="data['desc']">产品信息：{{data['desc']}}<br/><br/></span>
+    <span style = "width: 100%; margin-left: 2px; color: #3f83fb; font-size: 15px; background: #fafafa; height: 1.8rem; line-height: 1.8rem; display: inline-block; border-left: 3px solid #3f83fb; padding-left: .5rem; margin-bottom: .38rem;">产品信息</span>
+    <span id = "productDesc" *ngIf="data['desc']" style = "padding-left: .8rem; margin-top: .5rem">产品信息：{{data['desc']}}<br/><br/></span>
     <script>
         var productDesc = document.getElementById('productDesc');
         if(data['desc']) {
             productDesc.style.display = 'block';
+            productDesc.innerText = '产品信息：' + data['desc'];
         }
     </script>
-    <span id = 'productFrom' *ngIf="data['from']">产地：{{data.from}}<br/></span>
+    <span id = 'productFrom' *ngIf="data['from']" style = "padding-left: .8rem">产地：{{data.from}}<br/></span>
     <script>
         var productFrom = document.getElementById('productFrom');
         if(data['from']) {
             productFrom.style.display = 'block';
+            productFrom.innerText = '产地：' + data['from'];
         }
     </script>
-    <span id = 'productTo' *ngIf="data['to']">销往：{{data['to']}}</span>
+    <span id = 'productTo' *ngIf="data['to']" style = "padding-left: .8rem">销往：{{data['to']}}</span>
     <script>
         var productTo = document.getElementById('productTo');
         if(data['to']) {
             productTo.style.display = 'block';
+            productTo.innerText = '销往：' + data['to'];
         }
     </script>
 </div>
-<div id="storeName" class="c-div-item">
+<div style = "width: 90%; margin: 1rem auto 0 auto; overflow-x: hidden; border: 2px solid #fefbfb; border-radius: .4rem; padding-bottom:  1rem; height: auto">
+	<span style = "width: 100%; margin-left: 2px; color: #3f83fb; font-size: 15px; background: #fafafa; height: 1.8rem; line-height: 1.8rem; display: inline-block; border-left: 3px solid #3f83fb; padding-left: .5rem; margin-bottom: .38rem;">公司信息</span>
+	<div id="storeName" class="c-div-item">
     <script>
         var storeName = document.getElementById('storeName');
-        storeName.innerText = data.name;
+        storeName.innerText = '公司名称：' + data.name;
     </script>
 </div>
 <div id = 'storeAddr' class="c-div-item" style="display: none">
@@ -175,39 +202,37 @@
         }
     </script>
 </div>
-<div id = 'wechatNo' class="c-div-item" style="display: none">
-    <script>
-        var wechatNo = document.getElementById('wechatNo');
-        if(data.wechat) {
-            wechatNo.innerText = '微信号：' + data.wechat;
-            wechatNo.style.display = 'block';
-        }
-    </script>
 </div>
-<div style="width: 80%; margin: .5rem auto 0; height: 1px;  border-top: 1px #333 dashed; max-width: 70rem;"></div>
 
-<div class="c-btn-wrap" style="text-align: center; margin-top: 2rem; font-weight: bold">
-    <a id = 'micNetwork' style="text-decoration:none; display: inline-block; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; font-size: .84rem" href="{{codeInfo['official_website']}}" >公司微官网<span class="iconfont icon-bofang"></span></a>
-    <script>
+<!--<div id = 'wechatNo' class="c-div-item" style="display: none">-->
+<!--    <script>-->
+<!--        var wechatNo = document.getElementById('wechatNo');-->
+<!--        if(data.wechat) {-->
+<!--            wechatNo.innerText = '微信号：' + data.wechat;-->
+<!--            wechatNo.style.display = 'block';-->
+<!--        }-->
+<!--    </script>-->
+<!--</div>-->
+<!-- <div style="width: 80%; margin: .5rem auto 0; height: 1px;  border-top: 1px #333 dashed; max-width: 70rem;"></div> -->
+
+<!-- <div class="c-btn-wrap" style="text-align: center; margin-top: 2rem; font-weight: bold"> -->
+<!--    <a id = 'micNetwork' style="text-decoration:none; display: inline-block; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; font-size: .84rem" href="{{codeInfo['official_website']}}" >公司微官网<span class="iconfont icon-bofang"></span></a>-->
+ <!--    <script>
         if(data.official_website && data.official_website.trim() != '') {
-            if(data.official_website.indexOf('http') < 0) {
-                data.official_website = data.official_website.trim();
-                var regExp = new RegExp('http://');
-                var regExtResult = regExp.test(data.official_website);
-                if(!regExtResult) data.official_website = 'http://' + data.official_website;
-            }
+            data.official_website = data.official_website.trim();
+            var regExp = new RegExp('http://');
+            var regExtResult = regExp.test(data.official_website);
+            if(!regExtResult) data.official_website = 'http://' + data.official_website;
         }
         var micNetwork = document.getElementById('micNetwork');
         micNetwork.href = data.official_website ? data.official_website : this.location.href;
-    </script>
-    <span style="display: inline-block; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; font-size: .84rem" onclick ="viewQrcodeBtn()">关注微信<span class="iconfont icon-bofang"></span></span>
-    <span id = 'wcImg' style="display: none; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; margin-left: .5rem; font-size: .84rem" onclick = "viewWcQrcodeBtn()">关注公众号<span class="iconfont icon-bofang"></span></span>
-</div>
+    </script> -->
+<!--    <span style="display: inline-block; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; font-size: .84rem" onclick ="viewQrcodeBtn()">关注微信<span class="iconfont icon-bofang"></span></span>-->
+<!--    <span id = 'wcImg' style="display: none; height: 2rem; width: 7rem; background: #6ea017; color: white; cursor: pointer; border-radius: .25rem; margin-left: .5rem; font-size: .84rem" onclick = "viewWcQrcodeBtn()">关注公众号<span class="iconfont icon-bofang"></span></span>-->
+<!-- </div> -->
 
 
-<div class="c-bottom-wrap" *ngIf="codeInfo['support_tag']">© Copyright 2017 - 2020. 贝思盈防伪系统<br/>
-    <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao" style = "color: #999">闽ICP备18015738号-1</a>
-</div>
+<div class="c-bottom-wrap" *ngIf="codeInfo['support_tag']">© Copyright 2017 - 2019. 贝思盈防伪系统</div>
 
 <div id = 'imgShow' class="imgShow">
     <div style=" border-radius: 0.63rem; height: 2rem; width: 100%; float: right; text-align: right; margin-right: .25rem; line-height: 2rem; background: white; width: calc(100% - .25rem); font-size: 1.5rem;"><span onclick="imgHide()">×</span></div>
@@ -226,6 +251,8 @@
           imgShow.style.display = 'block';
           var wcOrwxImg = document.getElementById('wcOrwxImg');
           wcOrwxImg.src = data['qr_code'];
+      } else if(data['wechat_url']) {
+          window.location.href = data['wechat_url'].indexOf('http') == 0 ? data['wechat_url'] : 'http://' + data['wechat_url'];
       } else {
           window.location.reload();
       }
@@ -246,6 +273,7 @@
         var imgShow = document.getElementById('imgShow');
         imgShow.style.display = 'none';
     }
+  
 </script>
 </body>
 </html>
