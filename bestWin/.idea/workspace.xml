@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c02eb975-0515-4e76-87ec-893648ca57a4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/back-end/QRCode/views/template1.jade" afterDir="false" />
+    <list default="true" id="c02eb975-0515-4e76-87ec-893648ca57a4" name="Default" comment="新出模版二">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/controllers/merch.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/controllers/merch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/controllers/qrcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/controllers/qrcode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/public/component/carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/public/component/carousel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/public/component/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/public/component/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/public/javascripts/c-swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/public/javascripts/c-swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/QRCode/views/template1.html" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/QRCode/views/template1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/QRcode/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/QRcode/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/QRcode/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/QRcode/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/QRcode/src/app/business/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/QRcode/src/app/business/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/QRcode/src/app/business/main/merch-mgt/merch-add/merch-add.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +11,9 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -99,8 +86,16 @@
       <workItem from="1631872373586" duration="1136000" />
       <workItem from="1631881326713" duration="1263000" />
       <workItem from="1631883249261" duration="1178000" />
-      <workItem from="1631885062281" duration="1260000" />
+      <workItem from="1631885062281" duration="1543000" />
     </task>
+    <task id="LOCAL-00001" summary="新出模版二">
+      <created>1631886689368</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631886689368</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,12 +119,24 @@
       <collection />
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新出模版二" />
+    <option name="LAST_COMMIT_MESSAGE" value="新出模版二" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="380" y="118" key="CommitChangelistDialog2" timestamp="1631886688936">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="380" y="118" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1631886688936" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog" timestamp="1631876414778">
       <screen x="0" y="25" width="1680" height="993" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1631873559540" />
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/0.25.1680.993@0.25.1680.993" timestamp="1631876414778" />
+    <state x="440" y="263" key="Vcs.Push.Dialog.v2" timestamp="1631886712336">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="263" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1631886712336" />
     <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1631869984874">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
