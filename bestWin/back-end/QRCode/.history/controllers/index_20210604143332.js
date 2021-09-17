@@ -72,7 +72,7 @@ function getCodeInfo(data, headers) {
                     "        , qr_code_range.`to`" +
                     "        , qr_code_range.`brand_name`" +
                     "        , qr_code_range.`desc`" +
-                    "        , merch.`wechat_uin`" +
+                    "        , qr_code_range.`desc`" +
                     "   FROM merch" +
                     "   LEFT JOIN qr_code_range ON merch.id = qr_code_range.merch_id" +
                     "     AND qr_code_range.`start` <= " + data ['code'] +

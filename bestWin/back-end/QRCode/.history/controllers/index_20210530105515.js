@@ -16,7 +16,7 @@ module.exports = function (router) {
     });
 }
 
-function getCodeInfo(data, headers) {
+function getCodeInfo(data, headers) {m f f
     var mysqlConnect = null;
     return new Promise(function (resolve, reject) {
         // if(!data['merch_id'] || parseInt(data['merch_id']) < 0) {
@@ -72,7 +72,6 @@ function getCodeInfo(data, headers) {
                     "        , qr_code_range.`to`" +
                     "        , qr_code_range.`brand_name`" +
                     "        , qr_code_range.`desc`" +
-                    "        , merch.`wechat_uin`" +
                     "   FROM merch" +
                     "   LEFT JOIN qr_code_range ON merch.id = qr_code_range.merch_id" +
                     "     AND qr_code_range.`start` <= " + data ['code'] +

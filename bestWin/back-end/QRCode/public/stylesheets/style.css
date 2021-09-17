@@ -168,11 +168,11 @@ ul,li{
 }
 
 .c-code-desc-wrap {
-  width: 80%;
+  width: 87%;
   /* height: 5rem; */
   height: auto;
   margin: .1rem auto 0;
-  font-size: 1rem;
+  font-size: .8rem;
   color: red;
   white-space: normal;
   word-break: break-all;
@@ -182,25 +182,28 @@ ul,li{
 }
 
 .c-code-from-to {
-  line-height: 1.5rem;
-  font-size: .94rem;
-  width: 80%;
+  line-height: 1rem;
+  font-size: .8rem;
+  width: 90%;
   height: auto;
   margin: .5rem auto 0;
   padding-bottom: 1rem;
   border-bottom: 1px #333 dashed;
   color: #666;
-    max-width: 70rem;
+  max-width: 70rem;
 }
 
 .c-div-item {
-  height: .94rem;
-  line-height: .94rem;
-  width: 80%;
+  min-height: .94rem;
+  height: auto;
+  line-height: 1rem;
+  width: calc(100% - 20px);
+
   margin: .5rem auto 0;
-  font-size: .74rem;
+  font-size: .8rem;
   color: #666;
     max-width: 70rem;
+    padding: 0 10px 0 10px;
 }
 
 .c-btn-wrap {
