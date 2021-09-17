@@ -25,18 +25,53 @@ Carousel.prototype.init = function() {
 
     // 添加显示图片区域
     // 无缝轮播，收尾多加一张
-    let temStr = `<div class="broadcastMe-item">
+    let temStr = '';
+    // ToDo
+    if(this.checkVideo(this.imgsUrl[this.imgsUrl.length-1].imgSrc)) {
+        temStr = `<div class="broadcastMe-item">
+          <a href="${this.imgsUrl[this.imgsUrl.length-1].linkHref==null?"#":this.imgsUrl[this.imgsUrl.length-1].linkHref}">
+          <video controls ><source src = "${this.imgsUrl[this.imgsUrl.length-1].imgSrc}"></video>
+          </a>
+        </div>`
+    } else {
+        temStr = `<div class="broadcastMe-item">
           <a href="${this.imgsUrl[this.imgsUrl.length-1].linkHref==null?"#":this.imgsUrl[this.imgsUrl.length-1].linkHref}"><img src="${this.imgsUrl[this.imgsUrl.length-1].imgSrc}" alt="轮播图图片-pawn"></a>
         </div>`
+    }
+    // let temStr = `<div class="broadcastMe-item">
+    //       <a href="${this.imgsUrl[this.imgsUrl.length-1].linkHref==null?"#":this.imgsUrl[this.imgsUrl.length-1].linkHref}"><img src="${this.imgsUrl[this.imgsUrl.length-1].imgSrc}" alt="轮播图图片-pawn"></a>
+    //     </div>`
 
     this.imgsUrl.map( item => {
-        temStr += `<div class="broadcastMe-item">
+        if(this.checkVideo(item.imgSrc)) {
+            temStr += `<div class="broadcastMe-item">
+                  <a href="${item.linkHref==null?"#":item.linkHref}">
+                  <video controls><source src = "${item.imgSrc}"></video>
+                  </a>
+              </div>`
+        } else {
+            temStr += `<div class="broadcastMe-item">
                   <a href="${item.linkHref==null?"#":item.linkHref}"><img src="${item.imgSrc}" alt="轮播图图片-pawn"></a>
               </div>`
+        }
+        // temStr += `<div class="broadcastMe-item">
+        //           <a href="${item.linkHref==null?"#":item.linkHref}"><img src="${item.imgSrc}" alt="轮播图图片-pawn"></a>
+        //       </div>`
     })
-    temStr += `<div class="broadcastMe-item">
+    if(this.checkVideo(this.imgsUrl[0].imgSrc)) {
+        temStr += `<div class="broadcastMe-item">
+              <a href="${this.imgsUrl[0].linkHref==null?"#":this.imgsUrl[0].linkHref}">
+              <video controls><source src = "${this.imgsUrl[0].imgSrc}"></video>
+              </a>
+            </div>`
+    } else {
+        temStr += `<div class="broadcastMe-item">
               <a href="${this.imgsUrl[0].linkHref==null?"#":this.imgsUrl[0].linkHref}"><img src="${this.imgsUrl[0].imgSrc}" alt="轮播图图片-pawn"></a>
             </div>`
+    }
+    // temStr += `<div class="broadcastMe-item">
+    //           <a href="${this.imgsUrl[0].linkHref==null?"#":this.imgsUrl[0].linkHref}"><img src="${this.imgsUrl[0].imgSrc}" alt="轮播图图片-pawn"></a>
+    //         </div>`
     html += temStr + "</div>";
 
     temStr = `<div class="broadcastMe-tool">
@@ -190,6 +225,16 @@ Carousel.prototype.spotClick = function (obj) {
             break;
         }
     }
+}
+
+Carousel.prototype.checkVideo = (url) => {
+    if (/\w(\.gif|\.jpeg|\.png|\.jpg|\.bmp)/.test(url)) {
+        return false;
+    }
+    if (/\w*\.[mp4|rmvb|flv|mpeg|avi|...]/.test(url)) {
+        return true;
+    }
+    return false;
 }
 
 // 如果是在vue的环境下使用，取消下面的注释

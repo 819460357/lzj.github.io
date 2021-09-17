@@ -28,6 +28,7 @@ module.exports = function (router) {
         getCodeInfo(req.query, req.headers)
             .then(function (result) {
                 result.data = JSON.stringify(result.data);
+                console.log(33333333333)
                 return res.render('index', result);
             })
             .catch(function (err) {

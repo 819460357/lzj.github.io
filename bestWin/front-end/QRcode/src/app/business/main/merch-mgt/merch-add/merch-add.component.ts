@@ -20,6 +20,7 @@ export class MerchAddComponent implements OnInit {
   public wcQrcode;
   public wcQrcodeUrl;
   public fixed_line;
+  public template = 1;
   public imgs: Array<OnInit> = new Array();
   public support_tag = 1;
   public selectList: Array<Object> = [
@@ -115,6 +116,7 @@ export class MerchAddComponent implements OnInit {
     body['support_tag'] = this.support_tag;
     body['imgs'] = new Array();
     body['official_website'] = this.official_website;
+    body['template'] = this.template;
     for (let i = 0; i < this.imgs.length; i ++ ) {
       body['imgs'].push(this.imgs[i]['url']);
     }
@@ -164,6 +166,7 @@ export class MerchAddComponent implements OnInit {
         this.qrCodeUrl =  res['data']['qr_code_url'];
         this.wcQrcodeUrl =  res['data']['wc_img_url'];
         this.imgs = res['data']['imgs'];
+        this.template = res['data']['template'] || 1;
       })
       .catch(err => {
 
@@ -206,6 +209,11 @@ export class MerchAddComponent implements OnInit {
     this.wcQrcode = '';
     this.wcQrcodeUrl = '';
     this.wcQrCodeInput = '';
+  }
+
+  isImage(str) {
+    var reg = /\.(png|jpg|gif|jpeg|webp)$/;
+    return reg.test(str.changingThisBreaksApplicationSecurity);
   }
 
 

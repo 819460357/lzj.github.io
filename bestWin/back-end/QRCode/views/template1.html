@@ -8,11 +8,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta content="telephone=no" name="format-detection">
-  <title></title>
   <script>
     var data = '{{{data}}}'
     data = JSON.parse(data);
-    document.title = '防伪查询_' + data.brand_name
+    document.title = '防伪查询_' + data.name
   </script>
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="swiper.min.css">
@@ -122,13 +121,38 @@ a:hover {
     </div>
   </div>-->
   <div style="max-width:640px; margin:auto">
-  <img src="upfile/2020106142839449.jpg" style=" width:100%; margin:auto; text-align:center">
+  <img id = "mainUrl" src="" style=" width:100%; margin:auto; text-align:center; display: none">
+    <script>
+      var img = ''
+      for(let i = 0; i < data['imgs'].length; i++) {
+        if(isImage(data['imgs'][i].url)) {
+          img = data['imgs'][i].url
+          break;
+        }
+      }
+      var mainUrl = document.getElementById('mainUrl');
+      mainUrl.src = img
+      mainUrl.style.display = 'block';
+      function isImage(str) {
+        var reg = /\.(png|jpg|gif|jpeg|webp)$/;
+        return reg.test(str);
+      }
+
+    </script>
   </div>
   <div class="mt">
-  <div style="margin:auto; color:#009694; font-size:18px; text-align:center; padding:10px;"><img src="01.png" width="20" style="margin-top:3px; padding-right:10px">您查询的防伪码：101053327736</div>
-  <div style="margin:auto; font-size:14px; padding:10px; padding-left:15px; padding-right:15px;">
-  <font style='color: #ff0000' id="codeInfo">你所查询的防伪码已被查询过，首次查询时间：2021-9-3 15:48:36&nbsp;查询方式:扫码,请确认!&nbsp;此次是第&nbsp;<b style='font-size:16px'>14</b>&nbsp;次查询！</font>
+  <div style="margin:auto; color:#009694; font-size:12px; text-align:center; padding:10px;" ><img src="01.png" width="20" style="margin-top:3px; padding-right:10px"> 您查询的防伪码为：<span id = 'antifakeCode'></span></div>
     <script>
+      var antifakeCode = document.getElementById('antifakeCode');
+      if(data.antifakeCode) {
+        antifakeCode.innerText = data.antifakeCode;
+      }
+    </script>
+
+  <div style="margin:auto; font-size:14px; padding:10px; padding-left:15px; padding-right:15px;">
+  <font style='color: #ff0000' id="codeInfo"></font>
+    <script>
+      console.log(data)
       var codeInfo = document.getElementById('codeInfo');
       var infoText = '';
       if(data.read > 0 && data.code_exist) {
@@ -174,14 +198,29 @@ a:hover {
     <script>
       var storeAddr = document.getElementById('storeAddr');
       if(data.addr) {
-        storeAddr.innerHTML = data.brand_name + '<br>' + '地址：' + data.addr;
+        storeAddr.innerHTML = data.name + '<br>' + '地址：' + data.addr;
       }
 
     </script>
 
-    <video id="video" poster="upfile/202092892916708.mp4" autoplay="autoplay" src="upfile/202092892916708.mp4" style="height:200px; width:100%" controls="" x5-playsinline="" playsinline="" webkit-playsinline="" preload="auto"></video>
+    <video id="video" poster="upfile/202092892916708.mp4" autoplay="autoplay" src="upfile/202092892916708.mp4" style="height:200px; width:100%; display: none" controls="" x5-playsinline="" playsinline="" webkit-playsinline="" preload="auto"></video>
     <br>点击上方播放宣传视频
-
+    <script>
+      var videoUrl = ''
+      for(let i = 0; i < data['imgs'].length; i++) {
+        if(!isImage(data['imgs'][i].url)) {
+          videoUrl = data['imgs'][i].url
+          break;
+        }
+      }
+      var video = document.getElementById('video');
+      video.src = videoUrl
+      video.style.display = 'block';
+      function isImage(str) {
+        var reg = /\.(png|jpg|gif|jpeg|webp)$/;
+        return reg.test(str);
+      }
+  </script>
   </div>
 
   <div class="handdle">
@@ -192,23 +231,42 @@ a:hover {
   <h2>精品展示</h2>
   <H3>OUR PRODUCTS</H3>
 
-  <li><img src="pro/17/1.jpg"></li>
+    <div id = "imgs"></div>
 
-  <li><img src="pro/17/2.jpg"></li>
+    <script>
+      var imgs = document.getElementById('imgs');
+      var innerHtml = ''
+      for(let i = 0; i < data['imgs'].length; i++) {
+        if(isImage(data['imgs'][i].url)) {
+          innerHtml += '<li><img src="' + data['imgs'][i].url + '"></li>'
+          break;
+        }
+      }
+      imgs.innerHTML = innerHtml
+      function isImage(str) {
+        var reg = /\.(png|jpg|gif|jpeg|webp)$/;
+        return reg.test(str);
+      }
 
-  <li><img src="pro/17/3.jpg"></li>
+    </script>
 
-  <li><img src="pro/17/4.jpg"></li>
+<!--  <li><img src="pro/17/1.jpg"></li>-->
 
-  <li><img src="pro/17/5.jpg"></li>
+<!--  <li><img src="pro/17/2.jpg"></li>-->
 
-  <li><img src="pro/17/6.jpg"></li>
+<!--  <li><img src="pro/17/3.jpg"></li>-->
 
-  <li><img src="pro/17/7.jpg"></li>
+<!--  <li><img src="pro/17/4.jpg"></li>-->
+
+<!--  <li><img src="pro/17/5.jpg"></li>-->
+
+<!--  <li><img src="pro/17/6.jpg"></li>-->
+
+<!--  <li><img src="pro/17/7.jpg"></li>-->
 
   </div>
 
-  <div class="footer">
+  <div class="footer" id = "footer">
     Copyright 2017 - 2020. 贝思盈防伪系统
     <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao" style = "color: #999">闽ICP备18015738号-1</a>
   </div>

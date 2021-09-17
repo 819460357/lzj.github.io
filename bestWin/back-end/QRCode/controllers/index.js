@@ -6,10 +6,16 @@ module.exports = function (router) {
     router.get('/', function(req, res) {
         getCodeInfo(req.query, req.headers)
             .then(function (result) {
-                result.data = JSON.stringify(result.data);
-                return res.render('index', result);
+                if(result.data.template == 2) {
+                    result.data = JSON.stringify(result.data);
+                    return res.render('template1', result);
+                } else {
+                    result.data = JSON.stringify(result.data);
+                    return res.render('index', result);
+                }
             })
             .catch(function (err) {
+                console.log('err:', err)
                 // res.json(err);
                 return res.render('index', err);
             })
@@ -54,7 +60,7 @@ function getCodeInfo(data, headers) {
             return new Promise(function (resolve, reject) {
                 var selectSql =
                     "   SELECT merch.`name`" +
-                    // "        , merch.title" +
+                    "        , merch.template" +
                     "        , merch.addr" +
                     "        , merch.support_tag" +
                     "        , merch.fixed_line" +

@@ -113,6 +113,7 @@ function addMerch(data) {
                     "   INSERT INTO merch" +
                     "   SET append_user_id =  "+ data['user_id'] +
                     "     , `name` = '" + data['name'] + "'" +
+                    "     , `template` = '" + data['template'] + "'" +
                     "     , `support_tag` = " + data['support_tag'] +
                     "     , effect = 1" +
                     "     , active = 1";
@@ -304,6 +305,7 @@ function getMerchInfo(data) {
                 var selectSql =
                     "   SELECT merch.`name`" +
                     "        , merch.id" +
+                    "        , merch.template" +
                     "        , merch.fixed_line" +
                     "        , merch.support_tag" +
                     "        , merch.wechat" +
@@ -435,7 +437,7 @@ function editMerch(data) {
                     "   SET modify_user_id =  "+ data['user_id'] +
                     "     , `name` = '" + data['name'] + "'" +
                     "     , `support_tag` = " + data['support_tag'] +
-                    // "     , `title` = '" + data['title'] + "'" +
+                    "     , `template` = '" + data['template'] + "'" +
                     "     , `addr` = '" + data['addr'] + "'" +
                     "     , `tel` = '" + data['tel'] + "'" +
                     "     , `wechat` = '" + (data['wechat'] ? data['wechat'] : '') + "'" +
