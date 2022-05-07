@@ -224,7 +224,11 @@ a:hover {
   </div>
 
   <div class="handdle">
-	<a class="b02" href="#">公司官网</a><a href="http://cnxitong.com/fw/wy/upfile/2020930151413277.jpg">关注微信</a>
+	<a class="b02" href="#">公司官网</a><a href="#" id="wechat">关注微信</a>
+    <script>
+      var wechat = document.getElementById('wechat');
+      wechat.href = data['wc_img']
+    </script>
   </div>
 
   <div class="ipro">
@@ -239,7 +243,6 @@ a:hover {
       for(let i = 0; i < data['imgs'].length; i++) {
         if(isImage(data['imgs'][i].url)) {
           innerHtml += '<li><img src="' + data['imgs'][i].url + '"></li>'
-          break;
         }
       }
       imgs.innerHTML = innerHtml
