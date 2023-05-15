@@ -35,6 +35,9 @@ function getCodeInfo(data, headers) {
         if(data['id'] == 91 && (data['code'] >= 110002 && data['code'] <= 330002 )) {
             data['id'] = 90;
         }
+        if(data['id'] == 218 && (data['code'] >= 220001 && data['code'] <= 440001 )) {
+            data['id'] = 65;
+        }
         // if(data['id'] == 90 && (data['code'] >= 330002 && data['code'] <= 550002 )) {
         //     data['id'] = 91;
         // }
