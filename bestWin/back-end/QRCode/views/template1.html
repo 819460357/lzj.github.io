@@ -1,13 +1,13 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta content="telephone=no" name="format-detection">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta content="telephone=no" name="format-detection">
   <script>
     var data = '{{{data}}}'
     data = JSON.parse(data);
@@ -18,34 +18,41 @@
 
   <!-- Demo styles -->
   <style>
-  a {
-	color:#333;
-	text-decoration:none;
-	outline:none;
-}
-a:hover {
-	color:#db0010;
-	text-decoration:none;
-}
-    html, body {
+    a {
+      color: #333;
+      text-decoration: none;
+      outline: none;
+    }
+
+    a:hover {
+      color: #db0010;
+      text-decoration: none;
+    }
+
+    html,
+    body {
       position: relative;
       height: 100%;
     }
+
     body {
       background: #fff;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
-      color:#000;
+      color: #000;
       margin: 0;
       padding: 0;
 
     }
-	a{}
+
+    a {}
+
     .swiper-container {
-	  width:100%;
+      width: 100%;
       max-width: 640px;
       height: auto;
     }
+
     .swiper-slide {
       text-align: center;
       font-size: 18px;
@@ -65,53 +72,101 @@ a:hover {
       -webkit-align-items: center;
       align-items: center;
     }
-	.mt{ margin-top:12px; margin-left:auto; margin-right:auto; max-width:640px; background:#f8f8f8; text-align:center;}
 
-	.handdle{
-	text-align:center;
-	padding:10px 0;
-	margin:10px auto;
-}
- .handdle a{
-	background:url(b01.png) no-repeat;
-	display:inline-block;
-	width:140px;
-	height:34px;
-	line-height:34px;
-	color:#fff;
-	font-weight:bolder;
-	margin-left:15px;
-	margin-right:10px;
-}
+    .mt {
+      margin-top: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 640px;
+      background: #f8f8f8;
+      text-align: center;
+    }
 
- .handdle .b02{
-	background:url(b02.png) no-repeat;
-	display:inline-block;
-	width:140px;
-	height:34px;
-	line-height:34px;
-	color:#fff;
-	font-weight:bolder;
-	margin-left:15px;
-	margin-right:10px;
-}
-.footer{
-	 width:100%; height:30px; line-height:30px; background-color:#fff; color:#999; font-size:12px; text-align:center; clear:both;
-	}
-.ipro{
-	width:100%; text-align:center; max-width:640px; margin:auto; margin-top:30px;
-	}
-.ipro h2{
-	font-size:24px; font-weight:bold; color:#009694; margin:auto; text-align:center;
-	}
-.ipro h3{
-	font-size:18px; font-weight:bold; color:#999; margin:auto; text-align:center; margin-bottom:50px;
-	}
-.ipro li{
-	width:100%; float:left; list-style:none; padding:0; margin:0; text-align:center}
-.ipro img{ width:90%; margin:auto; border:#5db2b1 solid 1px; margin-bottom:25px;border-radius:10px;}
+    .handdle {
+      text-align: center;
+      padding: 10px 0;
+      margin: 10px auto;
+    }
+
+    .handdle a {
+      background: url(b01.png) no-repeat;
+      display: inline-block;
+      width: 140px;
+      height: 34px;
+      line-height: 34px;
+      color: #fff;
+      font-weight: bolder;
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+
+    .handdle .b02 {
+      background: url(b02.png) no-repeat;
+      display: inline-block;
+      width: 140px;
+      height: 34px;
+      line-height: 34px;
+      color: #fff;
+      font-weight: bolder;
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+
+    .footer {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      background-color: #fff;
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+      clear: both;
+    }
+
+    .ipro {
+      width: 100%;
+      text-align: center;
+      max-width: 640px;
+      margin: auto;
+      margin-top: 30px;
+    }
+
+    .ipro h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #009694;
+      margin: auto;
+      text-align: center;
+    }
+
+    .ipro h3 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #999;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .ipro li {
+      width: 100%;
+      float: left;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center
+    }
+
+    .ipro img {
+      width: 90%;
+      margin: auto;
+      border: #5db2b1 solid 1px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Swiper
@@ -121,11 +176,11 @@ a:hover {
     </div>
   </div>-->
   <div style="max-width:640px; margin:auto">
-  <img id = "mainUrl" src="" style=" width:100%; margin:auto; text-align:center; display: none">
+    <img id="mainUrl" src="" style=" width:100%; margin:auto; text-align:center; display: none">
     <script>
       var img = ''
-      for(let i = 0; i < data['imgs'].length; i++) {
-        if(isImage(data['imgs'][i].url)) {
+      for (let i = 0; i < data['imgs'].length; i++) {
+        if (isImage(data['imgs'][i].url)) {
           img = data['imgs'][i].url
           break;
         }
@@ -133,7 +188,7 @@ a:hover {
       var mainUrl = document.getElementById('mainUrl');
       mainUrl.src = img
       mainUrl.style.display = 'block';
-      function isImage(str) {
+      function isImage (str) {
         var reg = /\.(png|jpg|gif|jpeg|webp)$/;
         return reg.test(str);
       }
@@ -141,74 +196,155 @@ a:hover {
     </script>
   </div>
   <div class="mt">
-  <div style="margin:auto; color:#009694; font-size:12px; text-align:center; padding:10px;" ><img src="01.png" width="20" style="margin-top:3px; padding-right:10px"> 您查询的防伪码为：<span id = 'antifakeCode'></span></div>
+    <div style="margin:auto; color:#009694; font-size:12px; text-align:center; padding:10px;"><img src="01.png"
+        width="20" style="margin-top:3px; padding-right:10px"> 您查询的防伪码为：<span id='antifakeCode'></span></div>
     <script>
       var antifakeCode = document.getElementById('antifakeCode');
-      if(data.antifakeCode) {
+      if (data.antifakeCode) {
         antifakeCode.innerText = data.antifakeCode;
       }
     </script>
 
-  <div style="margin:auto; font-size:14px; padding:10px; padding-left:15px; padding-right:15px;">
-  <font style='color: #ff0000' id="codeInfo"></font>
-    <script>
-      console.log(data)
-      var codeInfo = document.getElementById('codeInfo');
-      var infoText = '';
-      if(data.read > 0 && data.code_exist) {
-        Date.prototype['format'] = function(format) {
-          var date = {
-            "M+": this.getMonth() + 1,
-            "d+": this.getDate(),
-            "h+": this.getHours(),
-            "m+": this.getMinutes(),
-            "s+": this.getSeconds(),
-            "q+": Math.floor((this.getMonth() + 3) / 3),
-            "S+": this.getMilliseconds()
-          };
-          if (/(y+)/i.test(format)) {
-            format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
-          }
-          for (var k in date) {
-            if (new RegExp("(" + k + ")").test(format)) {
-              format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
-                      date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+    <div style="margin:auto; font-size:14px; padding:10px; padding-left:15px; padding-right:15px;">
+      <font style='color: #ff0000' id="codeInfo"></font>
+      <script>
+        console.log(data)
+        var codeInfo = document.getElementById('codeInfo');
+        var infoText = '';
+        if (data.read > 0 && data.code_exist) {
+          Date.prototype['format'] = function (format) {
+            var date = {
+              "M+": this.getMonth() + 1,
+              "d+": this.getDate(),
+              "h+": this.getHours(),
+              "m+": this.getMinutes(),
+              "s+": this.getSeconds(),
+              "q+": Math.floor((this.getMonth() + 3) / 3),
+              "S+": this.getMilliseconds()
+            };
+            if (/(y+)/i.test(format)) {
+              format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
             }
+            for (var k in date) {
+              if (new RegExp("(" + k + ")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
+                  date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+              }
+            }
+            return format;
+          };
+          infoText = '您所查询的防伪码已被查询过，首次查询时间：' + new Date(data['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss') + ',查询方式:网络,请确认!此次是第 <b style=\"font-size:16px\">' + (data['read'] + 1) + '</b>次查询！';
+          codeInfo.style.color = 'red';
+        }
+        if (data.read == 0 && data.code_exist) {
+          infoText = '您所查询的是' + (data.brand_name ? '"' + data.brand_name + '"' : '') + '品牌卫浴产品，是该品牌正品的标识，感谢您的查询！';
+          codeInfo.style.color = '#6ea017';
+        }
+        if (!data.code_exist) {
+          infoText = '您所查询的防伪码不存在！';
+          codeInfo.style.color = 'red';
+        }
+        codeInfo.innerHTML = infoText;
+
+        console.log('32323232323')
+        codeInfo.innerText = infoText;
+        textTranslateVideo(infoText)
+
+
+        function textTranslateVideo (text) {
+
+          var utterThis = new SpeechSynthesisUtterance();
+          utterThis.text = text;
+          utterThis.volume = 1; // 声音的音量 范围是0到1
+          utterThis.rate = 0.7; //语速，数值，默认值是1，范围是0.1到10
+          utterThis.pitch = 0; // 音高，数值，范围从0（最小）到2（最大）。默认值为1
+          window.onload = () => {
+            console.log(122)
+            speechSynthesis.speak(utterThis);
           }
-          return format;
-        };
-        infoText = '您所查询的防伪码已被查询过，首次查询时间：' + new Date(data['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss') + ',查询方式:网络,请确认!此次是第 <b style=\"font-size:16px\">'  + (data['read'] + 1) + '</b>次查询！';
-        codeInfo.style.color = 'red';
-      }
-      if(data.read == 0 && data.code_exist) {
-        infoText = '您所查询的是' + (data.brand_name ? '"' + data.brand_name + '"' : '') + '品牌卫浴产品，是该品牌正品的标识，感谢您的查询！';
-        codeInfo.style.color = '#6ea017';
-      }
-      if(!data.code_exist) {
-        infoText = '您所查询的防伪码不存在！';
-        codeInfo.style.color = 'red';
-      }
-      codeInfo.innerHTML = infoText;
-    </script>
-  </div>
+          document.addEventListener("WeixinJSBridgeReady", function () {
+            console.log(456)
+            speechSynthesis.speak(utterThis);
+          })
+
+          // let tsn =
+          //   `https://api.vvhan.com/api/song?txt=${text}`
+
+          // let audio = new Audio(tsn)
+
+          // document.ready(() => {
+          //   // codeInfo.addEventListener('click', function () {
+          //   //     audio.play();
+          //   // }, false);
+          //   // const e = document.createEvent("MouseEvents");
+          //   // e.initEvent("click", true, true);
+          //   // // 让这个框发出模拟点击
+          //   // codeInfo.dispatchEvent(e);
+          //   audio.play();
+
+          //   document.addEventListener("WeixinJSBridgeReady", function () {
+          //     audio.play();
+          //   })
+          // })
+
+
+
+
+          //    audio.addEventListener('')
+
+          // if (!window.SpeechSynthesisUtterance) {
+          //     console.warn('当前浏览器不支持文字转语音服务')
+          //     return;
+          // }
+          // console.log('播放')
+          // // setTimeout(() => {
+          // console.log('播放准备')
+          // let synth = window.speechSynthesis;
+          // console.log('synth', synth)
+          // let utterThis = new SpeechSynthesisUtterance(text);
+          // window.speechSynthesis.cancel()
+          // synth.speak(utterThis);
+          // utterThis.onend = function () {
+          //     console.log('播放结束')
+          // };
+          // utterThis.onstart = function () {
+          //     console.log('开始播放')
+          // };
+          // }, 1000)
+          // let speechUtterance = new window.SpeechSynthesisUtterance();
+          // let synth = window.speechSynthesis;
+          // speechUtterance.text = text;
+          // speechUtterance.rate = 1;
+          // speechUtterance.lang = 'zh-CN';
+          // speechUtterance.volume = 1;
+          // speechUtterance.pitch = 1;
+
+          // window.speechSynthesis.speak(speechUtterance);
+        }
+      </script>
+    </div>
   </div>
 
   <div class="mt">
-  	<div style="font-size:14px; color:#666; text-align:left; max-width:600px; padding:10px 20px; line-height:26px; overflow:hidden;" id = 'storeAddr'></div>
+    <div
+      style="font-size:14px; color:#666; text-align:left; max-width:600px; padding:10px 20px; line-height:26px; overflow:hidden;"
+      id='storeAddr'></div>
     <script>
       var storeAddr = document.getElementById('storeAddr');
-      if(data.addr) {
+      if (data.addr) {
         storeAddr.innerHTML = data.name + '<br>' + '地址：' + data.addr;
       }
 
     </script>
 
-    <video id="video" poster="upfile/202092892916708.mp4" autoplay="autoplay" src="upfile/202092892916708.mp4" style="height:200px; width:100%; display: none" controls="" x5-playsinline="" playsinline="" webkit-playsinline="" preload="auto"></video>
+    <video id="video" poster="upfile/202092892916708.mp4" autoplay="autoplay" src="upfile/202092892916708.mp4"
+      style="height:200px; width:100%; display: none" controls="" x5-playsinline="" playsinline="" webkit-playsinline=""
+      preload="auto"></video>
     <br>点击上方播放宣传视频
     <script>
       var videoUrl = ''
-      for(let i = 0; i < data['imgs'].length; i++) {
-        if(!isImage(data['imgs'][i].url)) {
+      for (let i = 0; i < data['imgs'].length; i++) {
+        if (!isImage(data['imgs'][i].url)) {
           videoUrl = data['imgs'][i].url
           break;
         }
@@ -216,15 +352,15 @@ a:hover {
       var video = document.getElementById('video');
       video.src = videoUrl
       video.style.display = 'block';
-      function isImage(str) {
+      function isImage (str) {
         var reg = /\.(png|jpg|gif|jpeg|webp)$/;
         return reg.test(str);
       }
-  </script>
+    </script>
   </div>
 
   <div class="handdle">
-	<a class="b02" href="#">公司官网</a><a href="#" id="wechat">关注微信</a>
+    <a class="b02" href="#">公司官网</a><a href="#" id="wechat">关注微信</a>
     <script>
       var wechat = document.getElementById('wechat');
       wechat.href = data['wc_img']
@@ -232,47 +368,49 @@ a:hover {
   </div>
 
   <div class="ipro">
-  <h2>精品展示</h2>
-  <H3>OUR PRODUCTS</H3>
+    <h2>精品展示</h2>
+    <H3>OUR PRODUCTS</H3>
 
-    <div id = "imgs"></div>
+    <div id="imgs"></div>
 
     <script>
       var imgs = document.getElementById('imgs');
       var innerHtml = ''
-      for(let i = 0; i < data['imgs'].length; i++) {
-        if(isImage(data['imgs'][i].url)) {
+      for (let i = 0; i < data['imgs'].length; i++) {
+        if (isImage(data['imgs'][i].url)) {
           innerHtml += '<li><img src="' + data['imgs'][i].url + '"></li>'
         }
       }
       imgs.innerHTML = innerHtml
-      function isImage(str) {
+      function isImage (str) {
         var reg = /\.(png|jpg|gif|jpeg|webp)$/;
         return reg.test(str);
       }
 
     </script>
 
-<!--  <li><img src="pro/17/1.jpg"></li>-->
+    <!--  <li><img src="pro/17/1.jpg"></li>-->
 
-<!--  <li><img src="pro/17/2.jpg"></li>-->
+    <!--  <li><img src="pro/17/2.jpg"></li>-->
 
-<!--  <li><img src="pro/17/3.jpg"></li>-->
+    <!--  <li><img src="pro/17/3.jpg"></li>-->
 
-<!--  <li><img src="pro/17/4.jpg"></li>-->
+    <!--  <li><img src="pro/17/4.jpg"></li>-->
 
-<!--  <li><img src="pro/17/5.jpg"></li>-->
+    <!--  <li><img src="pro/17/5.jpg"></li>-->
 
-<!--  <li><img src="pro/17/6.jpg"></li>-->
+    <!--  <li><img src="pro/17/6.jpg"></li>-->
 
-<!--  <li><img src="pro/17/7.jpg"></li>-->
+    <!--  <li><img src="pro/17/7.jpg"></li>-->
 
   </div>
 
-  <div class="footer" id = "footer">
+  <div class="footer" id="footer">
     Copyright 2017 - 2020. 贝思盈防伪系统
-    <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao" style = "color: #999">闽ICP备18015738号-1</a>
+    <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao"
+      style="color: #999">闽ICP备18015738号-1</a>
   </div>
 
 </body>
+
 </html>
