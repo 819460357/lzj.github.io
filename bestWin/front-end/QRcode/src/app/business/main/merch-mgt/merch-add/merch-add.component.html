@@ -2,75 +2,89 @@
   <div class="c-contain-wrap">
     <div class="c-contain-left-wrap">
       <div class="c-div-item">
-        <span class="c-input-text">商户名称：</span><input class="c-input" [(ngModel)]="name"/>
+        <span class="c-input-text">商户名称：</span><input class="c-input" [(ngModel)]="name" />
       </div>
       <!--<div class="c-div-item">-->
-        <!--<span class="c-input-text">防伪标题：</span><input class="c-input" [(ngModel)]="title"/>-->
+      <!--<span class="c-input-text">防伪标题：</span><input class="c-input" [(ngModel)]="title"/>-->
       <!--</div>-->
       <div class="c-div-item">
-        <span class="c-input-text">地址：</span><input class="c-input" [(ngModel)]="addr"/>
+        <span class="c-input-text">地址：</span><input class="c-input" [(ngModel)]="addr" />
       </div>
       <div class="c-div-item">
-        <span class="c-input-text">客服热线：</span><input class="c-input" [(ngModel)]="tel"/>
+        <span class="c-input-text">客服热线：</span><input class="c-input" [(ngModel)]="tel" />
       </div>
       <div class="c-div-item">
-        <span class="c-input-text">固定电话：</span><input class="c-input" [(ngModel)]="fixed_line"/>
+        <span class="c-input-text">固定电话：</span><input class="c-input" [(ngModel)]="fixed_line" />
       </div>
       <div class="c-div-item">
         <span class="c-input-text">模版：</span>
-        <mat-select placeholder="" [(ngModel)] = "template" class="c-text-gray c-no-drag"  class = 'c-input'>
+        <mat-select placeholder="" [(ngModel)]="template" class="c-text-gray c-no-drag" class='c-input'>
           <mat-option [value]="1">
-           模版一
+            模版一
           </mat-option>
           <mat-option [value]="2">
             模版二
+          </mat-option>
+          <mat-option [value]="3">
+            模版三
           </mat-option>
         </mat-select>
       </div>
       <div class="c-div-item">
         <span class="c-input-text">显示技术支持：</span>
-        <mat-select placeholder="" [(ngModel)] = "support_tag" class="c-text-gray c-no-drag"  class = 'c-input'>
+        <mat-select placeholder="" [(ngModel)]="support_tag" class="c-text-gray c-no-drag" class='c-input'>
           <mat-option *ngFor="let selectItem of selectList" [value]="selectItem.value">
             {{ selectItem.name }}
           </mat-option>
         </mat-select>
       </div>
       <div class="c-div-item">
-        <span class="c-input-text">微信号：</span><input class="c-input" [(ngModel)]="wechat"/>
+        <span class="c-input-text">微信号：</span><input class="c-input" [(ngModel)]="wechat" />
       </div>
       <div class="c-div-item">
-        <span class="c-input-text">官网：</span><input class="c-input" [(ngModel)]="official_website"/>
+        <span class="c-input-text">官网：</span><input class="c-input" [(ngModel)]="official_website" />
       </div>
       <div class="c-qrCode-div" style="display: flex; justify-content: center">
         <div style="text-align: center">
           <label style="height: 100%; width: 100%; position: relative; text-align: center" class="c-cursor-pointer">
-            <input type="file" accept="image/*" class="c-input-file" (change)="uploadQRCode($event)" [(ngModel)]="qrCodeInput"/>
-            <img [src] = "qrCodeUrl && qrCodeUrl != '' ? qrCodeUrl : 'assets/imgs/qrcode.png'" style="height: 8rem; width: 8rem"><br/>
+            <input type="file" accept="image/*" class="c-input-file" (change)="uploadQRCode($event)"
+              [(ngModel)]="qrCodeInput" />
+            <img [src]="qrCodeUrl && qrCodeUrl != '' ? qrCodeUrl : 'assets/imgs/qrcode.png'"
+              style="height: 8rem; width: 8rem"><br />
           </label>
-          <span style="font-size: .84rem; color: grey" class="c-cursor-pointer" (click)="delQrcode($event)" [ngStyle]="{'color': qrCodeUrl && qrCodeUrl != '' ? 'red' : 'grey'}"> {{qrCodeUrl && qrCodeUrl != '' ? '删除微信二维码' : '微信二维码'}}</span>
+          <span style="font-size: .84rem; color: grey" class="c-cursor-pointer" (click)="delQrcode($event)"
+            [ngStyle]="{'color': qrCodeUrl && qrCodeUrl != '' ? 'red' : 'grey'}"> {{qrCodeUrl && qrCodeUrl != '' ?
+            '删除微信二维码' : '微信二维码'}}</span>
         </div>
 
-        <div style="text-align: center; height: 100%; width: 100%; margin-left: 2rem;" >
+        <div style="text-align: center; height: 100%; width: 100%; margin-left: 2rem;">
           <label style="height: 100%; width: 100%; position: relative; text-align: center" class="c-cursor-pointer">
-            <input type="file" accept="image/*" class="c-input-file" (change)="uploadWcQRCode($event)" [(ngModel)]="wcQrCodeInput"/>
-            <img [src] = "wcQrcodeUrl && wcQrcodeUrl != '' ? wcQrcodeUrl : 'assets/imgs/wcQrcode.png'" style="height: 8rem; width: 8rem">
+            <input type="file" accept="image/*" class="c-input-file" (change)="uploadWcQRCode($event)"
+              [(ngModel)]="wcQrCodeInput" />
+            <img [src]="wcQrcodeUrl && wcQrcodeUrl != '' ? wcQrcodeUrl : 'assets/imgs/wcQrcode.png'"
+              style="height: 8rem; width: 8rem">
           </label>
-          <span style="font-size: .84rem" class="c-cursor-pointer" (click)="delWcQrcode($event)" [ngStyle]="{'color': wcQrcodeUrl && wcQrcodeUrl != '' ? 'red' : 'grey'}"> {{wcQrcodeUrl && wcQrcodeUrl != '' ? '删除公众号二维码' : '公众号二维码'}}</span>
+          <span style="font-size: .84rem" class="c-cursor-pointer" (click)="delWcQrcode($event)"
+            [ngStyle]="{'color': wcQrcodeUrl && wcQrcodeUrl != '' ? 'red' : 'grey'}"> {{wcQrcodeUrl && wcQrcodeUrl != ''
+            ? '删除公众号二维码' : '公众号二维码'}}</span>
         </div>
       </div>
     </div>
     <div class="c-contain-right-wrap">
       <div class="c-img-wrap">
         <div class="c-img-item" *ngFor="let imgItem of imgs; let imgIndex = index" style="position: relative">
-        <img [src]="imgItem['imgUrl']" style="height: 8rem; width: 8rem; vertical-align: bottom;" *ngIf="isImage(imgItem['imgUrl'])">
-          <video [src]="imgItem['imgUrl']" style="height: 8rem; width: 8rem" controls="controls" *ngIf="!isImage(imgItem['imgUrl'])"></video>
-          <span style="color: red; display: inline-block; position: absolute; top: 0; right: .5rem; font-size: 1.2rem" class="c-cursor-pointer" (click)="delImgBtn($event, imgIndex)">×</span>
+          <img [src]="imgItem['imgUrl']" style="height: 8rem; width: 8rem; vertical-align: bottom;"
+            *ngIf="isImage(imgItem['imgUrl'])">
+          <video [src]="imgItem['imgUrl']" style="height: 8rem; width: 8rem" controls="controls"
+            *ngIf="!isImage(imgItem['imgUrl'])"></video>
+          <span style="color: red; display: inline-block; position: absolute; top: 0; right: .5rem; font-size: 1.2rem"
+            class="c-cursor-pointer" (click)="delImgBtn($event, imgIndex)">×</span>
         </div>
         <div class="c-img-input-wrap" style="position: relative">
-        <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
-        <input type="file" accept="video/*,image/*" class="c-input-file" multiple (change)="uploadImg($event)"/>
-        <img [src]="'assets/imgs/imgAdd.png'" style="height: 8rem; width: 8rem">
-        </label>
+          <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
+            <input type="file" accept="video/*,image/*" class="c-input-file" multiple (change)="uploadImg($event)" />
+            <img [src]="'assets/imgs/imgAdd.png'" style="height: 8rem; width: 8rem">
+          </label>
         </div>
       </div>
       <div class="c-btn-wrap">
