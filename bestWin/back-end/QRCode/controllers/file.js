@@ -22,6 +22,7 @@ function uploadImg (req) {
   return new Promise(function (resolve, reject) {
     var form = new multiparty.Form({ uploadDir: DIRNAME });
     form.parse(req, function (err, fields, files) {
+      console.log(files)
       if (err) {
         return reject({ code: -1, msg: '文件上传出错' })
       }
@@ -31,7 +32,9 @@ function uploadImg (req) {
       var urls = new Array();
       var promiseResult = new Array();
       for (key in files) {
-        var fileName = DIRNAME + new Date().getTime() + '_' + Math.floor(Math.random() * 100) + files[key][0]['originalFilename'].substring(files[key][0]['originalFilename'].lastIndexOf('.'));
+        var fileName = DIRNAME + new Date().getTime() + '_' + Math.floor(Math.random() * 100) + '_' + files[key][0]['originalFilename'];
+        console.log('fileName', fileName)
+        // var fileName = DIRNAME + new Date().getTime() + '_' + Math.floor(Math.random() * 100) + files[key][0]['originalFilename'].substring(files[key][0]['originalFilename'].lastIndexOf('.'));
         urls.push(fileName.substring(fileName.indexOf('/public') + 7));
         promiseResult.push(renameImg(files[key][0]['path'], fileName));
       }

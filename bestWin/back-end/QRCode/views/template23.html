@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="http://scy.api.bestwin.vip/component/carousel.css">
+  <script src="http://scy.api.bestwin.vip/component/carousel.js"></script>
+  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script>
+    var data = '{{{data}}}'
+    data = JSON.parse(data);
+    document.title = '防伪查询_' + data.name
+  </script>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    a {
+      color: #333;
+      text-decoration: none;
+      outline: none;
+    }
+
+    a:hover {
+      color: #db0010;
+      text-decoration: none;
+    }
+
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    a {}
+
+    .swiper-container {
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .mt {
+      margin-top: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 640px;
+      /* background: #f8f8f8; */
+      text-align: center;
+    }
+
+    .handdle {
+      text-align: center;
+      padding: 10px 0;
+      margin: 10px auto;
+    }
+
+    .handdle a {
+      background: url(b01.png) no-repeat;
+      display: inline-block;
+      width: 140px;
+      height: 34px;
+      line-height: 34px;
+      color: #fff;
+      font-weight: bolder;
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+
+    .handdle .b02 {
+      background: url(b02.png) no-repeat;
+      display: inline-block;
+      width: 140px;
+      height: 34px;
+      line-height: 34px;
+      color: #fff;
+      font-weight: bolder;
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+
+    .footer {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      background-color: #fff;
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+      clear: both;
+    }
+
+    .ipro {
+      width: 100%;
+      text-align: center;
+      max-width: 640px;
+      margin: auto;
+      margin-top: 30px;
+    }
+
+    .ipro h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #009694;
+      margin: auto;
+      text-align: center;
+    }
+
+    .ipro h3 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #999;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .ipro li {
+      width: 100%;
+      float: left;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center
+    }
+
+    .ipro img {
+      width: 90%;
+      margin: auto;
+      border: #5db2b1 solid 1px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Swiper
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="upfile/2020106142839449.jpg" width="100%" style="max-width:640px;"></div>
+    </div>
+  </div>-->
+  <div id='carousel' style="background: #fff"></div>
+  <script>
+    var carousel = document.getElementById('carousel');
+    var imgsUrl = [];
+    for (var i = 0; i < data.imgs.length; i++) {
+      if (isImage(data['imgs'][i].url)) {
+        imgsUrl.push({
+          imgSrc: 'http://scy.api.bestwin.vip' + data.imgs[i]['url']
+        });
+      }
+    }
+    console.log('imgUrl:', imgsUrl)
+    function isImage (str) {
+      var reg = /\.(png|jpg|gif|jpeg|webp)$/;
+      return reg.test(str);
+    }
+    var carouselComponent = new Carousel(carousel, imgsUrl, {
+      transitionTime: 800, // 动画过渡时间，默认为800ms
+      intervalTime: 5000 // 图片切换时间，默认为5s
+    });
+  </script>
+  <div class="mt">
+    <div style="margin:auto; color:#009694; font-size:12px; text-align:center; padding:10px;"><img src="01.png"
+        width="20" style="margin-top:3px; padding-right:10px"> 您查询的防伪码为：<span id='antifakeCode'></span></div>
+    <script>
+      var antifakeCode = document.getElementById('antifakeCode');
+      if (data.antifakeCode) {
+        antifakeCode.innerText = data.antifakeCode;
+      }
+    </script>
+
+    <div style="margin:auto; font-size:14px; padding:10px; padding-left:15px; padding-right:15px;">
+      <font style='color: #ff0000' id="codeInfo"></font>
+      <script>
+        console.log(data)
+        var codeInfo = document.getElementById('codeInfo');
+        var infoText = '';
+        if (data.read > 0 && data.code_exist) {
+          Date.prototype['format'] = function (format) {
+            var date = {
+              "M+": this.getMonth() + 1,
+              "d+": this.getDate(),
+              "h+": this.getHours(),
+              "m+": this.getMinutes(),
+              "s+": this.getSeconds(),
+              "q+": Math.floor((this.getMonth() + 3) / 3),
+              "S+": this.getMilliseconds()
+            };
+            if (/(y+)/i.test(format)) {
+              format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+            }
+            for (var k in date) {
+              if (new RegExp("(" + k + ")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
+                  date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+              }
+            }
+            return format;
+          };
+          infoText = '您所查询的防伪码已被查询过，首次查询时间：' + new Date(data['first_read_time'] * 1000)['format']('yyyy-MM-dd hh:mm:ss') + ',查询方式:网络,请确认!此次是第 <b style=\"font-size:16px\">' + (data['read'] + 1) + '</b>次查询！';
+          codeInfo.style.color = 'red';
+        }
+        if (data.read == 0 && data.code_exist) {
+          infoText = '您所查询的是' + (data.brand_name ? '"' + data.brand_name + '"' : '') + '品牌卫浴产品，是该品牌正品的标识，感谢您的查询！';
+          codeInfo.style.color = '#6ea017';
+        }
+        if (!data.code_exist) {
+          infoText = '您所查询的防伪码不存在,谨防假冒！';
+          codeInfo.style.color = 'red';
+        }
+        codeInfo.innerHTML = infoText;
+
+        codeInfo.innerText = infoText;
+        textTranslateVideo(infoText)
+
+
+        function textTranslateVideo (text) {
+
+          var utterThis = new SpeechSynthesisUtterance();
+          utterThis.text = text;
+          utterThis.volume = 1; // 声音的音量 范围是0到1
+          utterThis.rate = 0.7; //语速，数值，默认值是1，范围是0.1到10
+          utterThis.pitch = 0; // 音高，数值，范围从0（最小）到2（最大）。默认值为1
+          window.onload = () => {
+            console.log(122)
+            speechSynthesis.speak(utterThis);
+          }
+          document.addEventListener("WeixinJSBridgeReady", function () {
+            console.log(456)
+            speechSynthesis.speak(utterThis);
+          })
+
+
+        }
+      </script>
+    </div>
+  </div>
+
+  <div class="mt">
+    <!-- <div
+      style="font-size:14px; color:#666; text-align:left; max-width:600px; padding:10px 20px; line-height:26px; overflow:hidden;"
+      id='storeAddr'></div>
+    <script>
+      var storeAddr = document.getElementById('storeAddr');
+      if (data.addr) {
+        storeAddr.innerHTML = data.name + '<br>' + '地址：' + data.addr;
+      }
+
+    </script> -->
+
+    <div id="videos"></div>
+    <script>
+      let videoHtml = ''
+      var videoUrl = ''
+      var videowrap = document.getElementById('videos');
+      for (let i = 0; i < data['imgs'].length; i++) {
+        if (!isImage(data['imgs'][i].url)) {
+          videoUrl = 'http://scy.api.bestwin.vip' + data['imgs'][i].url
+          console.log('dddd:', videoUrl)
+          var video = document.createElement('video');
+
+          // 设置video的属性
+          video.src = videoUrl;  // 视频文件路径
+          video.width = 350;                     // 视频宽度
+          video.height = 200;                    // 视频高度
+          video.controls = true;                 // 显示播放控件
+          video.autoplay = true;
+          videowrap.appendChild(video)
+        }
+      }
+      // var video = document.getElementById('video');
+      // video.src = videoUrl
+      // video.style.display = 'block';
+      function isImage (str) {
+        var reg = /\.(png|jpg|gif|jpeg|webp)$/;
+        return reg.test(str);
+      }
+    </script>
+  </div>
+
+  </div>
+
+  <div class="footer" id="footer">
+    Copyright 2017 - 2020. 贝思盈防伪系统
+    <a rel="nofollow" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" class="beianhao"
+      style="color: #999">闽ICP备18015738号-1</a>
+  </div>
+
+</body>
+
+</html>
