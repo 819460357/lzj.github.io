@@ -21,6 +21,10 @@ export class MerchAddComponent implements OnInit {
   public wcQrcodeUrl;
   public fixed_line;
   public template = 1;
+  public company_name;
+  public company_address;
+  public company_tel1;
+  public company_tel2;
   public imgs: Array<OnInit> = new Array();
   public support_tag = 1;
   public selectList: Array<Object> = [
@@ -50,7 +54,7 @@ export class MerchAddComponent implements OnInit {
     return new Promise((resolve, reject) => {
       console.log(event);
       let files = event.target.files;
-      if(files.length == 0) return;
+      if (files.length == 0) return;
       this
         .myService
         .qrCodeUpload(files)
@@ -70,7 +74,7 @@ export class MerchAddComponent implements OnInit {
 
   public uploadWcQRCode = (event) => {
     let files = event.target.files;
-    if(files.length == 0) return;
+    if (files.length == 0) return;
     this
       .myService
       .qrCodeUpload(files)
@@ -88,7 +92,7 @@ export class MerchAddComponent implements OnInit {
    */
   public uploadImg = (event) => {
     let files = event.target.files;
-    if(files.length == 0) return;
+    if (files.length == 0) return;
     this
       .myService
       .imgUpload(files)
@@ -117,10 +121,14 @@ export class MerchAddComponent implements OnInit {
     body['imgs'] = new Array();
     body['official_website'] = this.official_website;
     body['template'] = this.template;
-    for (let i = 0; i < this.imgs.length; i ++ ) {
+    body['company_name'] = this.company_name;
+    body['company_address'] = this.company_address;
+    body['company_tel1'] = this.company_tel1;
+    body['company_tel2'] = this.company_tel2;
+    for (let i = 0; i < this.imgs.length; i++) {
       body['imgs'].push(this.imgs[i]['url']);
     }
-    if(!this.merchId) {
+    if (!this.merchId) {
       this
         .myService
         .addMerch(body)
@@ -151,7 +159,7 @@ export class MerchAddComponent implements OnInit {
   public getMerchInfo = () => {
     this
       .myService
-      .getMerchInfo({id: this.merchId})
+      .getMerchInfo({ id: this.merchId })
       .then(res => {
         this.name = res['data']['name'];
         // this.title = res['data']['title'];
@@ -163,10 +171,14 @@ export class MerchAddComponent implements OnInit {
         this.wcQrcode = res['data']['wc_img'];
         this.fixed_line = res['data']['fixed_line'];
         this.support_tag = res['data']['support_tag'];
-        this.qrCodeUrl =  res['data']['qr_code_url'];
-        this.wcQrcodeUrl =  res['data']['wc_img_url'];
+        this.qrCodeUrl = res['data']['qr_code_url'];
+        this.wcQrcodeUrl = res['data']['wc_img_url'];
         this.imgs = res['data']['imgs'];
         this.template = res['data']['template'] || 1;
+        this.company_name = res['data']['company_name'];
+        this.company_address = res['data']['company_address'];
+        this.company_tel1 = res['data']['company_tel1'];
+        this.company_tel2 = res['data']['company_tel2'];
       })
       .catch(err => {
 
@@ -179,7 +191,7 @@ export class MerchAddComponent implements OnInit {
    */
   getQueryParamsEvent = () => {
     this.activeRoute.queryParams.subscribe(params => {
-      if(params.hasOwnProperty('id')) {
+      if (params.hasOwnProperty('id')) {
         this.merchId = params['id'];
         this.getMerchInfo();
       }

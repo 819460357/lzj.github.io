@@ -79,6 +79,10 @@ function getCodeInfo (data, headers) {
           "        , merch.official_website" +
           "        , merch.tel" +
           "        , merch.wechat" +
+          "        , merch.company_name" +
+          "        , merch.company_address" +
+          "        , merch.company_tel1" +
+          "        , merch.company_tel2" +
           "        , IF(merch.id > 0, TRUE, FALSE) AS merch_exist" +
           "        ,IF(qr_code_range.id > 0, TRUE,FALSE) AS code_exist" +
           "        , IF(qr_code_range.effect = 1, " + data['code'] + "," + data['code'] + ") AS code" +

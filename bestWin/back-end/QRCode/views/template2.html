@@ -115,7 +115,11 @@
   </div>
 
   <p style="text-align:center; margin-top: 20px;">
-    <span style="background-color:#E53333;color:#FFFFFF;font-size:32px;" id="dd"></span>
+  <p style="color:#333;font-size:32px; text-align: center; line-height: 20px;" id="company_name"></p>
+  <p style="color:#333;font-size:16px; text-indent: 20px; line-height: 8px;" id="company_address"></p>
+  <p style="color:#333;font-size:16px; text-indent: 20px; line-height: 8px; " id="company_tel1"></p>
+  <p style="color:#333;font-size:16px; text-indent: 20px; line-height: 8px; " id="company_tel2"></p>
+  <p style="color:#333;font-size:32px; text-align: center; line-height: 20px;">产品安装使用视频</p>
   </p>
 
   <div class="videos" id="videos" style="text-align: center;"></div>
@@ -215,7 +219,10 @@
     return reg.test(str);
   }
 
-  document.getElementById('dd').innerText = `${data.name}产品安装使用视频`
+  document.getElementById('company_name').innerText = `${data['company_name']}`
+  document.getElementById('company_address').innerText = `地址：${data['company_address']}`
+  document.getElementById('company_tel1').innerText = `售后服务：${data['company_tel1']}`
+  document.getElementById('company_tel2').innerText = `全国招商热线：${data['company_tel2']}`
 </script>
 <style>
   .cell-item {

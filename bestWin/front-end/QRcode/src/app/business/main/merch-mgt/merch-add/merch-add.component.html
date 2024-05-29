@@ -1,12 +1,166 @@
-<div class="c-add-merch-wrap">
-  <div class="c-contain-wrap">
+<!-- <div class="c-add-merch-wrap"> -->
+
+<div style="background: #fff; padding: 10px 0;">
+  <div
+    style="height: 30px; border-left: 4px solid #074ba1; text-indent: 10px; line-height: 30px; margin: 10px 0 10px 10px;">
+    基础信息</div>
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>商户名称</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>地址</mat-label>
+        <input matInput [(ngModel)]="addr">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>客服热线</mat-label>
+        <input matInput [(ngModel)]="tel">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>固定电话</mat-label>
+        <input matInput [(ngModel)]="fixed_line">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>模板</mat-label>
+        <mat-select placeholder="" [(ngModel)]="template" class="c-text-gray c-no-drag" class='c-input'>
+          <mat-option [value]="1">
+            模板一
+          </mat-option>
+          <mat-option [value]="2">
+            模版二
+          </mat-option>
+          <mat-option [value]="3">
+            模版三
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>技术支持</mat-label>
+        <mat-select placeholder="" [(ngModel)]="support_tag" style="width: 100%;" class="c-text-gray c-no-drag"
+          class='c-input'>
+          <mat-option *ngFor="let selectItem of selectList" [value]="selectItem.value">
+            {{ selectItem.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>微信号</mat-label>
+        <input matInput [(ngModel)]="wechat">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>官网</mat-label>
+        <input matInput [(ngModel)]="official_website">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div
+    style="height: 30px; border-left: 4px solid #074ba1; text-indent: 10px; line-height: 30px; margin: 10px 0 10px 10px;">
+    公司信息</div>
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>公司名称</mat-label>
+        <input matInput [(ngModel)]="company_name">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>公司地址</mat-label>
+        <input matInput [(ngModel)]="company_address">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>售后服务</mat-label>
+        <input matInput [(ngModel)]="company_tel1">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>全国招商热线</mat-label>
+        <input matInput [(ngModel)]="company_tel2">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div
+    style="height: 30px; border-left: 4px solid #074ba1; text-indent: 10px; line-height: 30px; margin: 10px 0 10px 10px;">
+    图片信息</div>
+  <mat-grid-list cols="4" rowHeight="200px">
+    <mat-grid-tile>
+      <div style="text-align: center">
+        <label style="height: 100%; width: 100%; position: relative; text-align: center" class="c-cursor-pointer">
+          <input type="file" accept="image/*" class="c-input-file" (change)="uploadQRCode($event)"
+            [(ngModel)]="qrCodeInput" />
+          <img [src]="qrCodeUrl && qrCodeUrl != '' ? qrCodeUrl : 'assets/imgs/qrcode.png'"
+            style="height: 8rem; width: 8rem"><br />
+        </label>
+        <span style="font-size: .84rem; color: grey" class="c-cursor-pointer" (click)="delQrcode($event)"
+          [ngStyle]="{'color': qrCodeUrl && qrCodeUrl != '' ? 'red' : 'grey'}"> {{qrCodeUrl && qrCodeUrl != '' ?
+          '删除微信二维码' : '微信二维码'}}</span>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div style="text-align: center;">
+        <label style="height: 100%; width: 100%; position: relative; text-align: center" class="c-cursor-pointer">
+          <input type="file" accept="image/*" class="c-input-file" (change)="uploadWcQRCode($event)"
+            [(ngModel)]="wcQrCodeInput" />
+          <img [src]="wcQrcodeUrl && wcQrcodeUrl != '' ? wcQrcodeUrl : 'assets/imgs/wcQrcode.png'"
+            style="height: 8rem; width: 8rem">
+        </label>
+        <span style="font-size: .84rem" class="c-cursor-pointer" (click)="delWcQrcode($event)"
+          [ngStyle]="{'color': wcQrcodeUrl && wcQrcodeUrl != '' ? 'red' : 'grey'}"> {{wcQrcodeUrl && wcQrcodeUrl != ''
+          ? '删除公众号二维码' : '公众号二维码'}}</span>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div
+    style="height: 30px; border-left: 4px solid #074ba1; text-indent: 10px; line-height: 30px; margin: 10px 0 10px 10px;">
+    轮播图</div>
+  <div class="c-img-wrap">
+    <div class="c-img-item" *ngFor="let imgItem of imgs; let imgIndex = index" style="position: relative">
+      <img [src]="imgItem['imgUrl']" style="height: 8rem; width: 8rem; vertical-align: bottom;"
+        *ngIf="isImage(imgItem['imgUrl'])">
+      <video [src]="imgItem['imgUrl']" style="height: 8rem; width: 8rem" controls="controls"
+        *ngIf="!isImage(imgItem['imgUrl'])"></video>
+      <span style="color: red; display: inline-block; position: absolute; top: 0; right: .5rem; font-size: 1.2rem"
+        class="c-cursor-pointer" (click)="delImgBtn($event, imgIndex)">×</span>
+    </div>
+    <div class="c-img-input-wrap" style="position: relative">
+      <label style="height: 100%; width: 100%; position: relative" class="c-cursor-pointer">
+        <input type="file" accept="video/*,image/*" class="c-input-file" multiple (change)="uploadImg($event)" />
+        <img [src]="'assets/imgs/imgAdd.png'" style="height: 8rem; width: 8rem">
+      </label>
+    </div>
+  </div>
+  <div class="c-btn-wrap">
+    <span class="c-save-btn c-cursor-pointer" (click)="addMerchBtn($event)">保存</span>
+  </div>
+</div>
+
+
+
+<!-- <div class="c-contain-wrap">
     <div class="c-contain-left-wrap">
       <div class="c-div-item">
         <span class="c-input-text">商户名称：</span><input class="c-input" [(ngModel)]="name" />
       </div>
-      <!--<div class="c-div-item">-->
-      <!--<span class="c-input-text">防伪标题：</span><input class="c-input" [(ngModel)]="title"/>-->
-      <!--</div>-->
       <div class="c-div-item">
         <span class="c-input-text">地址：</span><input class="c-input" [(ngModel)]="addr" />
       </div>
@@ -43,6 +197,15 @@
       </div>
       <div class="c-div-item">
         <span class="c-input-text">官网：</span><input class="c-input" [(ngModel)]="official_website" />
+      </div>
+      <div class="c-div-item">
+        <span class="c-input-text">公司名称：</span><input class="c-input" [(ngModel)]="official_website" />
+      </div>
+      <div class="c-div-item">
+        <span class="c-input-text">地址：</span><input class="c-input" [(ngModel)]="official_website" />
+      </div>
+      <div class="c-div-item">
+        <span class="c-input-text">全国招商热线：</span><input class="c-input" [(ngModel)]="official_website" />
       </div>
       <div class="c-qrCode-div" style="display: flex; justify-content: center">
         <div style="text-align: center">
@@ -91,5 +254,5 @@
         <span class="c-save-btn c-cursor-pointer" (click)="addMerchBtn($event)">保存</span>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->
+<!-- </div> -->
